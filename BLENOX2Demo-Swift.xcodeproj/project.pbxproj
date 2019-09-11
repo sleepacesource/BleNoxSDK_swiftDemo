@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26E279202328EC20005A983D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2791F2328EC20005A983D /* AppDelegate.swift */; };
+		26E279222328EC20005A983D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E279212328EC20005A983D /* ViewController.swift */; };
+		26E279252328EC20005A983D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E279232328EC20005A983D /* Main.storyboard */; };
+		26E279272328EC23005A983D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26E279262328EC23005A983D /* Assets.xcassets */; };
+		26E2792A2328EC23005A983D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E279282328EC23005A983D /* LaunchScreen.storyboard */; };
+		26E279352328EC24005A983D /* BLENOX2Demo_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E279342328EC24005A983D /* BLENOX2Demo_SwiftTests.swift */; };
+		26E279402328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2793F2328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26E279312328EC24005A983D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26E279142328EC20005A983D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26E2791B2328EC20005A983D;
+			remoteInfo = "BLENOX2Demo-Swift";
+		};
+		26E2793C2328EC24005A983D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26E279142328EC20005A983D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26E2791B2328EC20005A983D;
+			remoteInfo = "BLENOX2Demo-Swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		26E2791C2328EC20005A983D /* BLENOX2Demo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BLENOX2Demo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26E2791F2328EC20005A983D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26E279212328EC20005A983D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		26E279242328EC20005A983D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		26E279262328EC23005A983D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26E279292328EC23005A983D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		26E2792B2328EC23005A983D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26E279302328EC24005A983D /* BLENOX2Demo-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BLENOX2Demo-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26E279342328EC24005A983D /* BLENOX2Demo_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLENOX2Demo_SwiftTests.swift; sourceTree = "<group>"; };
+		26E279362328EC24005A983D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26E2793B2328EC24005A983D /* BLENOX2Demo-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BLENOX2Demo-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26E2793F2328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLENOX2Demo_SwiftUITests.swift; sourceTree = "<group>"; };
+		26E279412328EC24005A983D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26E279192328EC20005A983D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E2792D2328EC24005A983D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E279382328EC24005A983D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26E279132328EC20005A983D = {
+			isa = PBXGroup;
+			children = (
+				26E2791E2328EC20005A983D /* BLENOX2Demo-Swift */,
+				26E279332328EC24005A983D /* BLENOX2Demo-SwiftTests */,
+				26E2793E2328EC24005A983D /* BLENOX2Demo-SwiftUITests */,
+				26E2791D2328EC20005A983D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26E2791D2328EC20005A983D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26E2791C2328EC20005A983D /* BLENOX2Demo-Swift.app */,
+				26E279302328EC24005A983D /* BLENOX2Demo-SwiftTests.xctest */,
+				26E2793B2328EC24005A983D /* BLENOX2Demo-SwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26E2791E2328EC20005A983D /* BLENOX2Demo-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				26E2791F2328EC20005A983D /* AppDelegate.swift */,
+				26E279212328EC20005A983D /* ViewController.swift */,
+				26E279232328EC20005A983D /* Main.storyboard */,
+				26E279262328EC23005A983D /* Assets.xcassets */,
+				26E279282328EC23005A983D /* LaunchScreen.storyboard */,
+				26E2792B2328EC23005A983D /* Info.plist */,
+			);
+			path = "BLENOX2Demo-Swift";
+			sourceTree = "<group>";
+		};
+		26E279332328EC24005A983D /* BLENOX2Demo-SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				26E279342328EC24005A983D /* BLENOX2Demo_SwiftTests.swift */,
+				26E279362328EC24005A983D /* Info.plist */,
+			);
+			path = "BLENOX2Demo-SwiftTests";
+			sourceTree = "<group>";
+		};
+		26E2793E2328EC24005A983D /* BLENOX2Demo-SwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				26E2793F2328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift */,
+				26E279412328EC24005A983D /* Info.plist */,
+			);
+			path = "BLENOX2Demo-SwiftUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26E2791B2328EC20005A983D /* BLENOX2Demo-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26E279442328EC24005A983D /* Build configuration list for PBXNativeTarget "BLENOX2Demo-Swift" */;
+			buildPhases = (
+				26E279182328EC20005A983D /* Sources */,
+				26E279192328EC20005A983D /* Frameworks */,
+				26E2791A2328EC20005A983D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BLENOX2Demo-Swift";
+			productName = "BLENOX2Demo-Swift";
+			productReference = 26E2791C2328EC20005A983D /* BLENOX2Demo-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26E2792F2328EC24005A983D /* BLENOX2Demo-SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26E279472328EC24005A983D /* Build configuration list for PBXNativeTarget "BLENOX2Demo-SwiftTests" */;
+			buildPhases = (
+				26E2792C2328EC24005A983D /* Sources */,
+				26E2792D2328EC24005A983D /* Frameworks */,
+				26E2792E2328EC24005A983D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26E279322328EC24005A983D /* PBXTargetDependency */,
+			);
+			name = "BLENOX2Demo-SwiftTests";
+			productName = "BLENOX2Demo-SwiftTests";
+			productReference = 26E279302328EC24005A983D /* BLENOX2Demo-SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		26E2793A2328EC24005A983D /* BLENOX2Demo-SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26E2794A2328EC24005A983D /* Build configuration list for PBXNativeTarget "BLENOX2Demo-SwiftUITests" */;
+			buildPhases = (
+				26E279372328EC24005A983D /* Sources */,
+				26E279382328EC24005A983D /* Frameworks */,
+				26E279392328EC24005A983D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26E2793D2328EC24005A983D /* PBXTargetDependency */,
+			);
+			name = "BLENOX2Demo-SwiftUITests";
+			productName = "BLENOX2Demo-SwiftUITests";
+			productReference = 26E2793B2328EC24005A983D /* BLENOX2Demo-SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26E279142328EC20005A983D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = medica;
+				TargetAttributes = {
+					26E2791B2328EC20005A983D = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					26E2792F2328EC24005A983D = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 26E2791B2328EC20005A983D;
+					};
+					26E2793A2328EC24005A983D = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 26E2791B2328EC20005A983D;
+					};
+				};
+			};
+			buildConfigurationList = 26E279172328EC20005A983D /* Build configuration list for PBXProject "BLENOX2Demo-Swift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26E279132328EC20005A983D;
+			productRefGroup = 26E2791D2328EC20005A983D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26E2791B2328EC20005A983D /* BLENOX2Demo-Swift */,
+				26E2792F2328EC24005A983D /* BLENOX2Demo-SwiftTests */,
+				26E2793A2328EC24005A983D /* BLENOX2Demo-SwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26E2791A2328EC20005A983D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E2792A2328EC23005A983D /* LaunchScreen.storyboard in Resources */,
+				26E279272328EC23005A983D /* Assets.xcassets in Resources */,
+				26E279252328EC20005A983D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E2792E2328EC24005A983D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E279392328EC24005A983D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26E279182328EC20005A983D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E279222328EC20005A983D /* ViewController.swift in Sources */,
+				26E279202328EC20005A983D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E2792C2328EC24005A983D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E279352328EC24005A983D /* BLENOX2Demo_SwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E279372328EC24005A983D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E279402328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26E279322328EC24005A983D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26E2791B2328EC20005A983D /* BLENOX2Demo-Swift */;
+			targetProxy = 26E279312328EC24005A983D /* PBXContainerItemProxy */;
+		};
+		26E2793D2328EC24005A983D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26E2791B2328EC20005A983D /* BLENOX2Demo-Swift */;
+			targetProxy = 26E2793C2328EC24005A983D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		26E279232328EC20005A983D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26E279242328EC20005A983D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		26E279282328EC23005A983D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26E279292328EC23005A983D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26E279422328EC24005A983D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		26E279432328EC24005A983D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26E279452328EC24005A983D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV3296URNT;
+				INFOPLIST_FILE = "BLENOX2Demo-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.BLENOX2Demo-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26E279462328EC24005A983D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV3296URNT;
+				INFOPLIST_FILE = "BLENOX2Demo-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.BLENOX2Demo-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		26E279482328EC24005A983D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV3296URNT;
+				INFOPLIST_FILE = "BLENOX2Demo-SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.BLENOX2Demo-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLENOX2Demo-Swift.app/BLENOX2Demo-Swift";
+			};
+			name = Debug;
+		};
+		26E279492328EC24005A983D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV3296URNT;
+				INFOPLIST_FILE = "BLENOX2Demo-SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.BLENOX2Demo-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLENOX2Demo-Swift.app/BLENOX2Demo-Swift";
+			};
+			name = Release;
+		};
+		26E2794B2328EC24005A983D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV3296URNT;
+				INFOPLIST_FILE = "BLENOX2Demo-SwiftUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.BLENOX2Demo-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "BLENOX2Demo-Swift";
+			};
+			name = Debug;
+		};
+		26E2794C2328EC24005A983D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV3296URNT;
+				INFOPLIST_FILE = "BLENOX2Demo-SwiftUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.BLENOX2Demo-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "BLENOX2Demo-Swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26E279172328EC20005A983D /* Build configuration list for PBXProject "BLENOX2Demo-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26E279422328EC24005A983D /* Debug */,
+				26E279432328EC24005A983D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26E279442328EC24005A983D /* Build configuration list for PBXNativeTarget "BLENOX2Demo-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26E279452328EC24005A983D /* Debug */,
+				26E279462328EC24005A983D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26E279472328EC24005A983D /* Build configuration list for PBXNativeTarget "BLENOX2Demo-SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26E279482328EC24005A983D /* Debug */,
+				26E279492328EC24005A983D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26E2794A2328EC24005A983D /* Build configuration list for PBXNativeTarget "BLENOX2Demo-SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26E2794B2328EC24005A983D /* Debug */,
+				26E2794C2328EC24005A983D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26E279142328EC20005A983D /* Project object */;
+}
