@@ -98,19 +98,6 @@ class SleepAidViewController: UIViewController {
         let vol  = UInt8(self.volumeTextField.text!)!
         
         if (sender as! UIButton).isSelected {
-            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOffSleepAidMusic: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-                if status == SLPDataTransferStatus.succeed
-                {
-                    print("turn off aid music succeed !")
-                }
-                else
-                {
-                    print("turn off aid music  failed !")
-                }
-            })
-        }
-        else
-        {
             SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnsleepAidMusic: musicID, volume: vol, playMode: 2, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
                 if status == SLPDataTransferStatus.succeed
                 {
@@ -119,6 +106,19 @@ class SleepAidViewController: UIViewController {
                 else
                 {
                     print("turn on aid music  failed !")
+                }
+            })
+        }
+        else
+        {
+            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOffSleepAidMusic: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+                if status == SLPDataTransferStatus.succeed
+                {
+                    print("turn off aid music succeed !")
+                }
+                else
+                {
+                    print("turn off aid music  failed !")
                 }
             })
         }

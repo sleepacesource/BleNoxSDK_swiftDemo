@@ -52,15 +52,12 @@ class LightViewController: UIViewController {
     
     
     @IBAction func changeColor(_ sender: Any) {
-        
-
         let r  = UInt8(self.rText.text!)
         let g  = UInt8(self.gText.text!)
         let b  = UInt8(self.bText.text!)
         let w  = UInt8(self.wText.text!)
         let br = UInt8(self.brightnessText.text!)!
-        
-        
+
         let light: SLPLight = SLPLight()
         light.r = r ?? 0
         light.g = g ?? 0
@@ -119,6 +116,10 @@ class LightViewController: UIViewController {
         })
     }
     
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view?.endEditing(true)
+    }
     
     /*
     // MARK: - Navigation

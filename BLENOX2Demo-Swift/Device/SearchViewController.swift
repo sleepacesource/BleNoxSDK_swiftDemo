@@ -37,16 +37,14 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         deviceList.removeAllObjects()
         self.tableview.reloadData()
-        let ret = SLPBLEManager.shared()?.scanBluetooth(withTimeoutInterval: 3.0, completion: { (code, handleID, peripheralInfo) in
-
-            if code.rawValue == 0{//SLPBLEScanReturnCode_Normal
-
+        
+        let ret = SLPBLEManager.shared()?.scanBluetooth(withTimeoutInterval: 3.0, completion: { (code: SLPBLEScanReturnCodes, handleID: Int, peripheralInfo: SLPPeripheralInfo?) in
+            if code == SLPBLEScanReturnCodes.normal{//SLPBLEScanReturnCode_Normal
                 self.appendPeripheral(info: peripheralInfo!)
             }
-            else if code.rawValue == 1{
+            else if code == SLPBLEScanReturnCodes.disable{
                  print("ble not open!")
             }
-
         })
 
         if !ret! {
