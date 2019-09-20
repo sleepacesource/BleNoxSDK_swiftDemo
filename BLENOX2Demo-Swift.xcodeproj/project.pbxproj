@@ -187,9 +187,6 @@
 		26E279132328EC20005A983D = {
 			isa = PBXGroup;
 			children = (
-				26F4AEE32331E01400575C02 /* BleNox.framework */,
-				262846E1232A3CE50018E84D /* BluetoothManager.framework */,
-				262846E2232A3CE60018E84D /* SLPCommon.framework */,
 				26E2791E2328EC20005A983D /* BLENOX2Demo-Swift */,
 				26E279332328EC24005A983D /* BLENOX2Demo-SwiftTests */,
 				26E2793E2328EC24005A983D /* BLENOX2Demo-SwiftUITests */,
@@ -211,6 +208,9 @@
 		26E2791E2328EC20005A983D /* BLENOX2Demo-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				26F4AEE32331E01400575C02 /* BleNox.framework */,
+				262846E1232A3CE50018E84D /* BluetoothManager.framework */,
+				262846E2232A3CE60018E84D /* SLPCommon.framework */,
 				26E2791F2328EC20005A983D /* AppDelegate.swift */,
 				26E279212328EC20005A983D /* ViewController.swift */,
 				2685C45F2329E03B009947EE /* MainViewController.swift */,
