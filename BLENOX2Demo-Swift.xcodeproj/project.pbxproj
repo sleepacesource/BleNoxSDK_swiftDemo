@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		262846E4232A3CE60018E84D /* BluetoothManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262846E1232A3CE50018E84D /* BluetoothManager.framework */; };
+		262846E5232A3CE60018E84D /* SLPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262846E2232A3CE60018E84D /* SLPCommon.framework */; };
+		262846E9232A3D000018E84D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 262846E8232A3D000018E84D /* libc++.tbd */; };
+		2642755B233086AC003F5BA7 /* CustomStyleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26427559233086AC003F5BA7 /* CustomStyleButton.m */; };
+		2642755C233086AC003F5BA7 /* CustomColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2642755A233086AC003F5BA7 /* CustomColorButton.m */; };
+		2685C4552329DF75009947EE /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C4532329DF75009947EE /* DeviceViewController.swift */; };
+		2685C4562329DF75009947EE /* DeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C4542329DF75009947EE /* DeviceViewController.xib */; };
+		2685C4592329DF8A009947EE /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C4572329DF8A009947EE /* ControlViewController.swift */; };
+		2685C45A2329DF8A009947EE /* ControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C4582329DF8A009947EE /* ControlViewController.xib */; };
+		2685C45D2329DF9B009947EE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C45B2329DF9B009947EE /* SettingViewController.swift */; };
+		2685C45E2329DF9B009947EE /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C45C2329DF9B009947EE /* SettingViewController.xib */; };
+		2685C4612329E03B009947EE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C45F2329E03B009947EE /* MainViewController.swift */; };
+		2685C4622329E03B009947EE /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C4602329E03B009947EE /* MainViewController.xib */; };
+		2685C4672329F492009947EE /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C4652329F492009947EE /* LightViewController.swift */; };
+		2685C4682329F492009947EE /* LightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C4662329F492009947EE /* LightViewController.xib */; };
+		2685C46B2329F4B1009947EE /* SleepAidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C4692329F4B1009947EE /* SleepAidViewController.swift */; };
+		2685C46C2329F4B1009947EE /* SleepAidViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C46A2329F4B1009947EE /* SleepAidViewController.xib */; };
+		2685C4702329F534009947EE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C46E2329F534009947EE /* SearchViewController.swift */; };
+		2685C4712329F534009947EE /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C46F2329F534009947EE /* SearchViewController.xib */; };
+		26D84AD22334824600311489 /* device_btn_refresh_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */; };
+		26D84AD32334824600311489 /* device_btn_refresh_nor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */; };
 		26E279202328EC20005A983D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2791F2328EC20005A983D /* AppDelegate.swift */; };
 		26E279222328EC20005A983D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E279212328EC20005A983D /* ViewController.swift */; };
 		26E279252328EC20005A983D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E279232328EC20005A983D /* Main.storyboard */; };
@@ -14,6 +35,9 @@
 		26E2792A2328EC23005A983D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E279282328EC23005A983D /* LaunchScreen.storyboard */; };
 		26E279352328EC24005A983D /* BLENOX2Demo_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E279342328EC24005A983D /* BLENOX2Demo_SwiftTests.swift */; };
 		26E279402328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2793F2328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift */; };
+		26F4AEE42331E01500575C02 /* BleNox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F4AEE32331E01400575C02 /* BleNox.framework */; };
+		26F4AEF02332217700575C02 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4AEEF2332217600575C02 /* DataManager.m */; };
+		26F4AEF3233225E800575C02 /* SN902B_20180509.1.24_release.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 26F4AEF2233225E800575C02 /* SN902B_20180509.1.24_release.MVA */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +58,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		262846E1232A3CE50018E84D /* BluetoothManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothManager.framework; sourceTree = "<group>"; };
+		262846E2232A3CE60018E84D /* SLPCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SLPCommon.framework; sourceTree = "<group>"; };
+		262846E8232A3D000018E84D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		26427557233086AC003F5BA7 /* CustomStyleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomStyleButton.h; sourceTree = "<group>"; };
+		26427558233086AC003F5BA7 /* CustomColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomColorButton.h; sourceTree = "<group>"; };
+		26427559233086AC003F5BA7 /* CustomStyleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomStyleButton.m; sourceTree = "<group>"; };
+		2642755A233086AC003F5BA7 /* CustomColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomColorButton.m; sourceTree = "<group>"; };
+		2642755D23308959003F5BA7 /* BLENOX2Demo-Swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BLENOX2Demo-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		2685C4532329DF75009947EE /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
+		2685C4542329DF75009947EE /* DeviceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceViewController.xib; sourceTree = "<group>"; };
+		2685C4572329DF8A009947EE /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
+		2685C4582329DF8A009947EE /* ControlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlViewController.xib; sourceTree = "<group>"; };
+		2685C45B2329DF9B009947EE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		2685C45C2329DF9B009947EE /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		2685C45F2329E03B009947EE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2685C4602329E03B009947EE /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		2685C4652329F492009947EE /* LightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
+		2685C4662329F492009947EE /* LightViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LightViewController.xib; sourceTree = "<group>"; };
+		2685C4692329F4B1009947EE /* SleepAidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAidViewController.swift; sourceTree = "<group>"; };
+		2685C46A2329F4B1009947EE /* SleepAidViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepAidViewController.xib; sourceTree = "<group>"; };
+		2685C46E2329F534009947EE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2685C46F2329F534009947EE /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_btn_refresh_nor@2x.png"; sourceTree = "<group>"; };
+		26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_btn_refresh_nor@3x.png"; sourceTree = "<group>"; };
 		26E2791C2328EC20005A983D /* BLENOX2Demo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BLENOX2Demo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E2791F2328EC20005A983D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26E279212328EC20005A983D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +95,10 @@
 		26E2793B2328EC24005A983D /* BLENOX2Demo-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BLENOX2Demo-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E2793F2328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLENOX2Demo_SwiftUITests.swift; sourceTree = "<group>"; };
 		26E279412328EC24005A983D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26F4AEE32331E01400575C02 /* BleNox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BleNox.framework; sourceTree = "<group>"; };
+		26F4AEEE2332217600575C02 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		26F4AEEF2332217600575C02 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		26F4AEF2233225E800575C02 /* SN902B_20180509.1.24_release.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_20180509.1.24_release.MVA; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +106,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262846E4232A3CE60018E84D /* BluetoothManager.framework in Frameworks */,
+				26F4AEE42331E01500575C02 /* BleNox.framework in Frameworks */,
+				262846E9232A3D000018E84D /* libc++.tbd in Frameworks */,
+				262846E5232A3CE60018E84D /* SLPCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,13 +130,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		262846E7232A3D000018E84D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				262846E8232A3D000018E84D /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26427556233086A3003F5BA7 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				2642755D23308959003F5BA7 /* BLENOX2Demo-Swift-Bridging-Header.h */,
+				26427558233086AC003F5BA7 /* CustomColorButton.h */,
+				2642755A233086AC003F5BA7 /* CustomColorButton.m */,
+				26427557233086AC003F5BA7 /* CustomStyleButton.h */,
+				26427559233086AC003F5BA7 /* CustomStyleButton.m */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		2685C4632329F141009947EE /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2685C45B2329DF9B009947EE /* SettingViewController.swift */,
+				2685C45C2329DF9B009947EE /* SettingViewController.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		2685C4642329F150009947EE /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				2685C4652329F492009947EE /* LightViewController.swift */,
+				2685C4662329F492009947EE /* LightViewController.xib */,
+				2685C4692329F4B1009947EE /* SleepAidViewController.swift */,
+				2685C46A2329F4B1009947EE /* SleepAidViewController.xib */,
+				2685C4572329DF8A009947EE /* ControlViewController.swift */,
+				2685C4582329DF8A009947EE /* ControlViewController.xib */,
+				26427556233086A3003F5BA7 /* Button */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		2685C46D2329F50D009947EE /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				2685C4532329DF75009947EE /* DeviceViewController.swift */,
+				2685C4542329DF75009947EE /* DeviceViewController.xib */,
+				2685C46E2329F534009947EE /* SearchViewController.swift */,
+				2685C46F2329F534009947EE /* SearchViewController.xib */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
 		26E279132328EC20005A983D = {
 			isa = PBXGroup;
 			children = (
+				26F4AEE32331E01400575C02 /* BleNox.framework */,
+				262846E1232A3CE50018E84D /* BluetoothManager.framework */,
+				262846E2232A3CE60018E84D /* SLPCommon.framework */,
 				26E2791E2328EC20005A983D /* BLENOX2Demo-Swift */,
 				26E279332328EC24005A983D /* BLENOX2Demo-SwiftTests */,
 				26E2793E2328EC24005A983D /* BLENOX2Demo-SwiftUITests */,
 				26E2791D2328EC20005A983D /* Products */,
+				262846E7232A3D000018E84D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +213,19 @@
 			children = (
 				26E2791F2328EC20005A983D /* AppDelegate.swift */,
 				26E279212328EC20005A983D /* ViewController.swift */,
+				2685C45F2329E03B009947EE /* MainViewController.swift */,
+				2685C4602329E03B009947EE /* MainViewController.xib */,
+				26F4AEEA23321FB500575C02 /* DataManager */,
+				2685C46D2329F50D009947EE /* Device */,
+				2685C4642329F150009947EE /* Control */,
+				2685C4632329F141009947EE /* Setting */,
 				26E279232328EC20005A983D /* Main.storyboard */,
 				26E279262328EC23005A983D /* Assets.xcassets */,
 				26E279282328EC23005A983D /* LaunchScreen.storyboard */,
 				26E2792B2328EC23005A983D /* Info.plist */,
+				26F4AEF2233225E800575C02 /* SN902B_20180509.1.24_release.MVA */,
+				26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */,
+				26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */,
 			);
 			path = "BLENOX2Demo-Swift";
 			sourceTree = "<group>";
@@ -123,6 +246,15 @@
 				26E279412328EC24005A983D /* Info.plist */,
 			);
 			path = "BLENOX2Demo-SwiftUITests";
+			sourceTree = "<group>";
+		};
+		26F4AEEA23321FB500575C02 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				26F4AEEE2332217600575C02 /* DataManager.h */,
+				26F4AEEF2332217600575C02 /* DataManager.m */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +325,7 @@
 				TargetAttributes = {
 					26E2791B2328EC20005A983D = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					26E2792F2328EC24005A983D = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -229,9 +362,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2685C45E2329DF9B009947EE /* SettingViewController.xib in Resources */,
+				2685C45A2329DF8A009947EE /* ControlViewController.xib in Resources */,
 				26E2792A2328EC23005A983D /* LaunchScreen.storyboard in Resources */,
 				26E279272328EC23005A983D /* Assets.xcassets in Resources */,
+				2685C4562329DF75009947EE /* DeviceViewController.xib in Resources */,
+				2685C46C2329F4B1009947EE /* SleepAidViewController.xib in Resources */,
+				2685C4622329E03B009947EE /* MainViewController.xib in Resources */,
 				26E279252328EC20005A983D /* Main.storyboard in Resources */,
+				2685C4712329F534009947EE /* SearchViewController.xib in Resources */,
+				26D84AD22334824600311489 /* device_btn_refresh_nor@2x.png in Resources */,
+				26F4AEF3233225E800575C02 /* SN902B_20180509.1.24_release.MVA in Resources */,
+				2685C4682329F492009947EE /* LightViewController.xib in Resources */,
+				26D84AD32334824600311489 /* device_btn_refresh_nor@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +399,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2685C4552329DF75009947EE /* DeviceViewController.swift in Sources */,
+				26F4AEF02332217700575C02 /* DataManager.m in Sources */,
 				26E279222328EC20005A983D /* ViewController.swift in Sources */,
+				2642755B233086AC003F5BA7 /* CustomStyleButton.m in Sources */,
+				2685C4592329DF8A009947EE /* ControlViewController.swift in Sources */,
+				2685C4702329F534009947EE /* SearchViewController.swift in Sources */,
+				2685C4612329E03B009947EE /* MainViewController.swift in Sources */,
 				26E279202328EC20005A983D /* AppDelegate.swift in Sources */,
+				2642755C233086AC003F5BA7 /* CustomColorButton.m in Sources */,
+				2685C46B2329F4B1009947EE /* SleepAidViewController.swift in Sources */,
+				2685C45D2329DF9B009947EE /* SettingViewController.swift in Sources */,
+				2685C4672329F492009947EE /* LightViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -418,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -432,15 +585,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NV3296URNT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "BLENOX2Demo-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(SRCROOT)/BleNox.framework/BleNox",
+					"-force_load",
+					"$(SRCROOT)/BluetoothManager.framework/BluetoothManager",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.BLENOX2Demo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BLENOX2Demo-Swift/Control/Button/BLENOX2Demo-Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -450,15 +617,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NV3296URNT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "BLENOX2Demo-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(SRCROOT)/BleNox.framework/BleNox",
+					"-force_load",
+					"$(SRCROOT)/BluetoothManager.framework/BluetoothManager",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.BLENOX2Demo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BLENOX2Demo-Swift/Control/Button/BLENOX2Demo-Swift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
