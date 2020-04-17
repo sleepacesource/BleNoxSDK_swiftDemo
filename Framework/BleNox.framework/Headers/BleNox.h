@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "SLPBleNoxDef.h"
 #import "SLPBLEManager+BleNox.h"
 
 #define kRestonVersion  @"3.1.0";
-
-
 
 
