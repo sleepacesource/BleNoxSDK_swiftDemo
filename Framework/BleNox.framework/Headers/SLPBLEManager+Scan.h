@@ -7,7 +7,6 @@
 //
 
 #import "SLPBLEManager.h"
-#import "SLPBLEDef.h"
 
 //扫描蓝牙
 typedef NS_ENUM(int,SLPBleConnectStatus) {

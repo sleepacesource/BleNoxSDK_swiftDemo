@@ -7,9 +7,6 @@
 //
 
 #import "SLPBLEManager.h"
-#import "SLPBLEDef.h"
-#import <SLPCommon/SLPCommon.h>
-#import <Foundation/Foundation.h>
 
 @class CBPeripheral;
 @interface SLPBLEManager (Connect)

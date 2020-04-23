@@ -6,7 +6,8 @@
 //  Copyright © 2018年 Martin. All rights reserved.
 //
 
-#import <BluetoothManager/BluetoothManager.h>
+//#import <BluetoothManager/BluetoothManager.h>
+//#import "SLPBLEManager.h"
 #import "BleNoxDeviceInfo.h"
 #import "BleNoxGestureInfo.h"
 #import "BleNoxWorkStatus.h"
@@ -37,7 +38,7 @@
  */
 - (void)bleNox:(CBPeripheral *)peripheral getDeviceInfoTimeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
 
-/*设备初始化
+/*设备恢复出厂设置
  timeout:超时
  */
 - (void)bleNox:(CBPeripheral *)peripheral deviceInitTimeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SLPHistoryData.h"
+#import "SLPBLEDef.h"
+#import "SLPOriginalDataALG.h"
+#import "SLPBLEManager.h"
+#import "SLPBLEManager+Scan.h"
 #import "SLPBleNoxDef.h"
 #import "SLPBLEManager+BleNox.h"
 
