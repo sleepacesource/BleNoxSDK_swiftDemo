@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import <BleNox/BleNoxAidInfo.h>
 #import <BleNox/BleNoxNightLightInfo.h>
 #import <BleNox/BleNoxUpgradeInfo.h>

@@ -209,7 +209,7 @@ class SettingViewController: UIViewController {
         nightLightInfo.startMinute = UInt8(start_min)
         nightLightInfo.duration = UInt16(duration)
         
-        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, nigthLightConfig: nightLightInfo, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, nigthLightConfigSet: nightLightInfo, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
                 print("save night light succeed !")
@@ -228,7 +228,7 @@ class SettingViewController: UIViewController {
 //        操作 0x00: 默认操作 0x01: 播放/暂停 0x02: 切歌(左上右下) 0xFF: 无操作(停用)
         let operation = UInt8(self.gestureTextField.text!)!
         
-        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, gestureConfig:mode, opt: operation, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?)in
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, gestureConfigSet:mode, opt: operation, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?)in
             if status == SLPDataTransferStatus.succeed
             {
                 print("save wave gesture succeed!")
@@ -247,7 +247,7 @@ class SettingViewController: UIViewController {
         //        操作 0x00: 默认操作 0x01: 播放/暂停  0xFF: 无操作(停用)
         let operation = UInt8(self.centerSettingTextField.text!)!
         
-        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, gestureConfig:mode, opt: operation, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?)in
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, gestureConfigSet:mode, opt: operation, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?)in
             if status == SLPDataTransferStatus.succeed
             {
                 print("save hove gesture succeed!")

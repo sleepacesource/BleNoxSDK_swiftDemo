@@ -73,7 +73,7 @@ class DeviceViewController: UIViewController {
             print("ble not open!")
             return ;
         }
-        
+    
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, getDeviceInfoTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
