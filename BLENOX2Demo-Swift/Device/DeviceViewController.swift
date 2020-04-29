@@ -106,7 +106,7 @@ class DeviceViewController: UIViewController {
     
     @IBAction func upgrade(_ sender: Any) {
         
-        let path = Bundle.main.path(forResource: "SN902B_20180509.1.24_release", ofType: "MVA")
+        let path = Bundle.main.path(forResource: "SN902B_20200401.1.28_beta", ofType: "MVA")
         let packageData = NSData.init(contentsOfFile: path!)
     
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, deviceUpgrade: packageData as Data?, timeout: 0, callback: { (status :SLPDataTransferStatus, data: Any?) in

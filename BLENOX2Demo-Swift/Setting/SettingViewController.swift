@@ -240,6 +240,7 @@ class SettingViewController: UIViewController {
         })
     }
     
+ 
     @IBAction func saveCenterSetting(_ sender: Any) {
         
         //悬停
@@ -259,6 +260,21 @@ class SettingViewController: UIViewController {
         })
     }
     
+    @IBAction func getGesture(_ sender: Any) {
+        
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, getGestureConfigTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+            var gestureList = data;
+           if status == SLPDataTransferStatus.succeed
+            {
+                print("get gesture succeed--\(gestureList)!")
+            }
+            else
+            {
+                print("get gesture failed!")
+            }
+        });
+     }
+
     @IBAction func resetAction(_ sender: Any) {
         
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, deviceInitTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in

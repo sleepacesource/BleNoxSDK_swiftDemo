@@ -24,6 +24,7 @@
 		2685C46C2329F4B1009947EE /* SleepAidViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C46A2329F4B1009947EE /* SleepAidViewController.xib */; };
 		2685C4702329F534009947EE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C46E2329F534009947EE /* SearchViewController.swift */; };
 		2685C4712329F534009947EE /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C46F2329F534009947EE /* SearchViewController.xib */; };
+		26B2710924596B54009BC795 /* SN902B_20200401.1.28_beta.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 26B2710824596B54009BC795 /* SN902B_20200401.1.28_beta.MVA */; };
 		26D84AD22334824600311489 /* device_btn_refresh_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */; };
 		26D84AD32334824600311489 /* device_btn_refresh_nor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */; };
 		26DCD645245190CE0082DF69 /* BleNox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DCD643245190CE0082DF69 /* BleNox.framework */; };
@@ -77,6 +78,7 @@
 		2685C46A2329F4B1009947EE /* SleepAidViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepAidViewController.xib; sourceTree = "<group>"; };
 		2685C46E2329F534009947EE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2685C46F2329F534009947EE /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		26B2710824596B54009BC795 /* SN902B_20200401.1.28_beta.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_20200401.1.28_beta.MVA; sourceTree = "<group>"; };
 		26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_btn_refresh_nor@2x.png"; sourceTree = "<group>"; };
 		26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_btn_refresh_nor@3x.png"; sourceTree = "<group>"; };
 		26DCD643245190CE0082DF69 /* BleNox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BleNox.framework; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				26E279262328EC23005A983D /* Assets.xcassets */,
 				26E279282328EC23005A983D /* LaunchScreen.storyboard */,
 				26E2792B2328EC23005A983D /* Info.plist */,
+				26B2710824596B54009BC795 /* SN902B_20200401.1.28_beta.MVA */,
 				26F4AEF2233225E800575C02 /* SN902B_20180509.1.24_release.MVA */,
 				26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */,
 				26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */,
@@ -365,6 +368,7 @@
 				2685C4562329DF75009947EE /* DeviceViewController.xib in Resources */,
 				2685C46C2329F4B1009947EE /* SleepAidViewController.xib in Resources */,
 				2685C4622329E03B009947EE /* MainViewController.xib in Resources */,
+				26B2710924596B54009BC795 /* SN902B_20200401.1.28_beta.MVA in Resources */,
 				26E279252328EC20005A983D /* Main.storyboard in Resources */,
 				2685C4712329F534009947EE /* SearchViewController.xib in Resources */,
 				26D84AD22334824600311489 /* device_btn_refresh_nor@2x.png in Resources */,
