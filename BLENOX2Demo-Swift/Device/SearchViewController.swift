@@ -11,12 +11,12 @@ import BleNox
 
 
 class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
- 
+    
     @IBOutlet weak var tableview: UITableView!
-
+    
     var deviceList = NSMutableArray.init()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +25,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         self.tableview.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "CellID")
         
         self.scan()
-    
+        
     }
     
     func scan() -> Void {
@@ -43,10 +43,10 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 self.appendPeripheral(info: peripheralInfo!)
             }
             else if code == SLPBLEScanReturnCodes.disable{
-                 print("ble not open!")
+                print("ble not open!")
             }
         })
-
+        
         if !ret! {
             print("ble not open!")
         }
@@ -74,7 +74,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     
     @IBAction func refresh(_ sender: Any) {
-      
+        
         self.scan()
     }
     
@@ -95,7 +95,26 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 DataManager.shared()?.deviceID = deviceInfo.deviceID
                 DataManager.shared()?.deviceName = device.name
                 DataManager.shared()?.peripheral = device.peripheral
-                self.navigationController?.popViewController(animated: true)
+                
+                ///login device after sync time
+                let timeInfo:SLPTimeInfo = SLPTimeInfo()
+                timeInfo.timestamp =  UInt32(NSDate().timeIntervalSince1970)
+                timeInfo.timezone = Int32(NSTimeZone().secondsFromGMT)
+                
+                SLPBLEManager.shared()?.bleNox(device.peripheral, syncTimeInfo: timeInfo, timeout: 0, callback: { (status: SLPDataTransferStatus,data: Any?) in
+                    if status == SLPDataTransferStatus.succeed
+                    {
+                        print("sync time succeed")
+                        
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    else
+                    {
+                        print("sync time failed")
+                    }
+                })
+                
+                
             }
             else
             {
@@ -122,13 +141,13 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

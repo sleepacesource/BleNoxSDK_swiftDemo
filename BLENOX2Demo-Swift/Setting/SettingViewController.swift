@@ -17,7 +17,7 @@ enum GestureMode: Int {
 }
 
 class SettingViewController: UIViewController {
-
+    
     @IBOutlet weak var alarmMinTextField: UITextField!
     @IBOutlet weak var alarmHourTextField: UITextField!
     @IBOutlet weak var alrmRepeatTextField: UITextField!
@@ -47,12 +47,12 @@ class SettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.setUI()
         self.initData()
     }
-
+    
     func setUI() -> Void {
         self.previewAlarm.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.previewAlarm.layer.cornerRadius = 2.0;
@@ -101,9 +101,9 @@ class SettingViewController: UIViewController {
         self.startMinTextField.text = "0"
         self.endHourTextField.text = "8"
         self.endMinTextField.text = "0"
-//        挥手
+        //        挥手
         self.gestureTextField.text = "0"
-//        悬停
+        //        悬停
         self.centerSettingTextField.text = "1"
     }
     
@@ -141,7 +141,7 @@ class SettingViewController: UIViewController {
                     print("stop preview failed !")
                 }
             })
-           
+            
         }
     }
     
@@ -225,7 +225,7 @@ class SettingViewController: UIViewController {
         
         //挥手
         let mode = UInt8(GestureMode.wave.rawValue)
-//        操作 0x00: 默认操作 0x01: 播放/暂停 0x02: 切歌(左上右下) 0xFF: 无操作(停用)
+        //        操作 0x00: 默认操作 0x01: 播放/暂停 0x02: 切歌(左上右下) 0xFF: 无操作(停用)
         let operation = UInt8(self.gestureTextField.text!)!
         
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, gestureConfigSet:mode, opt: operation, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?)in
@@ -273,14 +273,30 @@ class SettingViewController: UIViewController {
         })
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.alarmMinTextField.resignFirstResponder()
+        self.alarmHourTextField.resignFirstResponder()
+        self.alrmRepeatTextField.resignFirstResponder()
+        self.musicIDTextField.resignFirstResponder()
+        self.volumeTextField.resignFirstResponder()
+        self.rTextField.resignFirstResponder()
+        self.gTextField.resignFirstResponder()
+        self.bTextField.resignFirstResponder()
+        self.wTextField.resignFirstResponder()
+        self.brightnessTextField.resignFirstResponder()
+        self.startHourTextField.resignFirstResponder()
+        self.startMinTextField.resignFirstResponder()
+        self.endHourTextField.resignFirstResponder()
+        self.endMinTextField.resignFirstResponder()
     }
-    */
-
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
