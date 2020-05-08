@@ -99,7 +99,8 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 ///login device after sync time
                 let timeInfo:SLPTimeInfo = SLPTimeInfo()
                 timeInfo.timestamp =  UInt32(NSDate().timeIntervalSince1970)
-                timeInfo.timezone = Int32(NSTimeZone().secondsFromGMT)
+                timeInfo.timezone = Int32(NSTimeZone.system.secondsFromGMT())
+                timeInfo.season = 0
                 
                 SLPBLEManager.shared()?.bleNox(device.peripheral, syncTimeInfo: timeInfo, timeout: 0, callback: { (status: SLPDataTransferStatus,data: Any?) in
                     if status == SLPDataTransferStatus.succeed
