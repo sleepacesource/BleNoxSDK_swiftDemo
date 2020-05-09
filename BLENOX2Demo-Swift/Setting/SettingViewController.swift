@@ -102,7 +102,7 @@ class SettingViewController: UIViewController {
         self.endHourTextField.text = "8"
         self.endMinTextField.text = "0"
         //        挥手
-        self.gestureTextField.text = "0"
+        self.gestureTextField.text = "1"
         //        悬停
         self.centerSettingTextField.text = "1"
     }
@@ -225,7 +225,7 @@ class SettingViewController: UIViewController {
         
         //挥手
         let mode = UInt8(GestureMode.wave.rawValue)
-        //        操作 0x00: 默认操作 0x01: 播放/暂停 0x02: 切歌(左上右下) 0xFF: 无操作(停用)
+        //     0x00: 默认操作 0x01: 播放/暂停 0x02: 切歌(左上右下) 0xFF: 无操作(停用)
         let operation = UInt8(self.gestureTextField.text!)!
         
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, gestureConfigSet:mode, opt: operation, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?)in
@@ -240,7 +240,7 @@ class SettingViewController: UIViewController {
         })
     }
     
- 
+    
     @IBAction func saveCenterSetting(_ sender: Any) {
         
         //悬停
@@ -263,18 +263,21 @@ class SettingViewController: UIViewController {
     @IBAction func getGesture(_ sender: Any) {
         
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, getGestureConfigTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-            var gestureList = data;
-           if status == SLPDataTransferStatus.succeed
+            let gestureList = data as! [BleNoxGestureInfo];
+            if status == SLPDataTransferStatus.succeed
             {
-                print("get gesture succeed--\(gestureList)!")
+                print("get gesture succeed!")
+                for item: BleNoxGestureInfo in gestureList {
+                    print("gestur-->\(item.gesture)--option--->\(item.opt)")
+                }
             }
             else
             {
                 print("get gesture failed!")
             }
         });
-     }
-
+    }
+    
     @IBAction func resetAction(_ sender: Any) {
         
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, deviceInitTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
@@ -304,6 +307,8 @@ class SettingViewController: UIViewController {
         self.startMinTextField.resignFirstResponder()
         self.endHourTextField.resignFirstResponder()
         self.endMinTextField.resignFirstResponder()
+        self.centerSettingTextField.resignFirstResponder()
+        self.gestureTextField.resignFirstResponder()
     }
     /*
      // MARK: - Navigation
