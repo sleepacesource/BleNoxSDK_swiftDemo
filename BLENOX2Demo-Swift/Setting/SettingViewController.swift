@@ -84,20 +84,20 @@ class SettingViewController: UIViewController {
          *31001，10002，31003，31004，31005，31006，31007，31008，31009
          */
         self.musicIDTextField.text = "31001"
-        self.alarmHourTextField.text = "8"
-        self.alarmMinTextField.text = "0"
+        self.alarmHourTextField.text = "5"
+        self.alarmMinTextField.text = "5"
         self.alrmRepeatTextField.text = "0"
-        self.volumeTextField.text = "10"
+        self.volumeTextField.text = "100"
         self.alarmLightSwitch.isSelected = true
         
         //小夜灯
-        self.rTextField.text = "50"
-        self.gTextField.text = "50"
-        self.bTextField.text = "50"
+        self.rTextField.text = "208"
+        self.gTextField.text = "66"
+        self.bTextField.text = "92"
         self.wTextField.text = "50"
         self.brightnessTextField.text = "50"
         self.nightLightSwitch.isSelected = true
-        self.startHourTextField.text = "20"
+        self.startHourTextField.text = "4"
         self.startMinTextField.text = "0"
         self.endHourTextField.text = "8"
         self.endMinTextField.text = "0"
