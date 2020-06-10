@@ -10,6 +10,8 @@
 		262846E9232A3D000018E84D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 262846E8232A3D000018E84D /* libc++.tbd */; };
 		2642755B233086AC003F5BA7 /* CustomStyleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26427559233086AC003F5BA7 /* CustomStyleButton.m */; };
 		2642755C233086AC003F5BA7 /* CustomColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2642755A233086AC003F5BA7 /* CustomColorButton.m */; };
+		2684E8E22490BE4D00ADF97E /* SN902B_20200610.1.29.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 2684E8E12490BE4D00ADF97E /* SN902B_20200610.1.29.MVA */; };
+		2684E8EA2490C23900ADF97E /* SN902B_V1.28_20191129.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 2684E8E92490C23900ADF97E /* SN902B_V1.28_20191129.MVA */; };
 		2685C4552329DF75009947EE /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C4532329DF75009947EE /* DeviceViewController.swift */; };
 		2685C4562329DF75009947EE /* DeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C4542329DF75009947EE /* DeviceViewController.xib */; };
 		2685C4592329DF8A009947EE /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C4572329DF8A009947EE /* ControlViewController.swift */; };
@@ -24,7 +26,6 @@
 		2685C46C2329F4B1009947EE /* SleepAidViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C46A2329F4B1009947EE /* SleepAidViewController.xib */; };
 		2685C4702329F534009947EE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C46E2329F534009947EE /* SearchViewController.swift */; };
 		2685C4712329F534009947EE /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C46F2329F534009947EE /* SearchViewController.xib */; };
-		26B2710924596B54009BC795 /* SN902B_20200401.1.28_beta.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 26B2710824596B54009BC795 /* SN902B_20200401.1.28_beta.MVA */; };
 		26D84AD22334824600311489 /* device_btn_refresh_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */; };
 		26D84AD32334824600311489 /* device_btn_refresh_nor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */; };
 		26DCD645245190CE0082DF69 /* BleNox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DCD643245190CE0082DF69 /* BleNox.framework */; };
@@ -37,7 +38,6 @@
 		26E279352328EC24005A983D /* BLENOX2Demo_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E279342328EC24005A983D /* BLENOX2Demo_SwiftTests.swift */; };
 		26E279402328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2793F2328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift */; };
 		26F4AEF02332217700575C02 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4AEEF2332217600575C02 /* DataManager.m */; };
-		26F4AEF3233225E800575C02 /* SN902B_20180509.1.24_release.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 26F4AEF2233225E800575C02 /* SN902B_20180509.1.24_release.MVA */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +64,8 @@
 		26427559233086AC003F5BA7 /* CustomStyleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomStyleButton.m; sourceTree = "<group>"; };
 		2642755A233086AC003F5BA7 /* CustomColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomColorButton.m; sourceTree = "<group>"; };
 		2642755D23308959003F5BA7 /* BLENOX2Demo-Swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BLENOX2Demo-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		2684E8E12490BE4D00ADF97E /* SN902B_20200610.1.29.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_20200610.1.29.MVA; sourceTree = "<group>"; };
+		2684E8E92490C23900ADF97E /* SN902B_V1.28_20191129.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_V1.28_20191129.MVA; sourceTree = "<group>"; };
 		2685C4532329DF75009947EE /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		2685C4542329DF75009947EE /* DeviceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceViewController.xib; sourceTree = "<group>"; };
 		2685C4572329DF8A009947EE /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +80,6 @@
 		2685C46A2329F4B1009947EE /* SleepAidViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepAidViewController.xib; sourceTree = "<group>"; };
 		2685C46E2329F534009947EE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2685C46F2329F534009947EE /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
-		26B2710824596B54009BC795 /* SN902B_20200401.1.28_beta.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_20200401.1.28_beta.MVA; sourceTree = "<group>"; };
 		26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_btn_refresh_nor@2x.png"; sourceTree = "<group>"; };
 		26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_btn_refresh_nor@3x.png"; sourceTree = "<group>"; };
 		26DCD643245190CE0082DF69 /* BleNox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BleNox.framework; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 		26E279412328EC24005A983D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26F4AEEE2332217600575C02 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		26F4AEEF2332217600575C02 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		26F4AEF2233225E800575C02 /* SN902B_20180509.1.24_release.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_20180509.1.24_release.MVA; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,8 +221,8 @@
 				26E279262328EC23005A983D /* Assets.xcassets */,
 				26E279282328EC23005A983D /* LaunchScreen.storyboard */,
 				26E2792B2328EC23005A983D /* Info.plist */,
-				26B2710824596B54009BC795 /* SN902B_20200401.1.28_beta.MVA */,
-				26F4AEF2233225E800575C02 /* SN902B_20180509.1.24_release.MVA */,
+				2684E8E92490C23900ADF97E /* SN902B_V1.28_20191129.MVA */,
+				2684E8E12490BE4D00ADF97E /* SN902B_20200610.1.29.MVA */,
 				26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */,
 				26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */,
 			);
@@ -367,14 +367,14 @@
 				26E279272328EC23005A983D /* Assets.xcassets in Resources */,
 				2685C4562329DF75009947EE /* DeviceViewController.xib in Resources */,
 				2685C46C2329F4B1009947EE /* SleepAidViewController.xib in Resources */,
+				2684E8E22490BE4D00ADF97E /* SN902B_20200610.1.29.MVA in Resources */,
 				2685C4622329E03B009947EE /* MainViewController.xib in Resources */,
-				26B2710924596B54009BC795 /* SN902B_20200401.1.28_beta.MVA in Resources */,
 				26E279252328EC20005A983D /* Main.storyboard in Resources */,
 				2685C4712329F534009947EE /* SearchViewController.xib in Resources */,
 				26D84AD22334824600311489 /* device_btn_refresh_nor@2x.png in Resources */,
-				26F4AEF3233225E800575C02 /* SN902B_20180509.1.24_release.MVA in Resources */,
 				2685C4682329F492009947EE /* LightViewController.xib in Resources */,
 				26D84AD32334824600311489 /* device_btn_refresh_nor@3x.png in Resources */,
+				2684E8EA2490C23900ADF97E /* SN902B_V1.28_20191129.MVA in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
