@@ -9,7 +9,7 @@
 import UIKit
 
 class SleepAidViewController: UIViewController {
-
+    
     @IBOutlet weak var sendBT1: UIButton!
     @IBOutlet weak var playdBT: UIButton!
     @IBOutlet weak var sendBT2: UIButton!
@@ -25,11 +25,11 @@ class SleepAidViewController: UIViewController {
     @IBOutlet weak var brightnessTextField: UITextField!
     @IBOutlet weak var minTextField: UITextField!
     
-     @IBOutlet weak var cview: UIView!
+    @IBOutlet weak var cview: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.setUI();
         self.initData()
@@ -57,8 +57,8 @@ class SleepAidViewController: UIViewController {
     }
     
     func initData() -> Void {
-
-//        default value
+        
+        //        default value
         /*音乐编号
          *30001，30002，30003，30004，30005，30006，30007，30008
          */
@@ -73,10 +73,10 @@ class SleepAidViewController: UIViewController {
         self.brightnessTextField.text = "50"
         self.minTextField.text = "5"
     }
-
+    
     @IBAction func changeVolume(_ sender: Any) {
         
-         let vol  = UInt8(self.volumeTextField.text!)!
+        let vol  = UInt8(self.volumeTextField.text!)!
         
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, setMusicVolume: vol, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
@@ -98,29 +98,55 @@ class SleepAidViewController: UIViewController {
         let vol  = UInt8(self.volumeTextField.text!)!
         
         if (sender as! UIButton).isSelected {
-            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnsleepAidMusic: musicID, volume: vol, playMode: 2, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-                if status == SLPDataTransferStatus.succeed
-                {
-                    print("turn on aid music succeed !")
-                }
-                else
-                {
-                    print("turn on aid music  failed !")
-                }
-            })
+                        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnsleepAidMusic: musicID, volume: vol, playMode: 2, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+                            if status == SLPDataTransferStatus.succeed
+                            {
+                                print("turn on aid music succeed !")
+                            }
+                            else
+                            {
+                                print("turn on aid music  failed !")
+                            }
+                        })
+            
+//            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnMusic: musicID, volume: vol, playMode: 2, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?)in
+//
+//                if status == SLPDataTransferStatus.succeed
+//                {
+//                    print("turn on music succeed !")
+//                }
+//                else
+//                {
+//                    print("turn on music  failed !")
+//                }
+//            })
+            
+            
+            
         }
         else
         {
-            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOffSleepAidMusic: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-                if status == SLPDataTransferStatus.succeed
-                {
-                    print("turn off aid music succeed !")
-                }
-                else
-                {
-                    print("turn off aid music  failed !")
-                }
-            })
+                        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOffSleepAidMusic: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+                            if status == SLPDataTransferStatus.succeed
+                            {
+                                print("turn off aid music succeed !")
+                            }
+                            else
+                            {
+                                print("turn off aid music  failed !")
+                            }
+                        })
+            
+//            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOffMusicTimeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+//                if status == SLPDataTransferStatus.succeed
+//                {
+//                    print("turn off  music succeed !")
+//                }
+//                else
+//                {
+//                    print("turn off  music  failed !")
+//                }
+//            })
         }
     }
     
@@ -200,13 +226,13 @@ class SleepAidViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

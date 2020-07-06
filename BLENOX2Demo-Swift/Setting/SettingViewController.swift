@@ -175,7 +175,7 @@ class SettingViewController: UIViewController {
         
     }
     
-    
+
     @IBAction func saveNightLight(_ sender: Any) {
         
         let r  = UInt8(self.rTextField.text!)
