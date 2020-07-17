@@ -6,8 +6,6 @@
 //  Copyright © 2018年 Martin. All rights reserved.
 //
 
-//#import <BluetoothManager/BluetoothManager.h>
-//#import "SLPBLEManager.h"
 #import "BleNoxDeviceInfo.h"
 #import "BleNoxGestureInfo.h"
 #import "BleNoxWorkStatus.h"
@@ -18,6 +16,8 @@
 #import "BleNoxLogInfo.h"
 #import "BleNoxPINCode.h"
 #import <SLPCommon/SLPCommon.h>
+#import <BluetoothManager/SLPBLEDef.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
 @interface SLPBLEManager (BleNox)
 

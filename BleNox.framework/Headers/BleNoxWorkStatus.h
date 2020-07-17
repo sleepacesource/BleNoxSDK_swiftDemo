@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SLPBLEManager.h"
-
+#import <BluetoothManager/BluetoothManager.h>
 
 @interface BleNoxWorkStatus : NSObject
 @property (nonatomic, assign) UInt8 alarmStatus;//闹钟状态 0x00: 未运行 0x01: 运行中 0x02：贪睡中 0x03: 预览中
