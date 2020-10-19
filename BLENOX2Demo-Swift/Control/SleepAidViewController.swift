@@ -150,6 +150,22 @@ class SleepAidViewController: UIViewController {
         }
     }
     
+    @IBAction func aidsleep(_ sender: Any) {
+        
+        ((sender) as! UIButton).isSelected = !(sender as! UIButton).isSelected
+        
+        if (sender as! UIButton).isSelected {
+            
+//            SLPBLEManager.shared()?.setSleepAidWithOperation
+            
+        }
+        else{
+            
+        }
+        
+        
+    }
+    
     @IBAction func changeColor(_ sender: Any) {
         let r  = UInt8(self.rTextField.text!)
         let g  = UInt8(self.gTextField.text!)
