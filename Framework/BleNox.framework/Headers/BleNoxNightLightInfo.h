@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SLPBLEManager.h"
+#import <BluetoothManager/BluetoothManager.h>
 
 @interface BleNoxNightLightInfo : NSObject
 @property (nonatomic, assign) BOOL enable;

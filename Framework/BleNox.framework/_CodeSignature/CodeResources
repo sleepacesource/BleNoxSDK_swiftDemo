@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/BleNox.h</key>
 		<data>
-		uUkAef4zB5O3BBayUtuFMYJv6Sg=
+		aiZ2sCJQm2ZZRaA7VBNJ0H1ESks=
 		</data>
 		<key>Headers/BleNoxAidInfo.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/BleNoxNightLightInfo.h</key>
 		<data>
-		PvxQg1nQAnDGpoepbL70OjgscPY=
+		AQWK9RuReKTVxl13dU4EP65rm6Q=
 		</data>
 		<key>Headers/BleNoxPINCode.h</key>
 		<data>
@@ -42,95 +42,23 @@
 		</data>
 		<key>Headers/BleNoxWorkStatus.h</key>
 		<data>
-		PvLGIaDMg7K8osCX8iC8W7r7NAE=
-		</data>
-		<key>Headers/BluetoothManager.h</key>
-		<data>
-		608Cir8ErVrMkhJ8jnyCnqlvn+Q=
-		</data>
-		<key>Headers/SLPBLEDef.h</key>
-		<data>
-		8cCYnuPACVHbyNYSke+RPE/CRYQ=
+		ZSdu0192CULwdP3dZZo+fsC3MG0=
 		</data>
 		<key>Headers/SLPBLEManager+BleNox.h</key>
 		<data>
-		ZZ3EBLvG/ybvoaBiC+TlbbuLR20=
-		</data>
-		<key>Headers/SLPBLEManager+Scan.h</key>
-		<data>
-		Weg/iJK1hLWN/nFbiJUeKdcmLPs=
-		</data>
-		<key>Headers/SLPBLEManager.h</key>
-		<data>
-		nzkt8FuiznNn6dkEx/btoDJ46yk=
+		89X+ZywWcpYVFSIwixF0j6WKX0w=
 		</data>
 		<key>Headers/SLPBleNoxDef.h</key>
 		<data>
 		pjllJ7zsShvoknjj5g+bOONXA2c=
 		</data>
-		<key>Headers/SLPHistoryData.h</key>
-		<data>
-		xqXUrSQSg8/V6CQp5Xx8339oUjM=
-		</data>
-		<key>Headers/SLPOriginalDataALG.h</key>
-		<data>
-		S36mwQcuaUDorV6vcnuvaJHiroM=
-		</data>
 		<key>Info.plist</key>
 		<data>
-		SL9KULhMyEcR5RWP+p9nzrNru0c=
+		dquEEas+w84noWRTeO3evuKOsh8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		/kmdW1kKHK62bo47nwpar4zktRU=
-		</data>
-		<key>PrivateHeaders/SDCCPEnums.h</key>
-		<data>
-		wp1loHbB9Li28GHuQFM5MRUKraM=
-		</data>
-		<key>PrivateHeaders/SLPBLEBaseEntity.h</key>
-		<data>
-		ITZ39QDJSU+ha3ZmbdTpt302vaM=
-		</data>
-		<key>PrivateHeaders/SLPBLEBaseSendPacket.h</key>
-		<data>
-		dl12OJ1IxKobV5fwNkFi7n0cHuU=
-		</data>
-		<key>PrivateHeaders/SLPBLECommon.h</key>
-		<data>
-		rwXf9scmodlR5N+QZxpVAExTX7Y=
-		</data>
-		<key>PrivateHeaders/SLPBLECommonHeads.h</key>
-		<data>
-		s2nI0/nGLMFl8mTIzB+7pAOXopA=
-		</data>
-		<key>PrivateHeaders/SLPBLEManager+Connect.h</key>
-		<data>
-		5z2lvKGieiKmCJXUsk5oP/rzozI=
-		</data>
-		<key>PrivateHeaders/SLPBLESendPacketV_0.h</key>
-		<data>
-		QwxONs5gyKw+crAXhRqueuvzKSY=
-		</data>
-		<key>PrivateHeaders/SLPBLESendPacketV_1.h</key>
-		<data>
-		8LG7bllxF8v7cP9xWKDOsHIn7r4=
-		</data>
-		<key>PrivateHeaders/SLPBLESendPacketV_2.h</key>
-		<data>
-		CqjnZ1f5zIDoiL34xvpqnpIYpTg=
-		</data>
-		<key>PrivateHeaders/SLPBaseMusicModel.h</key>
-		<data>
-		LYfZWeHisql/ZIEE7WQGE7ugBC0=
-		</data>
-		<key>PrivateHeaders/SLPBleSendPacketHeads.h</key>
-		<data>
-		d6b+kBU0wXwFruApKxi2PHVE+Uo=
-		</data>
-		<key>PrivateHeaders/SLPSceneObject.h</key>
-		<data>
-		X+jyOCYJAjhO5L9XrR+7NAACzZg=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -139,11 +67,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uUkAef4zB5O3BBayUtuFMYJv6Sg=
+			aiZ2sCJQm2ZZRaA7VBNJ0H1ESks=
 			</data>
 			<key>hash2</key>
 			<data>
-			PPTJUFxSZn3crdeRC7vUB8pLQ8dB2lrHIypaicjV/64=
+			jM5moN52ZyPyAnpAVeNm/pPwgGp54js051gpfAvluPI=
 			</data>
 		</dict>
 		<key>Headers/BleNoxAidInfo.h</key>
@@ -205,11 +133,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PvxQg1nQAnDGpoepbL70OjgscPY=
+			AQWK9RuReKTVxl13dU4EP65rm6Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			EGNCWBhjNFhFH7T8v1nPFOv1akKtDMIoi1h9I2puwpo=
+			szdkWcKulR2V19RGNAcRNZk0kMjVLEpGWvs8dMfWLq0=
 			</data>
 		</dict>
 		<key>Headers/BleNoxPINCode.h</key>
@@ -238,66 +166,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PvLGIaDMg7K8osCX8iC8W7r7NAE=
+			ZSdu0192CULwdP3dZZo+fsC3MG0=
 			</data>
 			<key>hash2</key>
 			<data>
-			k2aPGU5ktNE5BWc6m2wo45r44L4oYQUSSR3VOe50vhk=
-			</data>
-		</dict>
-		<key>Headers/BluetoothManager.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			608Cir8ErVrMkhJ8jnyCnqlvn+Q=
-			</data>
-			<key>hash2</key>
-			<data>
-			/J5GtD+XwQyaEbpSWPbapFfHW/hp0m0IuUFeUlWBLVw=
-			</data>
-		</dict>
-		<key>Headers/SLPBLEDef.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			8cCYnuPACVHbyNYSke+RPE/CRYQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			Ba/hy/JkTQoDYbw7HH97uRGHSaVzEib0LSm23VHdjGk=
+			ZIa9zO18sEXtKSFlUFw4MB2hc/AhU5GFgblmDoJ2Gkk=
 			</data>
 		</dict>
 		<key>Headers/SLPBLEManager+BleNox.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZZ3EBLvG/ybvoaBiC+TlbbuLR20=
+			89X+ZywWcpYVFSIwixF0j6WKX0w=
 			</data>
 			<key>hash2</key>
 			<data>
-			JKmfF6ADdi6c+De9cTj/WRVg3eNhI4IgSLIYotJp7a8=
-			</data>
-		</dict>
-		<key>Headers/SLPBLEManager+Scan.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Weg/iJK1hLWN/nFbiJUeKdcmLPs=
-			</data>
-			<key>hash2</key>
-			<data>
-			pqmtpzo9D3rCYLyNiLTMpmhB9vGXYR/M/NJbSILHA4c=
-			</data>
-		</dict>
-		<key>Headers/SLPBLEManager.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			nzkt8FuiznNn6dkEx/btoDJ46yk=
-			</data>
-			<key>hash2</key>
-			<data>
-			O3zo6Wswwkg1AtsXo6p8dPySb3Gl3RCRzYHzHu1lOH0=
+			cuMUzwGOHfoyktnKPGYCGAIqgAMbPK6v7yoxNYvxs7M=
 			</data>
 		</dict>
 		<key>Headers/SLPBleNoxDef.h</key>
@@ -311,28 +195,6 @@
 			RzzgMh8r9gsA/E2E1xqULzDcrjMPB4+UYLP5VDxPJog=
 			</data>
 		</dict>
-		<key>Headers/SLPHistoryData.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			xqXUrSQSg8/V6CQp5Xx8339oUjM=
-			</data>
-			<key>hash2</key>
-			<data>
-			NehylvNVZoV16w6rio356vm1E7WCwBvJWirnXufUIh0=
-			</data>
-		</dict>
-		<key>Headers/SLPOriginalDataALG.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			S36mwQcuaUDorV6vcnuvaJHiroM=
-			</data>
-			<key>hash2</key>
-			<data>
-			YHMUHUvSkvGxs4zB7MB1P2xijEMmaFWgzZuwG5hJX/Y=
-			</data>
-		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
@@ -342,138 +204,6 @@
 			<key>hash2</key>
 			<data>
 			XQ3bgTXgEFgSVFuXZJViFHMGvghTrfJZBkpjzqHq4oc=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SDCCPEnums.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			wp1loHbB9Li28GHuQFM5MRUKraM=
-			</data>
-			<key>hash2</key>
-			<data>
-			s1rxawZQzB1kMV/X8BHY8uHSasp8wV02sPYI8Cr+0L0=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SLPBLEBaseEntity.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ITZ39QDJSU+ha3ZmbdTpt302vaM=
-			</data>
-			<key>hash2</key>
-			<data>
-			J9KTJikMRaoDKeIMKEVZ7C3M0BAQXiU3KeakHCr769Q=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SLPBLEBaseSendPacket.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			dl12OJ1IxKobV5fwNkFi7n0cHuU=
-			</data>
-			<key>hash2</key>
-			<data>
-			7E0AxpZrpvdRWQk27AtYfXJ0+VAOdXDeSEu+IZFUc1I=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SLPBLECommon.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			rwXf9scmodlR5N+QZxpVAExTX7Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			5qDfaKmr3o6x2PxXeri+2vC/X5zPCCobv25HKvhasoI=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SLPBLECommonHeads.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			s2nI0/nGLMFl8mTIzB+7pAOXopA=
-			</data>
-			<key>hash2</key>
-			<data>
-			vQneAfTSf9OEDG4pybYevqeJfqC5NEs/DDdaELtOV6A=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SLPBLEManager+Connect.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			5z2lvKGieiKmCJXUsk5oP/rzozI=
-			</data>
-			<key>hash2</key>
-			<data>
-			sTyeBIXVNoggTFhmMSLR10mtNMaeM6/KV7KQDluFrBI=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SLPBLESendPacketV_0.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			QwxONs5gyKw+crAXhRqueuvzKSY=
-			</data>
-			<key>hash2</key>
-			<data>
-			pIXiUQtV75jTQZn3UGhn3UB+7E9up5kYvNoGUbEqxXo=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SLPBLESendPacketV_1.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			8LG7bllxF8v7cP9xWKDOsHIn7r4=
-			</data>
-			<key>hash2</key>
-			<data>
-			eGCvSnoySMdiB2mvvpL2W/KQnIeuHPJyRxzBeD/WtwY=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SLPBLESendPacketV_2.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			CqjnZ1f5zIDoiL34xvpqnpIYpTg=
-			</data>
-			<key>hash2</key>
-			<data>
-			ew2pDokRWeBIJaEk1ENK4P5vNED3WUc+Q+vpFbPB7bE=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SLPBaseMusicModel.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			LYfZWeHisql/ZIEE7WQGE7ugBC0=
-			</data>
-			<key>hash2</key>
-			<data>
-			e8WpZvJNF0NWlRotl2fsSwoYJQRbsND/HPnjafcLMdE=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SLPBleSendPacketHeads.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			d6b+kBU0wXwFruApKxi2PHVE+Uo=
-			</data>
-			<key>hash2</key>
-			<data>
-			NlScApf1ZnKCULB9+tnQGGhSzG0EV/KxeNE4oTQ39jk=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SLPSceneObject.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			X+jyOCYJAjhO5L9XrR+7NAACzZg=
-			</data>
-			<key>hash2</key>
-			<data>
-			Pmjxd2RsuzDB0QGzQaqkJPjaZkBQ2trmNMz+L/Ehp84=
 			</data>
 		</dict>
 	</dict>

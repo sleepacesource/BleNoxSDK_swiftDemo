@@ -12,6 +12,7 @@ class SleepAidViewController: UIViewController {
     
     @IBOutlet weak var sendBT1: UIButton!
     @IBOutlet weak var playdBT: UIButton!
+    @IBOutlet weak var aidBT: UIButton!
     @IBOutlet weak var sendBT2: UIButton!
     @IBOutlet weak var closeBT: UIButton!
     @IBOutlet weak var saveBT: UIButton!
@@ -54,6 +55,9 @@ class SleepAidViewController: UIViewController {
         
         self.playdBT.setTitle("播放", for: UIControl.State.normal)
         self.playdBT.setTitle("暂停", for: UIControl.State.selected)
+        
+        self.aidBT.setTitle("开启助眠", for: UIControl.State.normal)
+        self.aidBT.setTitle("停止助眠", for: UIControl.State.selected)
     }
     
     func initData() -> Void {
@@ -147,6 +151,36 @@ class SleepAidViewController: UIViewController {
 //                    print("turn off  music  failed !")
 //                }
 //            })
+        }
+    }
+    
+    @IBAction func aidsleep(_ sender: Any) {
+        
+        ((sender) as! UIButton).isSelected = !(sender as! UIButton).isSelected
+        
+        if (sender as! UIButton).isSelected {
+            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, setSleepAidWithOperation: 0x01, lightOperation: 0x01, musicOperation: 0x01, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+                if status == SLPDataTransferStatus.succeed
+                {
+                    print("start aid sleep succeed !")
+                }
+                else
+                {
+                    print("start aid music  failed !")
+                }
+            })
+        }
+        else{
+            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, setSleepAidWithOperation: 0x02, lightOperation: 0x01, musicOperation: 0x01, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+                if status == SLPDataTransferStatus.succeed
+                {
+                    print("stop aid sleep succeed !")
+                }
+                else
+                {
+                    print("stop aid sleep  failed !")
+                }
+            })
         }
     }
     

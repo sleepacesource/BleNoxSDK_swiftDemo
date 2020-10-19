@@ -26,6 +26,7 @@
 		2685C46C2329F4B1009947EE /* SleepAidViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C46A2329F4B1009947EE /* SleepAidViewController.xib */; };
 		2685C4702329F534009947EE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C46E2329F534009947EE /* SearchViewController.swift */; };
 		2685C4712329F534009947EE /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C46F2329F534009947EE /* SearchViewController.xib */; };
+		26C570B924C0001C00F3FE17 /* BluetoothManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C570B824C0001C00F3FE17 /* BluetoothManager.framework */; };
 		26D84AD22334824600311489 /* device_btn_refresh_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */; };
 		26D84AD32334824600311489 /* device_btn_refresh_nor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */; };
 		26DCD645245190CE0082DF69 /* BleNox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DCD643245190CE0082DF69 /* BleNox.framework */; };
@@ -80,6 +81,7 @@
 		2685C46A2329F4B1009947EE /* SleepAidViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepAidViewController.xib; sourceTree = "<group>"; };
 		2685C46E2329F534009947EE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2685C46F2329F534009947EE /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		26C570B824C0001C00F3FE17 /* BluetoothManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothManager.framework; sourceTree = "<group>"; };
 		26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_btn_refresh_nor@2x.png"; sourceTree = "<group>"; };
 		26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_btn_refresh_nor@3x.png"; sourceTree = "<group>"; };
 		26DCD643245190CE0082DF69 /* BleNox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BleNox.framework; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				26DCD645245190CE0082DF69 /* BleNox.framework in Frameworks */,
 				262846E9232A3D000018E84D /* libc++.tbd in Frameworks */,
 				26DCD646245190CE0082DF69 /* SLPCommon.framework in Frameworks */,
+				26C570B924C0001C00F3FE17 /* BluetoothManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +189,7 @@
 		26E279132328EC20005A983D = {
 			isa = PBXGroup;
 			children = (
+				26C570B824C0001C00F3FE17 /* BluetoothManager.framework */,
 				26DCD643245190CE0082DF69 /* BleNox.framework */,
 				26DCD644245190CE0082DF69 /* SLPCommon.framework */,
 				26E2791E2328EC20005A983D /* BLENOX2Demo-Swift */,
@@ -319,7 +323,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = medica;
 				TargetAttributes = {
 					26E2791B2328EC20005A983D = {
@@ -491,6 +495,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -516,7 +521,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -552,6 +557,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -571,7 +577,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -593,7 +599,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "BLENOX2Demo-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -623,7 +629,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "BLENOX2Demo-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
