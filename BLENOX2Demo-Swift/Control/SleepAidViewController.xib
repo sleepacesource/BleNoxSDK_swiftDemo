@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SleepAidViewController" customModule="BLENOX2Demo_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="aidBT" destination="9RK-In-4tu" id="qKe-37-3rC"/>
                 <outlet property="bTextField" destination="uao-WY-XyI" id="IKt-WL-Hsy"/>
                 <outlet property="brightnessTextField" destination="xnm-0a-g3G" id="aIW-Dm-TjT"/>
                 <outlet property="closeBT" destination="UeN-7h-nPV" id="1PK-BN-3l7"/>
@@ -28,7 +29,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -93,6 +94,9 @@
                                     <rect key="frame" x="179" y="45.5" width="181" height="30"/>
                                     <color key="backgroundColor" red="0.1200412288" green="0.58204585310000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="开启助眠"/>
+                                    <connections>
+                                        <action selector="aidsleep:" destination="-1" eventType="touchUpInside" id="Ozj-J5-o4Y"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

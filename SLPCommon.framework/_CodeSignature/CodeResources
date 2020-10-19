@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/SLPDataTransferCommon.h</key>
 		<data>
-		0CTpVvDLXGm31SCQlucDvFWpLDQ=
+		X1/J3nQRjx1MT6tRltKWiujG9uM=
 		</data>
 		<key>Headers/SLPDataTransferDef.h</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/SLPHTTPManager.h</key>
 		<data>
-		iLWiSeKL/Ybs/OipvhzRon/HErw=
+		vphrbkAA37lWTHVT772hFjutW9s=
 		</data>
 		<key>Headers/SLPLight.h</key>
 		<data>
@@ -74,11 +74,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		d+2dK1fhWckyMMjmBN1UjnBCQH8=
+		JHwrUGGYUtNj6AyUAhwFVzz29tg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		28s1WrvIkqLdtWuhJCJv0dGzn1M=
+		</data>
+		<key>PrivateHeaders/SLPBaseMusicModel.h</key>
+		<data>
+		LYfZWeHisql/ZIEE7WQGE7ugBC0=
+		</data>
+		<key>PrivateHeaders/SLPSceneObject.h</key>
+		<data>
+		X+jyOCYJAjhO5L9XrR+7NAACzZg=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -164,11 +172,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0CTpVvDLXGm31SCQlucDvFWpLDQ=
+			X1/J3nQRjx1MT6tRltKWiujG9uM=
 			</data>
 			<key>hash2</key>
 			<data>
-			0iAvHIzdpnmq3c6jKxcGIxB9iO/8Qd/UGtqZ26UChrw=
+			jjn9V+e/s0xqXAUGQ21aBY4TbUoNm2PGRTNZnKk5Iak=
 			</data>
 		</dict>
 		<key>Headers/SLPDataTransferDef.h</key>
@@ -208,11 +216,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			iLWiSeKL/Ybs/OipvhzRon/HErw=
+			vphrbkAA37lWTHVT772hFjutW9s=
 			</data>
 			<key>hash2</key>
 			<data>
-			hl7A9UdlgkOt0BLN+iFX/s5dTqyarUQL9y3P+TwlR8Q=
+			M2yyWKPh0EWRijh0WD2Ttf2AKtFMFFQ69gY/fYKvZuU=
 			</data>
 		</dict>
 		<key>Headers/SLPLight.h</key>
@@ -279,6 +287,28 @@
 			<key>hash2</key>
 			<data>
 			LbsgjENJ9aAerMHHP3hFpYOdjmQujzBah0SMSo90LTs=
+			</data>
+		</dict>
+		<key>PrivateHeaders/SLPBaseMusicModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			LYfZWeHisql/ZIEE7WQGE7ugBC0=
+			</data>
+			<key>hash2</key>
+			<data>
+			e8WpZvJNF0NWlRotl2fsSwoYJQRbsND/HPnjafcLMdE=
+			</data>
+		</dict>
+		<key>PrivateHeaders/SLPSceneObject.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			X+jyOCYJAjhO5L9XrR+7NAACzZg=
+			</data>
+			<key>hash2</key>
+			<data>
+			Pmjxd2RsuzDB0QGzQaqkJPjaZkBQ2trmNMz+L/Ehp84=
 			</data>
 		</dict>
 	</dict>

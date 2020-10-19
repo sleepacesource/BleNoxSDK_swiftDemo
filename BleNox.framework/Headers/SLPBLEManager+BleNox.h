@@ -263,6 +263,13 @@
  */
 - (void)bleNox:(CBPeripheral *)peripheral sleepAidConfig:(BleNoxAidInfo *)info timeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
 
+/*助眠操作
+ operation           :操作类型 0x00: 正常操作(暂时未使用)  0x01: 重新开启  0x02: 停止助眠  0x03: 暂停助眠  0x04: 恢复助眠  0x05: 缓慢停止辅助(暂时未使用)
+ lightOperation      :灯开关 0: 关 1: 开 0xFF: 保持原状态
+ musicOperation      :音乐开关 0: 停止 1: 播放 2: 暂停 0xFF: 保持原状态
+ */
+- (void)bleNox:(CBPeripheral *)peripheral setSleepAidWithOperation:(UInt8)operation lightOperation:(UInt8)lightOperation musicOperation:(UInt8)musicOperation timeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
+
 /*获取PIN code
  timeout:超时
  */
