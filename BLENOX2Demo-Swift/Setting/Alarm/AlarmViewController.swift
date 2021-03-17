@@ -268,6 +268,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     func goSelectMusic() -> Void {
         let vc = MusicListViewController()
+        vc.title = "音乐列表"
         let musicList = self.getMusicList()
         vc.musicList = musicList
         vc.musicID = self.alarmDataNew!.musicID
@@ -296,6 +297,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     func goSelectWeekdayPage() -> Void {
         let vc = WeekdaySelectViewController()
+        vc.title = "重复"
         vc.selectWeekDay = self.alarmDataNew!.repeat
         vc.selectWeekdayBlock = {(weekday) ->() in
             self.alarmDataNew!.repeat = weekday
