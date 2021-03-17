@@ -80,6 +80,13 @@ class ControlViewController: UIViewController {
         self.content.addSubview(sectionVC.view)
         sectionVC.didMove(toParent: self)
         self.selectedController = sectionVC
+        
+        let testView = sectionVC.view
+        testView?.translatesAutoresizingMaskIntoConstraints = false
+        testView?.topAnchor.constraint(equalTo: self.content.topAnchor, constant: 0).isActive = true  //顶部约束
+        testView?.leadingAnchor.constraint(equalTo: self.content.leadingAnchor, constant: 0).isActive = true  //左端约束
+        testView?.trailingAnchor.constraint(equalTo: self.content.trailingAnchor, constant: 0).isActive = true  //右端约束
+        testView?.bottomAnchor.constraint(equalTo: self.content.bottomAnchor, constant: 0).isActive = true  //底部约束
     }
     
     
@@ -98,5 +105,12 @@ class ControlViewController: UIViewController {
         self.content.addSubview(sectionVC.view)
         sectionVC.didMove(toParent: self)
         self.selectedController = sectionVC
+        
+        let testView = sectionVC.view
+        testView?.translatesAutoresizingMaskIntoConstraints = false
+        testView?.topAnchor.constraint(equalTo: self.content.topAnchor, constant: 0).isActive = true  //顶部约束
+        testView?.leadingAnchor.constraint(equalTo: self.content.leadingAnchor, constant: 0).isActive = true  //左端约束
+        testView?.trailingAnchor.constraint(equalTo: self.content.trailingAnchor, constant: 0).isActive = true  //右端约束
+        testView?.bottomAnchor.constraint(equalTo: self.content.bottomAnchor, constant: 0).isActive = true  //底部约束
     }
 }
