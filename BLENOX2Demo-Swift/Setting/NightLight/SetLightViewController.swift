@@ -8,12 +8,16 @@
 
 import UIKit
 
+typealias SetLightBlock = (UInt8, UInt8, UInt8, UInt8, UInt8)->()
+
 class SetLightViewController: UIViewController {
     var r: UInt8?
     var g: UInt8?
     var b: UInt8?
     var w: UInt8?
     var brightness: UInt8?
+    
+    var setLightBlock: SetLightBlock?
     
     @IBOutlet weak var colorRTextField: UITextField!
     @IBOutlet weak var colorGTextField: UITextField!
@@ -72,6 +76,13 @@ class SetLightViewController: UIViewController {
                     Utils.showDeviceOperationFailed(-1, at: self)
                     return
                 }
+                
+                self.r = UInt8(r!)
+                self.g = UInt8(g!)
+                self.b = UInt8(b!)
+                self.w = UInt8(w!)
+                self.brightness = UInt8(brightness)
+                self.setLightBlock!(self.r!, self.g!, self.b!, self.w!, self.brightness!)
             })
         } else {
             Utils.showMessage("请输入0-255之间的整数", controller: self)
@@ -98,6 +109,9 @@ class SetLightViewController: UIViewController {
                     Utils.showDeviceOperationFailed(-1, at: self)
                     return
                 }
+                
+                self.brightness = brightness
+                self.setLightBlock!(self.r!, self.g!, self.b!, self.w!, self.brightness!)
             })
         } else {
             Utils.showMessage("请输入0-100之间的整数", controller: self)

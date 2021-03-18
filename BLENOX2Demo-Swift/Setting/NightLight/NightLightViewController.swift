@@ -196,6 +196,19 @@ class NightLightViewController: UIViewController,UITableViewDataSource,UITableVi
     func goSetTime() -> Void {
         let vc = SetTimeViewController()
         vc.title = "时间设置"
+        vc.startHour = self.startHour;
+        vc.startMinute = self.startMinute;
+        vc.endHour = self.endHour;
+        vc.endMinute = self.endMinute;
+        
+        vc.setTimeBlock = {(startHour, startMinute, endHour, endMinute) ->() in
+            self.startHour = startHour;
+            self.startMinute = startMinute;
+            self.endHour = endHour;
+            self.endMinute = endMinute;
+            self.tableView.reloadData()
+        }
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
