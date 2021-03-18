@@ -39,6 +39,10 @@
 		26E279352328EC24005A983D /* BLENOX2Demo_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E279342328EC24005A983D /* BLENOX2Demo_SwiftTests.swift */; };
 		26E279402328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2793F2328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift */; };
 		26F4AEF02332217700575C02 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4AEEF2332217600575C02 /* DataManager.m */; };
+		8F37B7D52603330000A69893 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B7D32603330000A69893 /* TitleCell.swift */; };
+		8F37B7D62603330000A69893 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B7D42603330000A69893 /* TitleCell.xib */; };
+		8F37B7F626033D4400A69893 /* TitleArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B7F426033D4400A69893 /* TitleArrowCell.swift */; };
+		8F37B7F726033D4400A69893 /* TitleArrowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B7F526033D4400A69893 /* TitleArrowCell.xib */; };
 		8F9C50CF260097F0004BB46B /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C50C1260097F0004BB46B /* AlarmListViewController.swift */; };
 		8F9C50D0260097F0004BB46B /* AlarmListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9C50C2260097F0004BB46B /* AlarmListViewController.xib */; };
 		8F9C50D1260097F0004BB46B /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C50C4260097F0004BB46B /* GestureViewController.swift */; };
@@ -79,6 +83,10 @@
 		8F9C51672601EBC4004BB46B /* SetTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9C51652601EBC4004BB46B /* SetTimeViewController.xib */; };
 		8F9C51712601F4C9004BB46B /* Utils+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C516E2601F4C8004BB46B /* Utils+UI.m */; };
 		8F9C51722601F4C9004BB46B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C516F2601F4C8004BB46B /* Utils.m */; };
+		8FD51C222602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD51C202602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.swift */; };
+		8FD51C232602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD51C212602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.xib */; };
+		8FD51C292602F0CF002C02A0 /* TimeMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD51C272602F0CF002C02A0 /* TimeMissionViewController.swift */; };
+		8FD51C2A2602F0CF002C02A0 /* TimeMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD51C282602F0CF002C02A0 /* TimeMissionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +149,10 @@
 		26E279412328EC24005A983D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26F4AEEE2332217600575C02 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		26F4AEEF2332217600575C02 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		8F37B7D32603330000A69893 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		8F37B7D42603330000A69893 /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
+		8F37B7F426033D4400A69893 /* TitleArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleArrowCell.swift; sourceTree = "<group>"; };
+		8F37B7F526033D4400A69893 /* TitleArrowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleArrowCell.xib; sourceTree = "<group>"; };
 		8F9C50C1260097F0004BB46B /* AlarmListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		8F9C50C2260097F0004BB46B /* AlarmListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmListViewController.xib; sourceTree = "<group>"; };
 		8F9C50C4260097F0004BB46B /* GestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +205,10 @@
 		8F9C516E2601F4C8004BB46B /* Utils+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Utils+UI.m"; sourceTree = "<group>"; };
 		8F9C516F2601F4C8004BB46B /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		8F9C51702601F4C9004BB46B /* UtilsHeads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilsHeads.h; sourceTree = "<group>"; };
+		8FD51C202602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueSwitchCellTableViewCell.swift; sourceTree = "<group>"; };
+		8FD51C212602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleValueSwitchCellTableViewCell.xib; sourceTree = "<group>"; };
+		8FD51C272602F0CF002C02A0 /* TimeMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMissionViewController.swift; sourceTree = "<group>"; };
+		8FD51C282602F0CF002C02A0 /* TimeMissionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeMissionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,6 +427,8 @@
 			children = (
 				8F9C50CD260097F0004BB46B /* TimeMissionListViewController.swift */,
 				8F9C50CE260097F0004BB46B /* TimeMissionListViewController.xib */,
+				8FD51C272602F0CF002C02A0 /* TimeMissionViewController.swift */,
+				8FD51C282602F0CF002C02A0 /* TimeMissionViewController.xib */,
 			);
 			path = TimeMission;
 			sourceTree = "<group>";
@@ -426,6 +444,12 @@
 				8F9C50FF2600A34E004BB46B /* BaseTableViewCell.swift */,
 				8F9C51122600B70A004BB46B /* SelectItemCell.swift */,
 				8F9C51132600B70A004BB46B /* SelectItemCell.xib */,
+				8FD51C202602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.swift */,
+				8FD51C212602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.xib */,
+				8F37B7D32603330000A69893 /* TitleCell.swift */,
+				8F37B7D42603330000A69893 /* TitleCell.xib */,
+				8F37B7F426033D4400A69893 /* TitleArrowCell.swift */,
+				8F37B7F526033D4400A69893 /* TitleArrowCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -597,6 +621,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F37B7D62603330000A69893 /* TitleCell.xib in Resources */,
 				8F9C50DF26009ABD004BB46B /* AlarmViewController.xib in Resources */,
 				2685C45E2329DF9B009947EE /* SettingViewController.xib in Resources */,
 				2685C45A2329DF8A009947EE /* ControlViewController.xib in Resources */,
@@ -608,8 +633,10 @@
 				8F9C511F260195A2004BB46B /* MusicListViewController.xib in Resources */,
 				8F9C50FB2600A0E4004BB46B /* SwtichTableViewCell.xib in Resources */,
 				2685C4562329DF75009947EE /* DeviceViewController.xib in Resources */,
+				8F37B7F726033D4400A69893 /* TitleArrowCell.xib in Resources */,
 				2685C46C2329F4B1009947EE /* SleepAidViewController.xib in Resources */,
 				8F9C51152600B70A004BB46B /* SelectItemCell.xib in Resources */,
+				8FD51C2A2602F0CF002C02A0 /* TimeMissionViewController.xib in Resources */,
 				2684E8E22490BE4D00ADF97E /* SN902B_20200610.1.29.MVA in Resources */,
 				8F9C51672601EBC4004BB46B /* SetTimeViewController.xib in Resources */,
 				8F9C50D3260097F0004BB46B /* NightLightViewController.xib in Resources */,
@@ -625,6 +652,7 @@
 				2685C4682329F492009947EE /* LightViewController.xib in Resources */,
 				26D84AD32334824600311489 /* device_btn_refresh_nor@3x.png in Resources */,
 				2684E8EA2490C23900ADF97E /* SN902B_V1.28_20191129.MVA in Resources */,
+				8FD51C232602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.xib in Resources */,
 				8F9C50D8260097F0004BB46B /* TimeMissionListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -650,6 +678,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FD51C222602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.swift in Sources */,
 				8F9C50D1260097F0004BB46B /* GestureViewController.swift in Sources */,
 				8F9C50FA2600A0E4004BB46B /* SwtichTableViewCell.swift in Sources */,
 				2685C4552329DF75009947EE /* DeviceViewController.swift in Sources */,
@@ -657,9 +686,11 @@
 				26F4AEF02332217700575C02 /* DataManager.m in Sources */,
 				8F9C512C2601C9C0004BB46B /* TimePickerSelectView.m in Sources */,
 				8F9C51002600A34E004BB46B /* BaseTableViewCell.swift in Sources */,
+				8FD51C292602F0CF002C02A0 /* TimeMissionViewController.swift in Sources */,
 				8F9C51712601F4C9004BB46B /* Utils+UI.m in Sources */,
 				26E279222328EC20005A983D /* ViewController.swift in Sources */,
 				8F9C51142600B70A004BB46B /* SelectItemCell.swift in Sources */,
+				8F37B7D52603330000A69893 /* TitleCell.swift in Sources */,
 				2642755B233086AC003F5BA7 /* CustomStyleButton.m in Sources */,
 				8F9C50D7260097F0004BB46B /* TimeMissionListViewController.swift in Sources */,
 				8F9C51452601CA12004BB46B /* SLPTimePicker.m in Sources */,
@@ -680,6 +711,7 @@
 				8F9C510D2600B4FC004BB46B /* WeekdaySelectViewController.swift in Sources */,
 				8F9C50D4260097F0004BB46B /* NightLightViewController.swift in Sources */,
 				2642755C233086AC003F5BA7 /* CustomColorButton.m in Sources */,
+				8F37B7F626033D4400A69893 /* TitleArrowCell.swift in Sources */,
 				2685C46B2329F4B1009947EE /* SleepAidViewController.swift in Sources */,
 				8F9C515F2601EA9E004BB46B /* SetLightViewController.swift in Sources */,
 				8F9C50DE26009ABD004BB46B /* AlarmViewController.swift in Sources */,

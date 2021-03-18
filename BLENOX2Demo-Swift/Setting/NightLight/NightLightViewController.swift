@@ -190,6 +190,15 @@ class NightLightViewController: UIViewController,UITableViewDataSource,UITableVi
         vc.b = self.b;
         vc.w = self.w;
         vc.brightness = self.brightness;
+        
+        vc.setLightBlock = {(r,g,b,w,brightness) ->() in
+            self.r = r
+            self.g = g
+            self.b = b
+            self.w = w
+            self.brightness = brightness
+        }
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

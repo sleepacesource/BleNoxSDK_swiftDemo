@@ -8,12 +8,14 @@
 
 import UIKit
 
-class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     var alarmDataNew:BleNoxAlarmInfo?
     var addAlarmID: UInt64?
     
-    var isPreviewing: Bool = false
+    var mode: Int?
+    
+    var openMode = 0
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -107,6 +109,9 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     @objc func rightClick() -> Void {
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, alarmConfig: self.alarmDataNew!, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed {
+                SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOffLightTimeout: 0, callback: { (status:SLPDataTransferStatus, data: Any?) in
+                    
+                })
                 self.navigationController?.popViewController(animated: true)
             } else {
                 print("alarmConfig failed")
@@ -116,7 +121,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func getAlarmTimeString(_ dataModel: BleNoxAlarmInfo) -> String {
@@ -144,38 +149,42 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         if indexPath.row == 0 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = "时间"
+            normalCell.titleLabel?.text = "开始时间"
             normalCell.subTitleLabel?.text = self.getAlarmTimeString(self.alarmDataNew!)
             return normalCell
         } else if indexPath.row == 1 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = "重复"
-            normalCell.subTitleLabel?.text = SLPWeekDay.getAlarmRepeatDayString(withWeekDay: self.alarmDataNew!.repeat)
+            normalCell.titleLabel?.text = "关闭时间"
+            normalCell.subTitleLabel?.text = self.getAlarmTimeString(self.alarmDataNew!)
             return normalCell
-        } else if indexPath.row == 2 {
+        }
+        else if indexPath.row == 2 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.subTitleLabel?.text = self.getMusicName(self.alarmDataNew!.musicID)
-            normalCell.titleLabel?.text = "音乐"
+            normalCell.titleLabel?.text = "重复"
+            normalCell.subTitleLabel?.text = SLPWeekDay.getAlarmRepeatDayString(withWeekDay: self.alarmDataNew!.repeat)
             return normalCell
         } else if indexPath.row == 3 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.subTitleLabel?.text = String(format: "%d", self.alarmDataNew!.volume)
-            normalCell.titleLabel?.text = "音量"
+            if self.openMode == 1 {
+                normalCell.subTitleLabel?.text = "照明模式"
+            } else {
+                normalCell.subTitleLabel?.text = "助眠模式"
+            }
+            normalCell.titleLabel?.text = "开启模式"
             return normalCell
         } else if indexPath.row == 4 {
-            tableView.register(UINib(nibName: "SwtichTableViewCell", bundle: nil), forCellReuseIdentifier: "SwtichTableViewCell")
-            let normalCell = tableView.dequeueReusableCell(withIdentifier: "SwtichTableViewCell") as! SwtichTableViewCell
-            normalCell.titleLabel?.text = "灯光唤醒"
-            normalCell.switcherBlock = {(switcher) ->() in
-                if switcher.isOn {
-                    self.alarmDataNew!.brightness = 100
-                } else {
-                    self.alarmDataNew!.brightness = 0
-                }
-            }
+            tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
+            let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
+            normalCell.titleLabel?.text = "灯光设置"
+            return normalCell
+        } else if indexPath.row == 5 {
+            tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
+            let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
+            normalCell.subTitleLabel?.text = self.getMusicName(self.alarmDataNew!.musicID)
+            normalCell.titleLabel?.text = "音乐设置"
             return normalCell
         }
         
@@ -191,62 +200,55 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         if indexPath.row == 0 {
             self.goSelectTime()
-        } else if indexPath.row == 1 {
+        }else if indexPath.row == 1 {
+            self.goSelectEndTime()
+        }
+        else if indexPath.row == 2 {
             self.goSelectWeekdayPage()
-        } else if indexPath.row == 2 {
-            self.goSelectMusic()
         } else if indexPath.row == 3 {
-            self.goSelectVolume()
+            self.goSelectMode()
+        } else if indexPath.row == 4 {
+            self.goSetLight()
+        } else if indexPath.row == 5 {
+            self.goSelectMusic()
         }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 104
+        if self.mode == 1 {
+            return 104
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
-        
-        let btn = UIButton()
-        btn.addTarget(self, action: #selector(previewAndStopAlarm), for: UIControl.Event.touchUpInside)
-        if self.isPreviewing {
-            btn.setTitle("停止预览", for: UIControl.State.normal)
-        } else {
-            btn.setTitle("预览闹钟", for: UIControl.State.normal)
+        if self.mode == 1 {
+            let btn = UIButton()
+            btn.addTarget(self, action: #selector(deleteMission), for: UIControl.Event.touchUpInside)
+            btn.setTitle("删除定时", for: UIControl.State.normal)
+            view.addSubview(btn)
+            btn.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
+            btn.layer.cornerRadius = 2.0;
+            btn.layer.masksToBounds = true;
+            btn.translatesAutoresizingMaskIntoConstraints = false
+            btn.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true  //顶部约束
+            btn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true  //左端约束
+            btn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true  //右端约束
+            btn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true  //底部约束
         }
-        view.addSubview(btn)
-        btn.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
-        btn.layer.cornerRadius = 2.0;
-        btn.layer.masksToBounds = true;
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true  //顶部约束
-        btn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true  //左端约束
-        btn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true  //右端约束
-        btn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true  //底部约束
         
         return view
     }
     
-    @objc func previewAndStopAlarm() {
-        if self.isPreviewing {
-            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, stopAlarmRreviewTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-                if status == SLPDataTransferStatus.succeed {
-                    self.isPreviewing = false
-                    self.tableView.reloadData()
-                } else {
-                    print("stop preview failed")
-                }
-            })
-        } else {
-            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, startAlarmRreviewvolume: self.alarmDataNew!.volume, brightness: self.alarmDataNew!.brightness, musicID: self.alarmDataNew!.musicID, timeout: 0, callback: { (status:SLPDataTransferStatus, data: Any?) in
-                if status == SLPDataTransferStatus.succeed {
-                    self.isPreviewing = true
-                    self.tableView.reloadData()
-                } else {
-                    print("preview failed")
-                }
-            })
-        }
+    @objc func deleteMission() {
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, stopAlarmRreviewTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+            if status == SLPDataTransferStatus.succeed {
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                
+            }
+        })
     }
     
     func goSelectVolume() -> Void {
@@ -265,9 +267,21 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
 
     }
     
+    func goSelectMode() -> Void {
+        
+    }
+    
+    func goSetLight() -> Void {
+        let vc = SetLightViewController()
+        vc.title = "灯光设置"
+        vc.setLightBlock = {(r,g,b,w,brightness) ->() in
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func goSelectMusic() -> Void {
         let vc = MusicListViewController()
-        vc.title = "音乐列表"
+        vc.title = "音乐设置"
         let musicList = self.getMusicList()
         vc.musicList = musicList
         vc.musicID = self.alarmDataNew!.musicID
@@ -276,6 +290,21 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
             self.tableView!.reloadData()
         }
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func goSelectEndTime() -> Void {
+        let time = SLPTime24.init()
+        time.hour = Int(self.alarmDataNew!.hour)
+        time.minute = Int(self.alarmDataNew!.minute)
+        
+        let timePicker = Bundle.main.loadNibNamed("TimePickerSelectView", owner: nil, options: nil)?.first as! TimePickerSelectView
+        timePicker.show(in: UIApplication.shared.keyWindow!, mode: SLPTimePickerMode._24Hour, time: time) { (time24) in
+            self.alarmDataNew!.hour = UInt8(time24.hour)
+            self.alarmDataNew!.minute = UInt8(time24.minute)
+            self.tableView.reloadData()
+        } cancelHandle: {
+            
+        }
     }
     
     func goSelectTime() -> Void {

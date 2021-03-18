@@ -31,11 +31,13 @@
 
 @property (nonatomic, strong) BleNoxNightLightInfo *nightLightInfo;
 
-@property (nonatomic, assign) int waveAction;
+@property (nonatomic, assign) UInt8 waveAction;
 
-@property (nonatomic, assign) int hoverAction;
+@property (nonatomic, assign) UInt8 hoverAction;
 
 @property (nonatomic, strong) NSMutableArray *alarmList;
+
+@property (nonatomic, strong) NSMutableArray *timeMissionList;
 
 + (DataManager *)sharedDataManager;
 

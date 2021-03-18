@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleCell" id="fI4-gy-a8o" customClass="TitleCell" customModule="BLENOX2Demo_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fI4-gy-a8o" id="9G4-BZ-teN">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mp7-F4-ldK">
+                        <rect key="frame" x="15" y="0.0" width="290" height="59"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBh-FY-7Wb">
+                        <rect key="frame" x="15" y="59" width="290" height="1"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Mk1-q1-OcB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mp7-F4-ldK" firstAttribute="leading" secondItem="9G4-BZ-teN" secondAttribute="leading" constant="15" id="5JS-gb-yt0"/>
+                    <constraint firstItem="TBh-FY-7Wb" firstAttribute="leading" secondItem="9G4-BZ-teN" secondAttribute="leading" constant="15" id="97j-By-W92"/>
+                    <constraint firstItem="mp7-F4-ldK" firstAttribute="top" secondItem="9G4-BZ-teN" secondAttribute="top" id="XLT-C6-WNM"/>
+                    <constraint firstAttribute="trailing" secondItem="mp7-F4-ldK" secondAttribute="trailing" constant="15" id="Y3d-bt-Xyf"/>
+                    <constraint firstAttribute="trailing" secondItem="TBh-FY-7Wb" secondAttribute="trailing" constant="15" id="pOo-B5-Mdr"/>
+                    <constraint firstAttribute="bottom" secondItem="TBh-FY-7Wb" secondAttribute="bottom" id="qks-RY-K3W"/>
+                    <constraint firstItem="TBh-FY-7Wb" firstAttribute="top" secondItem="mp7-F4-ldK" secondAttribute="bottom" id="rrR-Jb-QQf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lineDown" destination="TBh-FY-7Wb" id="V5M-9a-v0E"/>
+                <outlet property="titleLabel" destination="mp7-F4-ldK" id="zex-Di-MrE"/>
+            </connections>
+            <point key="canvasLocation" x="465" y="285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

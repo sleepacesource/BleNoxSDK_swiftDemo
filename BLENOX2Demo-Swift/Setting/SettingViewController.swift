@@ -49,7 +49,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
             } else if indexPath.row == 2 {
                 cell?.textLabel?.text = "定时任务"
             } else if indexPath.row == 3 {
-                cell?.textLabel?.text = "倒计时"
+                cell?.textLabel?.text = "延迟关闭"
             }
         } else if (indexPath.section == 1) {
             if indexPath.row == 0 {
@@ -121,21 +121,23 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     // 倒计时页面
     func goCountDownPage() -> Void {
         let searchVC = CountDownViewController ()
-        searchVC.title = "倒计时"
+        searchVC.title = "延迟关闭"
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
     
     // 挥手页面
     func goWavePage() -> Void {
-        let searchVC = GestureViewController ()
-        searchVC.title = "挥手"
-        self.navigationController?.pushViewController(searchVC, animated: true)
+        let vc = GestureViewController ()
+        vc.title = "挥手"
+        vc.mode = GestureMode.wave
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // 悬停页面
     func goHoverPage() -> Void {
-        let searchVC = GestureViewController ()
-        searchVC.title = "悬停"
-        self.navigationController?.pushViewController(searchVC, animated: true)
+        let vc = GestureViewController ()
+        vc.title = "悬停"
+        vc.mode = GestureMode.hover
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

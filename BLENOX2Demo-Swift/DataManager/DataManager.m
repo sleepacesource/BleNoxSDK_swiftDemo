@@ -50,6 +50,8 @@
         _nightLightInfo.duration = 420;
         
         _alarmList = [NSMutableArray array];
+        
+        _timeMissionList = [NSMutableArray array];
     }
     
     return self;
