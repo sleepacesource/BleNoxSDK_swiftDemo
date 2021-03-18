@@ -120,9 +120,13 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     // 倒计时页面
     func goCountDownPage() -> Void {
-        let searchVC = CountDownViewController ()
-        searchVC.title = "延迟关闭"
-        self.navigationController?.pushViewController(searchVC, animated: true)
+        let picker = Bundle.main.loadNibNamed("HourMinutePicker", owner: nil, options: nil)?.first as! HourMinutePicker
+        picker.show(in: UIApplication.shared.keyWindow!, hour: 3) { (hour) in
+            
+        } cancelHandle: {
+            
+        }
+
     }
     
     // 挥手页面

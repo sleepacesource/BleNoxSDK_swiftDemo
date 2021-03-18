@@ -268,7 +268,19 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     func goSelectMode() -> Void {
-        
+        let picker = Bundle.main.loadNibNamed("DataPicker", owner: nil, options: nil)?.first as! DataPicker
+        picker.selectedRow = self.openMode
+        picker.reload()
+        picker.backgroundColor = UIColor.clear
+        picker.cancelBlock = {() ->() in
+            picker.removeFromSuperview()
+        }
+        picker.confirmBlock = {(row) ->() in
+            self.openMode = row
+            self.tableView.reloadData()
+            picker.removeFromSuperview()
+        }
+        Utils.addSubView(picker, suitableTo: UIApplication.shared.keyWindow)
     }
     
     func goSetLight() -> Void {
