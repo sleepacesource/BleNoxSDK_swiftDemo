@@ -8,13 +8,15 @@
 
 import UIKit
 class LightViewController: UIViewController {
-
+    @IBOutlet weak var colorTitleLabel: UILabel!
+    
     @IBOutlet weak var rText: UITextField!
     @IBOutlet weak var gText: UITextField!
     @IBOutlet weak var bText: UITextField!
     @IBOutlet weak var wText: UITextField!
     @IBOutlet weak var brightnessText: UITextField!
     
+    @IBOutlet weak var brightnessLabel: UILabel!
     @IBOutlet weak var sendBT1: UIButton!
     @IBOutlet weak var sendBT2: UIButton!
     @IBOutlet weak var closeBT: UIButton!
@@ -31,15 +33,20 @@ class LightViewController: UIViewController {
         self.sendBT1.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.sendBT1.layer.cornerRadius = 2.0;
         self.sendBT1.layer.masksToBounds = true;
+        self.sendBT1.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
         
         self.sendBT2.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.sendBT2.layer.cornerRadius = 2.0;
         self.sendBT2.layer.masksToBounds = true;
+        self.sendBT2.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
         
         self.closeBT.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.closeBT.layer.cornerRadius = 2.0;
         self.closeBT.layer.masksToBounds = true;
+        self.closeBT.setTitle(NSLocalizedString("turn_off", comment: ""), for: UIControl.State.normal)
         
+        self.colorTitleLabel.text = NSLocalizedString("color", comment: "")
+        self.brightnessLabel.text = NSLocalizedString("luminance", comment: "")
         
         ///default value(example)
         self.rText.text = "50"

@@ -13,9 +13,9 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.addChildVC(childVC: DeviceViewController(), title: "设备", index: 0)
-        self.addChildVC(childVC: ControlViewController(), title: "控制", index: 1)
-        self.addChildVC(childVC: SettingViewController(), title: "设置", index: 2)
+        self.addChildVC(childVC: DeviceViewController(), title: NSLocalizedString("device", comment: ""), index: 0)
+        self.addChildVC(childVC: ControlViewController(), title: NSLocalizedString("control", comment: ""), index: 1)
+        self.addChildVC(childVC: SettingViewController(), title: NSLocalizedString("setting", comment: ""), index: 2)
         
     }
 

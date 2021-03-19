@@ -49,6 +49,7 @@
 		8F37B80C260358A800A69893 /* HourMinutePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B809260358A800A69893 /* HourMinutePicker.m */; };
 		8F37B81226035F6F00A69893 /* CustomColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B81026035F6F00A69893 /* CustomColorViewController.swift */; };
 		8F37B81326035F6F00A69893 /* CustomColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B81126035F6F00A69893 /* CustomColorViewController.xib */; };
+		8F37B8302604364D00A69893 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B8322604364D00A69893 /* Localizable.strings */; };
 		8F9C50CF260097F0004BB46B /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C50C1260097F0004BB46B /* AlarmListViewController.swift */; };
 		8F9C50D0260097F0004BB46B /* AlarmListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9C50C2260097F0004BB46B /* AlarmListViewController.xib */; };
 		8F9C50D1260097F0004BB46B /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C50C4260097F0004BB46B /* GestureViewController.swift */; };
@@ -166,6 +167,10 @@
 		8F37B80A260358A800A69893 /* HourMinutePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourMinutePicker.h; sourceTree = "<group>"; };
 		8F37B81026035F6F00A69893 /* CustomColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorViewController.swift; sourceTree = "<group>"; };
 		8F37B81126035F6F00A69893 /* CustomColorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomColorViewController.xib; sourceTree = "<group>"; };
+		8F37B8172604319C00A69893 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		8F37B8182604319C00A69893 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8F37B8312604364D00A69893 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8F37B8362604365100A69893 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		8F9C50C1260097F0004BB46B /* AlarmListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		8F9C50C2260097F0004BB46B /* AlarmListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmListViewController.xib; sourceTree = "<group>"; };
 		8F9C50C4260097F0004BB46B /* GestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
@@ -358,6 +363,7 @@
 				2684E8E12490BE4D00ADF97E /* SN902B_20200610.1.29.MVA */,
 				26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */,
 				26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */,
+				8F37B8322604364D00A69893 /* Localizable.strings */,
 			);
 			path = "BLENOX2Demo-Swift";
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 26E279132328EC20005A983D;
 			productRefGroup = 26E2791D2328EC20005A983D /* Products */;
@@ -665,6 +672,7 @@
 				8F9C50D3260097F0004BB46B /* NightLightViewController.xib in Resources */,
 				8F9C50D2260097F0004BB46B /* GestureViewController.xib in Resources */,
 				2685C4622329E03B009947EE /* MainViewController.xib in Resources */,
+				8F37B8302604364D00A69893 /* Localizable.strings in Resources */,
 				26E279252328EC20005A983D /* Main.storyboard in Resources */,
 				8F9C51602601EA9E004BB46B /* SetLightViewController.xib in Resources */,
 				2685C4712329F534009947EE /* SearchViewController.xib in Resources */,
@@ -784,6 +792,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				26E279242328EC20005A983D /* Base */,
+				8F37B8172604319C00A69893 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -792,8 +801,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				26E279292328EC23005A983D /* Base */,
+				8F37B8182604319C00A69893 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8F37B8322604364D00A69893 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F37B8312604364D00A69893 /* en */,
+				8F37B8362604365100A69893 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -803,6 +822,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -865,6 +885,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

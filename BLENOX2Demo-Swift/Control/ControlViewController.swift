@@ -44,6 +44,9 @@ class ControlViewController: UIViewController {
         self.light.isSelected = true
         self.currentButton = self.light
         self.showLightPage()
+        
+        self.light.setTitle(NSLocalizedString("light", comment: ""), for: UIControl.State.normal)
+        self.aid.setTitle(NSLocalizedString("sleep_aid", comment: ""), for: UIControl.State.normal)
     }
     
     @IBAction func showLight(_ sender: Any) {

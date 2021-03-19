@@ -11,8 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LightViewController" customModule="BLENOX2Demo_Swift" customModuleProvider="target">
             <connections>
                 <outlet property="bText" destination="I7e-RR-xKV" id="ezH-da-YaM"/>
+                <outlet property="brightnessLabel" destination="PRz-vd-7ED" id="suP-pT-bjJ"/>
                 <outlet property="brightnessText" destination="tvT-3r-5Ls" id="cMb-TR-hBV"/>
                 <outlet property="closeBT" destination="kZw-nY-cSn" id="ueB-ah-Nna"/>
+                <outlet property="colorTitleLabel" destination="Nkg-OU-BZl" id="l9A-qU-kuI"/>
                 <outlet property="gText" destination="I2u-MH-lsP" id="Fcs-at-qUq"/>
                 <outlet property="rText" destination="aAk-f6-IiO" id="W7p-DP-TDB"/>
                 <outlet property="sendBT1" destination="wEY-zg-Jsk" id="eog-h7-nY0"/>

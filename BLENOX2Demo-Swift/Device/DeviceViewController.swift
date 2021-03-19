@@ -32,33 +32,42 @@ class DeviceViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         self.setUI()
-    
-     
     }
     
     func setUI() -> Void {
+        self.connectBt.setTitle(NSLocalizedString("connect_device", comment: ""), for: UIControl.State.normal)
         self.connectBt.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.connectBt.layer.cornerRadius = 2.0;
         self.connectBt.layer.masksToBounds = true;
+        
+        self.getDeviceNameBt.setTitle(NSLocalizedString("device_id_clear", comment: ""), for: UIControl.State.normal)
         self.getDeviceNameBt.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.getDeviceNameBt.layer.cornerRadius = 2.0;
         self.getDeviceNameBt.layer.masksToBounds = true;
+        
+        self.getDeviceIdBt.setTitle(NSLocalizedString("device_id_cipher", comment: ""), for: UIControl.State.normal)
         self.getDeviceIdBt.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.getDeviceIdBt.layer.cornerRadius = 2.0;
         self.getDeviceIdBt.layer.masksToBounds = true;
+        
+        self.getDeviceIdBt.setTitle(NSLocalizedString("obtain_firmware", comment: ""), for: UIControl.State.normal)
         self.getVersionBt.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.getVersionBt.layer.cornerRadius = 2.0;
         self.getVersionBt.layer.masksToBounds = true;
+        
+        self.getDeviceIdBt.setTitle(NSLocalizedString("fireware_update", comment: ""), for: UIControl.State.normal)
         self.upgradeBt.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.upgradeBt.layer.cornerRadius = 2.0;
         self.upgradeBt.layer.masksToBounds = true;
-    
+        
+        self.deviceInfoTitleLabel.text = NSLocalizedString("device_infos", comment: "")
+        self.upgradeInfoTitleLabel.text = NSLocalizedString("firmware_info", comment: "")
     }
 
     @IBAction func connectDevice(_ sender: Any) {
         
         let searchVC = SearchViewController ()
-        searchVC.title = "搜索蓝牙设备"
+        searchVC.title = NSLocalizedString("search_ble", comment: "")
         self.navigationController?.pushViewController(searchVC, animated: true)
         
     }
@@ -116,7 +125,7 @@ class DeviceViewController: UIViewController {
             else
             {
                 print("upgrade failed")
-                Utils.showMessage("升级失败", controller: self)
+                Utils.showMessage(NSLocalizedString("up_failed", comment: ""), controller: self)
             }
         })
     }
