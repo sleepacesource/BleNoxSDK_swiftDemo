@@ -162,7 +162,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         else if indexPath.row == 2 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = NSLocalizedString("replay", comment: "")
+            normalCell.titleLabel?.text = NSLocalizedString("reply", comment: "")
             normalCell.subTitleLabel?.text = SLPWeekDay.getAlarmRepeatDayString(withWeekDay: self.alarmDataNew!.repeat)
             return normalCell
         } else if indexPath.row == 3 {
@@ -337,7 +337,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     func goSelectWeekdayPage() -> Void {
         let vc = WeekdaySelectViewController()
-        vc.title = NSLocalizedString("replay", comment: "")
+        vc.title = NSLocalizedString("reply", comment: "")
         vc.selectWeekDay = self.alarmDataNew!.repeat
         vc.selectWeekdayBlock = {(weekday) ->() in
             self.alarmDataNew!.repeat = weekday
