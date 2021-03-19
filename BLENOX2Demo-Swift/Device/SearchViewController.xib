@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="BLENOX2Demo_Swift" customModuleProvider="target">
             <connections>
                 <outlet property="refreshBtn" destination="2Ja-Qn-GFU" id="861-Kd-36X"/>
+                <outlet property="refreshLabel" destination="Ph6-Ql-E8z" id="eKd-mG-OAB"/>
                 <outlet property="selectIdLabel" destination="hcb-53-TLw" id="YSg-cC-jj4"/>
                 <outlet property="tableview" destination="jjL-5a-G8T" id="1DB-xt-fvx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

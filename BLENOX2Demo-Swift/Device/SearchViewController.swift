@@ -18,6 +18,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     @IBOutlet weak var refreshBtn: UIButton!
     
+    @IBOutlet weak var refreshLabel: UILabel!
     var deviceList = NSMutableArray.init()
     
     
@@ -29,7 +30,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         self.tableview.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "CellID")
         
         self.selectIdLabel.text = NSLocalizedString("select_id", comment: "")
-        self.refreshBtn.setTitle(NSLocalizedString("click_refresh", comment: ""), for: UIControl.State.normal)
+        self.refreshLabel.text = NSLocalizedString("click_refresh", comment: "")
         
         self.scan()
         

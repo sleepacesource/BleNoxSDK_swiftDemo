@@ -17,6 +17,8 @@ class MusicListViewController: UIViewController, UITableViewDataSource,UITableVi
     var musicList: Array<MusicInfo>?
     
     var selectMusicBlock:SelectMusicBlock?
+    
+    var mode: UInt8 = 0
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -26,6 +28,7 @@ class MusicListViewController: UIViewController, UITableViewDataSource,UITableVi
     }
 
     func setUI() -> Void {
+        
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
         let leftButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
@@ -34,15 +37,19 @@ class MusicListViewController: UIViewController, UITableViewDataSource,UITableVi
         leftButton.addTarget(self, action: #selector(leftClick), for: UIControl.Event.touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
         // 自定义
-        let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        rightButton.setTitle("保存", for: UIControl.State.normal)
-        rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+        if self.mode != 1 {
+            let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
+            rightButton.setTitle("保存", for: UIControl.State.normal)
+            rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
+            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+        }
     }
     
     @objc func leftClick() -> Void {
-        self.stopMusic()
+        if self.mode != 1 {
+            self.stopMusic()
+        }
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -73,7 +80,11 @@ class MusicListViewController: UIViewController, UITableViewDataSource,UITableVi
         tableView.deselectRow(at: indexPath, animated: true)
         let musicInfo = self.musicList![indexPath.row] as! MusicInfo
         self.musicID = musicInfo.musicID;
-        self.playMusic(self.musicID!)
+        if self.mode != 1 {
+            self.playMusic(self.musicID!)
+        } else {
+            self.selectMusicBlock!(self.musicID!)
+        }
         tableView.reloadData()
     }
     
