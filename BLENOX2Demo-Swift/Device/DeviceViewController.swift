@@ -23,6 +23,7 @@ class DeviceViewController: UIViewController {
     @IBOutlet weak var upgradeBt: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
     
+    @IBOutlet weak var bottomView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,37 @@ class DeviceViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         self.setUI()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceConnected), name: NSNotification.Name(rawValue: kNotificationNameBLEDeviceConnected), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceDisConnected), name: NSNotification.Name(rawValue: kNotificationNameBLEDeviceDisconnect), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.showConnected(connected: DataManager.shared().connected)
+    }
+    
+    @objc func deviceConnected() {
+        DataManager.shared()?.connected = true
+        self.showConnected(connected: true)
+    }
+    
+    @objc func deviceDisConnected() {
+        DataManager.shared()?.connected = false
+        self.showConnected(connected: false)
+    }
+    
+    func showConnected(connected: Bool) -> Void {
+        let alpha = connected ? 1: 0.3
+        self.bottomView.alpha = CGFloat(alpha)
+        self.bottomView.isUserInteractionEnabled = connected
+        
+        if connected {
+            self.connectBt.setTitle(NSLocalizedString("disconnect", comment: ""), for: UIControl.State.normal)
+        } else {
+            self.connectBt.setTitle(NSLocalizedString("connect_device", comment: ""), for: UIControl.State.normal)
+        }
     }
     
     func setUI() -> Void {
@@ -66,9 +98,15 @@ class DeviceViewController: UIViewController {
 
     @IBAction func connectDevice(_ sender: Any) {
         
-        let searchVC = SearchViewController ()
-        searchVC.title = NSLocalizedString("search_ble", comment: "")
-        self.navigationController?.pushViewController(searchVC, animated: true)
+        if DataManager.shared().connected {
+            SLPBLEManager.shared()?.disconnectPeripheral(DataManager.shared()?.peripheral, timeout: 0, completion: {(status: SLPBLEDisconnectReturnCodes, data: Any?) in
+                
+            })
+        } else {
+            let searchVC = SearchViewController ()
+            searchVC.title = NSLocalizedString("search_ble", comment: "")
+            self.navigationController?.pushViewController(searchVC, animated: true)
+        }
         
     }
     

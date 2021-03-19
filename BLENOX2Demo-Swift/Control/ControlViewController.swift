@@ -25,6 +25,32 @@ class ControlViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.setUI();
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceConnected), name: NSNotification.Name(rawValue: kNotificationNameBLEDeviceConnected), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceDisConnected), name: NSNotification.Name(rawValue: kNotificationNameBLEDeviceDisconnect), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.showConnected(connected: DataManager.shared().connected)
+    }
+    
+    @objc func deviceConnected() {
+        DataManager.shared()?.connected = true
+        self.showConnected(connected: true)
+    }
+    
+    @objc func deviceDisConnected() {
+        DataManager.shared()?.connected = false
+        self.showConnected(connected: false)
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func showConnected(connected: Bool) -> Void {
+        let alpha = connected ? 1: 0.3
+        self.view.alpha = CGFloat(alpha)
+        self.view.isUserInteractionEnabled = connected
     }
     
     func setUI() -> Void {
