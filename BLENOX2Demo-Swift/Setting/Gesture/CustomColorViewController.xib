@@ -11,6 +11,50 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomColorViewController" customModule="BLENOX2Demo_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="color1B" destination="XbP-sT-OW6" id="STX-Dd-wLG"/>
+                <outlet property="color1Clean" destination="8YO-xj-VFC" id="VeK-xu-I7j"/>
+                <outlet property="color1G" destination="f7N-O4-5U6" id="GY5-yO-IOp"/>
+                <outlet property="color1Label" destination="TTR-Tc-sZJ" id="bYe-hk-McY"/>
+                <outlet property="color1R" destination="sHT-t8-h17" id="gyo-ul-h2d"/>
+                <outlet property="color1Send" destination="zo5-jl-59z" id="rXw-bd-F3z"/>
+                <outlet property="color1W" destination="tsg-wd-bxc" id="sRX-DL-Qd9"/>
+                <outlet property="color2B" destination="MXm-oU-GrQ" id="UFN-9i-cT3"/>
+                <outlet property="color2Clean" destination="GEF-pu-fbi" id="ZVJ-HS-eMS"/>
+                <outlet property="color2G" destination="R6A-ZZ-H4H" id="PsS-US-3Bi"/>
+                <outlet property="color2Label" destination="XmY-MM-nwb" id="XFg-8M-Etz"/>
+                <outlet property="color2R" destination="raB-hp-MuH" id="Aqm-Jy-A5Z"/>
+                <outlet property="color2Send" destination="PXP-U3-fHw" id="yap-0v-994"/>
+                <outlet property="color2W" destination="xDq-SL-6q8" id="Z0Y-ZA-ovT"/>
+                <outlet property="color3B" destination="XNM-6E-AWe" id="hQN-x7-pT0"/>
+                <outlet property="color3Clean" destination="g5k-ah-dnN" id="iAV-mo-iyR"/>
+                <outlet property="color3G" destination="qhH-z9-z9H" id="kvT-hJ-jqC"/>
+                <outlet property="color3Label" destination="a8M-3c-Tkx" id="NIE-G3-TsW"/>
+                <outlet property="color3R" destination="EsA-TZ-WIR" id="w7E-4z-DDH"/>
+                <outlet property="color3Send" destination="xil-ac-xRA" id="wHu-HQ-oEa"/>
+                <outlet property="color3W" destination="boP-R0-9Mf" id="1aL-lB-3qL"/>
+                <outlet property="color4B" destination="w0q-pk-KAr" id="Qnd-It-v6g"/>
+                <outlet property="color4Clean" destination="zFv-hz-fsg" id="611-jj-X7P"/>
+                <outlet property="color4G" destination="Mui-to-mj2" id="87U-gB-BW7"/>
+                <outlet property="color4Label" destination="NdN-bj-KtK" id="fnY-nd-SZL"/>
+                <outlet property="color4R" destination="M45-nu-Sre" id="hX4-49-QV7"/>
+                <outlet property="color4Send" destination="N4S-nu-NXk" id="jON-Jv-9PS"/>
+                <outlet property="color4W" destination="XTt-0A-25A" id="BO1-z3-LFu"/>
+                <outlet property="color5B" destination="R6P-Wm-bI9" id="Ecy-4Y-lBO"/>
+                <outlet property="color5Clean" destination="O9n-hO-E9W" id="NLS-ea-BRT"/>
+                <outlet property="color5G" destination="lnv-Pw-g8N" id="5Z0-Ky-2he"/>
+                <outlet property="color5Label" destination="enx-M4-PhH" id="dWl-W8-QOm"/>
+                <outlet property="color5R" destination="F7v-Qh-8vT" id="NW8-Nf-GKs"/>
+                <outlet property="color5Send" destination="83W-Tr-xaK" id="KBu-SC-wyd"/>
+                <outlet property="color5W" destination="4Wb-y7-kpp" id="aBV-HZ-hEo"/>
+                <outlet property="color6B" destination="bIA-Qa-QZ0" id="cKT-9h-sn4"/>
+                <outlet property="color6Clean" destination="LvB-Dt-ady" id="yuN-Hn-8lM"/>
+                <outlet property="color6G" destination="GaV-Ah-WgH" id="cGh-4f-sr2"/>
+                <outlet property="color6Label" destination="mBA-bi-klE" id="FoQ-WV-gtd"/>
+                <outlet property="color6R" destination="DP8-pM-cim" id="YQm-e1-eKy"/>
+                <outlet property="color6Send" destination="jrD-2T-Dw2" id="eAD-Pd-l1Q"/>
+                <outlet property="color6W" destination="IZ1-1w-o8e" id="mSZ-nK-asP"/>
+                <outlet property="color7Label" destination="Wjl-6s-n3g" id="82o-t5-qmN"/>
+                <outlet property="color7Lum" destination="IKb-1m-KHD" id="1Op-A0-M2C"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -500,6 +544,9 @@
                                                 <constraint firstAttribute="height" constant="50" id="w7O-Wd-UW9"/>
                                             </constraints>
                                             <state key="normal" title="发送"/>
+                                            <connections>
+                                                <action selector="sendColor1:" destination="-1" eventType="touchUpInside" id="eQu-uu-jFE"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5k-ah-dnN">
                                             <rect key="frame" x="309" y="130.5" width="90" height="50"/>
@@ -509,6 +556,9 @@
                                                 <constraint firstAttribute="width" constant="90" id="cfo-Wu-ERm"/>
                                             </constraints>
                                             <state key="normal" title="删除"/>
+                                            <connections>
+                                                <action selector="cleanColor1:" destination="-1" eventType="touchUpInside" id="7NP-XK-wMI"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -668,6 +718,10 @@
                                                 <constraint firstAttribute="height" constant="50" id="qmj-3M-0c1"/>
                                             </constraints>
                                             <state key="normal" title="发送"/>
+                                            <connections>
+                                                <action selector="sendColor2:" destination="-1" eventType="touchUpInside" id="apy-fh-RGa"/>
+                                                <action selector="sendColor4:" destination="-1" eventType="touchUpInside" id="RzV-vA-wMu"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFv-hz-fsg">
                                             <rect key="frame" x="309" y="130.5" width="90" height="50"/>
@@ -677,6 +731,10 @@
                                                 <constraint firstAttribute="height" constant="50" id="fAS-7C-XVY"/>
                                             </constraints>
                                             <state key="normal" title="删除"/>
+                                            <connections>
+                                                <action selector="cleanColor2:" destination="-1" eventType="touchUpInside" id="9rk-RO-ioP"/>
+                                                <action selector="cleanColor4:" destination="-1" eventType="touchUpInside" id="LI6-UX-riM"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -836,6 +894,10 @@
                                                 <constraint firstAttribute="width" constant="90" id="ZkF-8x-eeR"/>
                                             </constraints>
                                             <state key="normal" title="发送"/>
+                                            <connections>
+                                                <action selector="sendColor3:" destination="-1" eventType="touchUpInside" id="EUa-vn-N8Y"/>
+                                                <action selector="sendColor5:" destination="-1" eventType="touchUpInside" id="5Pt-xq-BgT"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9n-hO-E9W">
                                             <rect key="frame" x="309" y="130.5" width="90" height="50"/>
@@ -845,6 +907,10 @@
                                                 <constraint firstAttribute="width" constant="90" id="wna-pb-0P9"/>
                                             </constraints>
                                             <state key="normal" title="删除"/>
+                                            <connections>
+                                                <action selector="cleanColor3:" destination="-1" eventType="touchUpInside" id="tQ8-a3-N7s"/>
+                                                <action selector="cleanColor5:" destination="-1" eventType="touchUpInside" id="YWQ-eI-Onk"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1004,6 +1070,9 @@
                                                 <constraint firstAttribute="height" constant="50" id="WcK-2Y-BSl"/>
                                             </constraints>
                                             <state key="normal" title="发送"/>
+                                            <connections>
+                                                <action selector="sendColor6:" destination="-1" eventType="touchUpInside" id="djC-Bn-Nyy"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvB-Dt-ady">
                                             <rect key="frame" x="309" y="130.5" width="90" height="50"/>
@@ -1013,6 +1082,9 @@
                                                 <constraint firstAttribute="width" constant="90" id="kPa-XJ-NyS"/>
                                             </constraints>
                                             <state key="normal" title="删除"/>
+                                            <connections>
+                                                <action selector="cleanColor6:" destination="-1" eventType="touchUpInside" id="GBf-X0-MQj"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
