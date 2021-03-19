@@ -33,6 +33,8 @@ class DataPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         
+        self.cancelBtn.setTitle(NSLocalizedString("cancel", comment: ""), for: UIControl.State.normal)
+        self.confirmBtn.setTitle(NSLocalizedString("confirm", comment: ""), for: UIControl.State.normal)
         self.cancelBtn.setTitleColor(Theme.c4(), for: UIControl.State.normal)
         self.confirmBtn.setTitleColor(Theme.c2(), for: UIControl.State.normal)
     }
@@ -59,9 +61,9 @@ class DataPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if row == 0 {
-            return "助眠模式"
+            return NSLocalizedString("aidMode", comment: "")
         } else {
-            return "照明模式"
+            return NSLocalizedString("lightMode", comment: "")
         }
     }
     

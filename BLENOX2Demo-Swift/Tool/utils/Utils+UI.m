@@ -106,11 +106,11 @@
 
 + (void)showDeviceOperationFailed:(NSInteger)status atViewController:(UIViewController *)viewController{
     if (status == -4) {
-        [self showAlertTitle:nil message:LocalizedString(@"蓝牙未打开")
-                confirmTitle:LocalizedString(@"确定") atViewController:viewController];
+        [self showAlertTitle:nil message:LocalizedString(@"phone_bluetooth_not_open")
+                confirmTitle:LocalizedString(@"confirm") atViewController:viewController];
     }else {
-        [self showAlertTitle:LocalizedString(@"设备连接失败") message:LocalizedString(@"确保设备开机，且与手机之间的距离不要超过5米")
-                confirmTitle:LocalizedString(@"确定") atViewController:viewController];
+        [self showAlertTitle:LocalizedString(@"device_connect_fail") message:LocalizedString(@"device_w_ble_connect_failed_tip")
+                confirmTitle:LocalizedString(@"confirm") atViewController:viewController];
     }
 }
 

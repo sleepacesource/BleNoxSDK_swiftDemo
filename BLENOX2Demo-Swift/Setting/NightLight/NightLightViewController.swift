@@ -66,7 +66,7 @@ class NightLightViewController: UIViewController,UITableViewDataSource,UITableVi
         
         let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        rightButton.setTitle("保存", for: UIControl.State.normal)
+        rightButton.setTitle(NSLocalizedString("save", comment: ""), for: UIControl.State.normal)
         rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
     }
@@ -96,7 +96,7 @@ class NightLightViewController: UIViewController,UITableViewDataSource,UITableVi
                 return
             }
             
-            Utils.showMessage("保存成功", controller: self)
+            Utils.showMessage(NSLocalizedString("save_succeed", comment: ""), controller: self)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.navigationController?.popViewController(animated: true)
             }
@@ -125,7 +125,7 @@ class NightLightViewController: UIViewController,UITableViewDataSource,UITableVi
         if indexPath.row == 0 {
             tableView.register(UINib(nibName: "SwtichTableViewCell", bundle: nil), forCellReuseIdentifier: "SwtichTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "SwtichTableViewCell") as! SwtichTableViewCell
-            normalCell.titleLabel?.text = "小夜灯"
+            normalCell.titleLabel?.text = NSLocalizedString("nightLight", comment: "")
             normalCell.switcher.isOn = self.enable!
             normalCell.switcherBlock = {(switcher) ->() in
                 if switcher.isOn {
@@ -140,12 +140,12 @@ class NightLightViewController: UIViewController,UITableViewDataSource,UITableVi
         } else if indexPath.row == 1 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = "灯光设置"
+            normalCell.titleLabel?.text = NSLocalizedString("setLight", comment: "")
             return normalCell
         } else if indexPath.row == 2 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = "时间设置"
+            normalCell.titleLabel?.text = NSLocalizedString("setTime", comment: "")
             let startStr = String(format: "%.2d:%.2d", self.startHour!, self.startMinute!)
             let endStr = String(format: "%.2d:%.2d", self.endHour!, self.endMinute!)
             normalCell.subTitleLabel?.text = String(format: "%@-%@", startStr, endStr)
@@ -163,7 +163,7 @@ class NightLightViewController: UIViewController,UITableViewDataSource,UITableVi
         let view = UIView()
         
         let label = UILabel()
-        label.text = "打开后,在设定的时间范围内,将启用小夜灯的颜色和亮度"
+        label.text = NSLocalizedString("setnightLight", comment: "")
         view.addSubview(label)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -187,7 +187,7 @@ class NightLightViewController: UIViewController,UITableViewDataSource,UITableVi
     
     func goSetLight() -> Void {
         let vc = SetLightViewController()
-        vc.title = "灯光设置"
+        vc.title = NSLocalizedString("setLight", comment: "")
         vc.r = self.r;
         vc.g = self.g;
         vc.b = self.b;
@@ -207,7 +207,7 @@ class NightLightViewController: UIViewController,UITableViewDataSource,UITableVi
     
     func goSetTime() -> Void {
         let vc = SetTimeViewController()
-        vc.title = "时间设置"
+        vc.title = NSLocalizedString("setTime", comment: "")
         vc.startHour = self.startHour;
         vc.startMinute = self.startMinute;
         vc.endHour = self.endHour;

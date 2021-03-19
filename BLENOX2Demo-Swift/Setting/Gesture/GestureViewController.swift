@@ -59,7 +59,7 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
         
         let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        rightButton.setTitle("保存", for: UIControl.State.normal)
+        rightButton.setTitle(NSLocalizedString("save", comment: ""), for: UIControl.State.normal)
         rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
     }
@@ -70,7 +70,7 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
                 Utils.showDeviceOperationFailed(-1, at: self)
                 return
             }
-            Utils.showMessage("保存成功", controller: self)
+            Utils.showMessage(NSLocalizedString("save_succeed", comment: ""), controller: self)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.navigationController?.popViewController(animated: true)
             }
@@ -108,7 +108,7 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
                 case 1:
                     tableView.register(UINib(nibName: "SelectItemCell", bundle: nil), forCellReuseIdentifier: "SelectItemCell")
                     let selectCell = tableView.dequeueReusableCell(withIdentifier: "SelectItemCell") as! SelectItemCell
-                    selectCell.titleLabel?.text = "切换灯光"
+                    selectCell.titleLabel?.text = NSLocalizedString("ChangeLightColor", comment: "")
                     
                     let isCurrent = self.currentGestureAction?.rawValue == GestureActionMode.changeLight.rawValue || self.currentGestureAction?.rawValue == GestureActionMode.GestureDefault.rawValue
                     selectCell.selectIcon?.isHidden = !isCurrent
@@ -118,26 +118,26 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
                     let selectCell = tableView.dequeueReusableCell(withIdentifier: "SelectItemCell") as! SelectItemCell
                     let isCurrent = self.currentGestureAction?.rawValue == GestureActionMode.changeMusic.rawValue
                     selectCell.selectIcon?.isHidden = !isCurrent
-                    selectCell.titleLabel?.text = "切换音乐"
+                    selectCell.titleLabel?.text = NSLocalizedString("ChangeMusic", comment: "")
                     return selectCell
                 case 3:
                     tableView.register(UINib(nibName: "SelectItemCell", bundle: nil), forCellReuseIdentifier: "SelectItemCell")
                     let selectCell = tableView.dequeueReusableCell(withIdentifier: "SelectItemCell") as! SelectItemCell
                     let isCurrent = self.currentGestureAction?.rawValue == GestureActionMode.disable.rawValue
                     selectCell.selectIcon?.isHidden = !isCurrent
-                    selectCell.titleLabel?.text = "停用"
+                    selectCell.titleLabel?.text = NSLocalizedString("Disable", comment: "")
                     return selectCell
                 default:
                     tableView.register(UINib(nibName: "SelectItemCell", bundle: nil), forCellReuseIdentifier: "SelectItemCell")
                     let titleCell = tableView.dequeueReusableCell(withIdentifier: "SelectItemCell") as! SelectItemCell
-                    titleCell.titleLabel?.text = "你想左右挥手切换灯光颜色还是切换音乐？"
+                    titleCell.titleLabel?.text = NSLocalizedString("WaveTitleStr", comment: "")
                     return titleCell
                    
                 }
             } else if indexPath.section == 1 {
                 tableView.register(UINib(nibName: "TitleArrowCell", bundle: nil), forCellReuseIdentifier: "TitleArrowCell")
                 let titleCell = tableView.dequeueReusableCell(withIdentifier: "TitleArrowCell") as! TitleArrowCell
-                titleCell.titleLabel?.text = "设置挥手切换的灯光颜色"
+                titleCell.titleLabel?.text = NSLocalizedString("setWaveColor", comment: "")
                 return titleCell
             }
         } else {
@@ -147,19 +147,19 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
                 let selectCell = tableView.dequeueReusableCell(withIdentifier: "SelectItemCell") as! SelectItemCell
                 let isCurrent = self.currentGestureAction?.rawValue == GestureActionMode.playOrStop.rawValue || self.currentGestureAction?.rawValue == GestureActionMode.GestureDefault.rawValue
                 selectCell.selectIcon?.isHidden = !isCurrent
-                selectCell.titleLabel?.text = "播放/暂停音乐"
+                selectCell.titleLabel?.text = NSLocalizedString("PlayOrStop", comment: "")
                 return selectCell
             case 2:
                 tableView.register(UINib(nibName: "SelectItemCell", bundle: nil), forCellReuseIdentifier: "SelectItemCell")
                 let selectCell = tableView.dequeueReusableCell(withIdentifier: "SelectItemCell") as! SelectItemCell
                 let isCurrent = self.currentGestureAction?.rawValue == GestureActionMode.disable.rawValue
                 selectCell.selectIcon?.isHidden = !isCurrent
-                selectCell.titleLabel?.text = "停用"
+                selectCell.titleLabel?.text = NSLocalizedString("Disable", comment: "")
                 return selectCell
             default:
                 tableView.register(UINib(nibName: "SelectItemCell", bundle: nil), forCellReuseIdentifier: "SelectItemCell")
                 let titleCell = tableView.dequeueReusableCell(withIdentifier: "SelectItemCell") as! SelectItemCell
-                titleCell.titleLabel?.text = "是否选择悬停在Nox前播放/暂停音乐？"
+                titleCell.titleLabel?.text = NSLocalizedString("HoverTitleStr", comment: "")
                 return titleCell
             }
         }
@@ -225,7 +225,7 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true  //左端约束
             label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true  //右端约束
             label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true  //底部约束
-            label.text = "颜色设置"
+            label.text = NSLocalizedString("setColor", comment: "")
             
             view.backgroundColor = UIColor.groupTableViewBackground
         }
@@ -235,6 +235,7 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
     
     func goSetCustomLight() -> Void {
         let vc = CustomColorViewController()
+//        vc.title = NSLocalizedString("setColor", comment: "")
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

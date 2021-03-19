@@ -24,47 +24,47 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         
         var musicInfo = MusicInfo()
         musicInfo.musicID = 31001
-        musicInfo.musicName = "晨之语"
+        musicInfo.musicName = NSLocalizedString("alarm_list_1", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
         musicInfo.musicID = 31002
-        musicInfo.musicName = "心动的感觉"
+        musicInfo.musicName = NSLocalizedString("alarm_list_2", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
         musicInfo.musicID = 31003
-        musicInfo.musicName = "低吟浅唱"
+        musicInfo.musicName = NSLocalizedString("alarm_list_3", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
         musicInfo.musicID = 31004
-        musicInfo.musicName = "街角的少年"
+        musicInfo.musicName = NSLocalizedString("alarm_list_4", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
         musicInfo.musicID = 31005
-        musicInfo.musicName = "明天是周末"
+        musicInfo.musicName = NSLocalizedString("alarm_list_5", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
         musicInfo.musicID = 31006
-        musicInfo.musicName = "新的一天"
+        musicInfo.musicName = NSLocalizedString("alarm_list_6", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
         musicInfo.musicID = 31007
-        musicInfo.musicName = "春溪小曲"
+        musicInfo.musicName = NSLocalizedString("alarm_list_7", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
         musicInfo.musicID = 31008
-        musicInfo.musicName = "且听风吟"
+        musicInfo.musicName = NSLocalizedString("alarm_list_8", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
         musicInfo.musicID = 31009
-        musicInfo.musicName = "慵懒的早晨"
+        musicInfo.musicName = NSLocalizedString("alarm_list_9", comment: "")
         musicList.append(musicInfo)
         
         return musicList
@@ -101,7 +101,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         
         let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        rightButton.setTitle("保存", for: UIControl.State.normal)
+        rightButton.setTitle(NSLocalizedString("save", comment: ""), for: UIControl.State.normal)
         rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
     }
@@ -149,42 +149,42 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         if indexPath.row == 0 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = "开始时间"
+            normalCell.titleLabel?.text = NSLocalizedString("start_time", comment: "")
             normalCell.subTitleLabel?.text = self.getAlarmTimeString(self.alarmDataNew!)
             return normalCell
         } else if indexPath.row == 1 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = "关闭时间"
+            normalCell.titleLabel?.text = NSLocalizedString("closeTime", comment: "")
             normalCell.subTitleLabel?.text = self.getAlarmTimeString(self.alarmDataNew!)
             return normalCell
         }
         else if indexPath.row == 2 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = "重复"
+            normalCell.titleLabel?.text = NSLocalizedString("replay", comment: "")
             normalCell.subTitleLabel?.text = SLPWeekDay.getAlarmRepeatDayString(withWeekDay: self.alarmDataNew!.repeat)
             return normalCell
         } else if indexPath.row == 3 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
             if self.openMode == 1 {
-                normalCell.subTitleLabel?.text = "照明模式"
+                normalCell.subTitleLabel?.text = NSLocalizedString("lightMode", comment: "")
             } else {
-                normalCell.subTitleLabel?.text = "助眠模式"
+                normalCell.subTitleLabel?.text = NSLocalizedString("aidMode", comment: "")
             }
-            normalCell.titleLabel?.text = "开启模式"
+            normalCell.titleLabel?.text = NSLocalizedString("openMode", comment: "")
             return normalCell
         } else if indexPath.row == 4 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = "灯光设置"
+            normalCell.titleLabel?.text = NSLocalizedString("setLight", comment: "")
             return normalCell
         } else if indexPath.row == 5 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
             normalCell.subTitleLabel?.text = self.getMusicName(self.alarmDataNew!.musicID)
-            normalCell.titleLabel?.text = "音乐设置"
+            normalCell.titleLabel?.text = NSLocalizedString("setMusic", comment: "")
             return normalCell
         }
         
@@ -226,7 +226,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         if self.mode == 1 {
             let btn = UIButton()
             btn.addTarget(self, action: #selector(deleteMission), for: UIControl.Event.touchUpInside)
-            btn.setTitle("删除定时", for: UIControl.State.normal)
+            btn.setTitle(NSLocalizedString("sa_delete", comment: ""), for: UIControl.State.normal)
             view.addSubview(btn)
             btn.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
             btn.layer.cornerRadius = 2.0;
@@ -285,7 +285,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     func goSetLight() -> Void {
         let vc = SetLightViewController()
-        vc.title = "灯光设置"
+        vc.title = NSLocalizedString("setLight", comment: "")
         vc.setLightBlock = {(r,g,b,w,brightness) ->() in
         }
         self.navigationController?.pushViewController(vc, animated: true)
@@ -293,7 +293,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     func goSelectMusic() -> Void {
         let vc = MusicListViewController()
-        vc.title = "音乐设置"
+        vc.title = NSLocalizedString("setMusic", comment: "")
         let musicList = self.getMusicList()
         vc.musicList = musicList
         vc.musicID = self.alarmDataNew!.musicID
@@ -337,7 +337,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     func goSelectWeekdayPage() -> Void {
         let vc = WeekdaySelectViewController()
-        vc.title = "重复"
+        vc.title = NSLocalizedString("replay", comment: "")
         vc.selectWeekDay = self.alarmDataNew!.repeat
         vc.selectWeekdayBlock = {(weekday) ->() in
             self.alarmDataNew!.repeat = weekday

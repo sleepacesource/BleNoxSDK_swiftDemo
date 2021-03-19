@@ -19,15 +19,23 @@ class SetLightViewController: UIViewController {
     
     var setLightBlock: SetLightBlock?
     
+    @IBOutlet weak var colorLabel: UILabel!
+    @IBOutlet weak var brightnessLabel: UILabel!
     @IBOutlet weak var colorRTextField: UITextField!
     @IBOutlet weak var colorGTextField: UITextField!
     @IBOutlet weak var colorBTextField: UITextField!
     @IBOutlet weak var colorWTextField: UITextField!
     @IBOutlet weak var brightnessTextFiled: UITextField!
+    @IBOutlet weak var sendBtn1: UIButton!
     
+    @IBOutlet weak var sendBtn2: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.colorLabel.text = NSLocalizedString("color", comment: "")
+        self.brightnessLabel.text = NSLocalizedString("luminance", comment: "")
+        self.sendBtn1.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
+        self.sendBtn2.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
     }
 
     @IBAction func sendColorAction(_ sender: UIButton) {
@@ -46,7 +54,7 @@ class SetLightViewController: UIViewController {
             let bValid = (b! >= 0) && (b! <= 255);
             let wValid = (w! >= 0) && (w! <= 255);
             if !(rValid && gValid && bValid && wValid)  {
-                Utils.showMessage("请输入0-255之间的整数", controller: self)
+                Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
                 return
             }
             
@@ -68,7 +76,7 @@ class SetLightViewController: UIViewController {
             
             let isOpen = SLPBLEManager.shared()?.blueToothIsOpen()
             if !(isOpen!) {
-                Utils.showMessage("手机蓝牙未打开", controller: self);
+                Utils.showMessage(NSLocalizedString("phone_bluetooth_not_open", comment: ""), controller: self);
                 return
             }
             SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnColorLight: light, brightness: brightness, timeout: 0, callback: { (status: SLPDataTransferStatus, data:Any?) in
@@ -85,7 +93,7 @@ class SetLightViewController: UIViewController {
                 self.setLightBlock!(self.r!, self.g!, self.b!, self.w!, self.brightness!)
             })
         } else {
-            Utils.showMessage("请输入0-255之间的整数", controller: self)
+            Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
         }
     }
     
@@ -94,13 +102,13 @@ class SetLightViewController: UIViewController {
         if valueBrightness {
             let brightness = UInt8(self.brightnessTextFiled.text!)
             if (!(brightness! >= 0) && (brightness! <= 100)) {
-                Utils.showMessage("请输入0-100之间的整数", controller: self)
+                Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
                 return
             }
             
             let isOpen = SLPBLEManager.shared()?.blueToothIsOpen()
             if !(isOpen!) {
-                Utils.showMessage("手机蓝牙未打开", controller: self);
+                Utils.showMessage(NSLocalizedString("phone_bluetooth_not_open", comment: ""), controller: self);
                 return
             }
             
@@ -114,7 +122,7 @@ class SetLightViewController: UIViewController {
                 self.setLightBlock!(self.r!, self.g!, self.b!, self.w!, self.brightness!)
             })
         } else {
-            Utils.showMessage("请输入0-100之间的整数", controller: self)
+            Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
         }
     }
 }

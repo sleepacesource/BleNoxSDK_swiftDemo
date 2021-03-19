@@ -31,7 +31,14 @@ class WeekdaySelectViewController: UIViewController, UITableViewDataSource,UITab
         self.setUI()
 
         // Do any additional setup after loading the view.
-        self.weekdayList = NSArray.init(objects: "周一","周二","周三","周四","周五","周六","周日")
+        let s1 = NSLocalizedString("mon", comment: "")
+        let s2 = NSLocalizedString("tue", comment: "")
+        let s3 = NSLocalizedString("wed", comment: "")
+        let s4 = NSLocalizedString("thur", comment: "")
+        let s5 = NSLocalizedString("fri", comment: "")
+        let s6 = NSLocalizedString("sat", comment: "")
+        let s7 = NSLocalizedString("sun", comment: "")
+        self.weekdayList = NSArray.init(objects: s1,s2,s3,s4,s5,s6,s7)
         self.weekDayNew = self.selectWeekDay
         
         let list = SLPWeekDay.getRepeatDays(self.weekDayNew!)
@@ -43,7 +50,7 @@ class WeekdaySelectViewController: UIViewController, UITableViewDataSource,UITab
         // 自定义
         let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        rightButton.setTitle("保存", for: UIControl.State.normal)
+        rightButton.setTitle(NSLocalizedString("save", comment: ""), for: UIControl.State.normal)
         rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
     }

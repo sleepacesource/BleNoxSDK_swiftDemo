@@ -50,12 +50,12 @@ class DeviceViewController: UIViewController {
         self.getDeviceIdBt.layer.cornerRadius = 2.0;
         self.getDeviceIdBt.layer.masksToBounds = true;
         
-        self.getDeviceIdBt.setTitle(NSLocalizedString("obtain_firmware", comment: ""), for: UIControl.State.normal)
+        self.getVersionBt.setTitle(NSLocalizedString("obtain_firmware", comment: ""), for: UIControl.State.normal)
         self.getVersionBt.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.getVersionBt.layer.cornerRadius = 2.0;
         self.getVersionBt.layer.masksToBounds = true;
         
-        self.getDeviceIdBt.setTitle(NSLocalizedString("fireware_update", comment: ""), for: UIControl.State.normal)
+        self.upgradeBt.setTitle(NSLocalizedString("fireware_update", comment: ""), for: UIControl.State.normal)
         self.upgradeBt.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.upgradeBt.layer.cornerRadius = 2.0;
         self.upgradeBt.layer.masksToBounds = true;

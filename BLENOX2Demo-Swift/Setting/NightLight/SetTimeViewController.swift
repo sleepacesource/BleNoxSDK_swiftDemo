@@ -59,14 +59,14 @@ class SetTimeViewController: UIViewController,UITableViewDataSource,UITableViewD
         if indexPath.row == 0 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = "开始时间"
+            normalCell.titleLabel?.text = NSLocalizedString("start_time", comment: "")
             let startStr = String(format: "%.2d:%.2d", self.startHour!, self.startMinute!)
             normalCell.subTitleLabel?.text = String(format: "%@", startStr)
             return normalCell
         } else if indexPath.row == 1 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = "开始时间"
+            normalCell.titleLabel?.text = NSLocalizedString("end_time", comment: "")
             let endStr = String(format: "%.2d:%.2d", self.endHour!, self.endMinute!)
             normalCell.subTitleLabel?.text = String(format: "%@", endStr)
             return normalCell

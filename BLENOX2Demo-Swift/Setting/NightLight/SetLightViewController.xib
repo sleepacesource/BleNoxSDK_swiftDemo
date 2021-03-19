@@ -11,11 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetLightViewController" customModule="BLENOX2Demo_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="brightnessLabel" destination="f7i-xY-Mce" id="grQ-JV-rL8"/>
                 <outlet property="brightnessTextFiled" destination="rXp-Sx-Ru5" id="gjO-Nx-k81"/>
                 <outlet property="colorBTextField" destination="1JF-pD-15u" id="bxe-vK-n2C"/>
                 <outlet property="colorGTextField" destination="HkA-gz-t71" id="MLc-JE-U6O"/>
+                <outlet property="colorLabel" destination="uMz-a3-Y6w" id="aos-Hd-zDC"/>
                 <outlet property="colorRTextField" destination="8us-Cy-MqL" id="pac-AE-sss"/>
                 <outlet property="colorWTextField" destination="fQL-5W-hZu" id="c5w-1T-lFd"/>
+                <outlet property="sendBtn1" destination="aHy-1T-sud" id="sJC-Oz-raN"/>
+                <outlet property="sendBtn2" destination="X81-5t-gAI" id="7sV-yj-vXe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

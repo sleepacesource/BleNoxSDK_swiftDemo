@@ -33,14 +33,15 @@ class MusicListViewController: UIViewController, UITableViewDataSource,UITableVi
         
         let leftButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         leftButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        leftButton.setTitle("返回", for: UIControl.State.normal)
+//        leftButton.setTitle("返回", for: UIControl.State.normal)
+        leftButton.setImage(UIImage.init(named: "common_nav_btn_back_nor"), for: UIControl.State.normal)
         leftButton.addTarget(self, action: #selector(leftClick), for: UIControl.Event.touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
         // 自定义
         if self.mode != 1 {
             let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
             rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
-            rightButton.setTitle("保存", for: UIControl.State.normal)
+            rightButton.setTitle(NSLocalizedString("save", comment: ""), for: UIControl.State.normal)
             rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
             navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
         }

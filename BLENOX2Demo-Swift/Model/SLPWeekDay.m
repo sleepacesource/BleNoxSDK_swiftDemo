@@ -14,25 +14,25 @@
     NSString *weekDayName = @"";
     switch (index) {
         case WeekDayModeMonday:
-            weekDayName = @"周一";
+            weekDayName = NSLocalizedString(@"mon", nil);
             break;
         case WeekDayModeTuesday:
-            weekDayName = @"周二";
+            weekDayName = NSLocalizedString(@"tue", nil);
             break;
         case WeekDayModeWednesday:
-            weekDayName = @"周三";
+            weekDayName = NSLocalizedString(@"wed", nil);
             break;
         case WeekDayModeTursday:
-            weekDayName = @"周四";
+            weekDayName = NSLocalizedString(@"thur", nil);
             break;
         case WeekDayModeFriday:
-            weekDayName = @"周五";
+            weekDayName = NSLocalizedString(@"fri", nil);
             break;
         case WeekDayModeSatarday:
-            weekDayName = @"周六";
+            weekDayName = NSLocalizedString(@"sat", nil);
             break;
         case WeekDayModeSunday:
-            weekDayName = @"周日";
+            weekDayName = NSLocalizedString(@"sun", nil);
             break;
         default:
             break;
@@ -56,7 +56,7 @@
     if (repeatDayStr.length) {
         repeatDayStr = [repeatDayStr substringToIndex:repeatDayStr.length - 1];
     } else {
-        repeatDayStr = @"仅一次";
+        repeatDayStr = NSLocalizedString(@"once", nil);
     }
     return repeatDayStr;
 }

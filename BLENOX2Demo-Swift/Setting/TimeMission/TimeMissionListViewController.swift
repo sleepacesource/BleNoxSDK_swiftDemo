@@ -26,6 +26,7 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
     
     func initData() -> Void {
         self.timeMissionList = DataManager.shared()?.timeMissionList
+        self.emptyLbl.text = NSLocalizedString("sa_no_timer", comment: "")
         
         let hasData = self.timeMissionList!.count > 0
         
@@ -44,7 +45,7 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
         // 自定义
         let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        rightButton.setTitle("添加", for: UIControl.State.normal)
+        rightButton.setTitle(NSLocalizedString("add", comment: ""), for: UIControl.State.normal)
         rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
     }
@@ -52,7 +53,7 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
     @objc func rightClick() -> Void {
         let vc = TimeMissionViewController()
         vc.mode = 0
-        vc.title = "添加定时任务"
+        vc.title = NSLocalizedString("addTimeMission", comment: "")
         vc.addAlarmID = UInt64(NSDate().timeIntervalSince1970)
         self.navigationController?.pushViewController(vc, animated: true)
     }

@@ -43,19 +43,19 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                cell?.textLabel?.text = "闹钟"
+                cell?.textLabel?.text = NSLocalizedString("alarm", comment: "")
             } else if indexPath.row == 1 {
-                cell?.textLabel?.text = "小夜灯"
+                cell?.textLabel?.text = NSLocalizedString("nightLight", comment: "")
             } else if indexPath.row == 2 {
-                cell?.textLabel?.text = "定时任务"
+                cell?.textLabel?.text = NSLocalizedString("timeMission", comment: "")
             } else if indexPath.row == 3 {
-                cell?.textLabel?.text = "延迟关闭"
+                cell?.textLabel?.text = NSLocalizedString("delayClose", comment: "")
             }
         } else if (indexPath.section == 1) {
             if indexPath.row == 0 {
-                cell?.textLabel?.text = "挥手"
+                cell?.textLabel?.text = NSLocalizedString("Wave", comment: "")
             } else if indexPath.row == 1 {
-                cell?.textLabel?.text = "悬停"
+                cell?.textLabel?.text = NSLocalizedString("Hover", comment: "")
             }
         }
         
@@ -69,7 +69,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 1 {
-            return "手势设置"
+            return NSLocalizedString("setGesture", comment: "")
         }
         
         return ""
@@ -99,7 +99,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     // 闹钟页面
     func goAlarmPage() -> Void {
         let searchVC = AlarmViewController ()
-        searchVC.title = "闹钟"
+        searchVC.title = NSLocalizedString("alarm", comment: "")
         searchVC.addAlarmID = UInt64(NSDate().timeIntervalSince1970)
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
@@ -107,14 +107,14 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     // 小夜灯页面
     func goNightLightPage() -> Void {
         let searchVC = NightLightViewController ()
-        searchVC.title = "小夜灯"
+        searchVC.title = NSLocalizedString("nightLight", comment: "")
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
     
     // 定时任务页面
     func goTimeMissionPage() -> Void {
         let searchVC = TimeMissionListViewController ()
-        searchVC.title = "定时任务"
+        searchVC.title = NSLocalizedString("timeMission", comment: "")
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
     
@@ -132,7 +132,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     // 挥手页面
     func goWavePage() -> Void {
         let vc = GestureViewController ()
-        vc.title = "挥手"
+        vc.title = NSLocalizedString("Wave", comment: "")
         vc.mode = GestureMode.wave
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -140,7 +140,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     // 悬停页面
     func goHoverPage() -> Void {
         let vc = GestureViewController ()
-        vc.title = "悬停"
+        vc.title = NSLocalizedString("Hover", comment: "")
         vc.mode = GestureMode.hover
         self.navigationController?.pushViewController(vc, animated: true)
     }

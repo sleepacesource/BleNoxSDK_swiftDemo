@@ -141,3 +141,15 @@
 "pm"="PM";
 "app_name"="Nox SN902B SDK";
 "nox_music"="Nox床头灯";
+
+
+"timeMission"="定时任务";
+"addTimeMission"="添加定时任务";
+"delayClose"="延迟关闭";
+"closeTime"="关闭时间";
+"lightMode"="照明模式";
+"aidMode"="助眠模式";
+"openMode"="开启模式";
+"setMusic"="音乐设置";
+"setWaveColor"="设置挥手切换的灯光颜色";
+"setColor"="颜色设置";
