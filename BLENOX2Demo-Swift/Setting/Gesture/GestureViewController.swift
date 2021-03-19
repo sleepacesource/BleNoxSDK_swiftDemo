@@ -70,7 +70,11 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
                 Utils.showDeviceOperationFailed(-1, at: self)
                 return
             }
-            self.navigationController?.popViewController(animated: true)
+            Utils.showMessage("保存成功", controller: self)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.navigationController?.popViewController(animated: true)
+            }
+            
         })
     }
     
@@ -230,6 +234,7 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
     }
     
     func goSetCustomLight() -> Void {
-        
+        let vc = CustomColorViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -47,6 +47,8 @@
 		8F37B80426034C5600A69893 /* DataPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B80326034C5600A69893 /* DataPicker.xib */; };
 		8F37B80B260358A800A69893 /* HourMinutePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B808260358A800A69893 /* HourMinutePicker.xib */; };
 		8F37B80C260358A800A69893 /* HourMinutePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B809260358A800A69893 /* HourMinutePicker.m */; };
+		8F37B81226035F6F00A69893 /* CustomColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B81026035F6F00A69893 /* CustomColorViewController.swift */; };
+		8F37B81326035F6F00A69893 /* CustomColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B81126035F6F00A69893 /* CustomColorViewController.xib */; };
 		8F9C50CF260097F0004BB46B /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C50C1260097F0004BB46B /* AlarmListViewController.swift */; };
 		8F9C50D0260097F0004BB46B /* AlarmListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9C50C2260097F0004BB46B /* AlarmListViewController.xib */; };
 		8F9C50D1260097F0004BB46B /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C50C4260097F0004BB46B /* GestureViewController.swift */; };
@@ -162,6 +164,8 @@
 		8F37B808260358A800A69893 /* HourMinutePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourMinutePicker.xib; sourceTree = "<group>"; };
 		8F37B809260358A800A69893 /* HourMinutePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourMinutePicker.m; sourceTree = "<group>"; };
 		8F37B80A260358A800A69893 /* HourMinutePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourMinutePicker.h; sourceTree = "<group>"; };
+		8F37B81026035F6F00A69893 /* CustomColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorViewController.swift; sourceTree = "<group>"; };
+		8F37B81126035F6F00A69893 /* CustomColorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomColorViewController.xib; sourceTree = "<group>"; };
 		8F9C50C1260097F0004BB46B /* AlarmListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		8F9C50C2260097F0004BB46B /* AlarmListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmListViewController.xib; sourceTree = "<group>"; };
 		8F9C50C4260097F0004BB46B /* GestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
@@ -405,6 +409,8 @@
 			children = (
 				8F9C50C4260097F0004BB46B /* GestureViewController.swift */,
 				8F9C50C5260097F0004BB46B /* GestureViewController.xib */,
+				8F37B81026035F6F00A69893 /* CustomColorViewController.swift */,
+				8F37B81126035F6F00A69893 /* CustomColorViewController.xib */,
 			);
 			path = Gesture;
 			sourceTree = "<group>";
@@ -638,6 +644,7 @@
 				8F37B7D62603330000A69893 /* TitleCell.xib in Resources */,
 				8F9C50DF26009ABD004BB46B /* AlarmViewController.xib in Resources */,
 				8F37B80B260358A800A69893 /* HourMinutePicker.xib in Resources */,
+				8F37B81326035F6F00A69893 /* CustomColorViewController.xib in Resources */,
 				2685C45E2329DF9B009947EE /* SettingViewController.xib in Resources */,
 				2685C45A2329DF8A009947EE /* ControlViewController.xib in Resources */,
 				26E2792A2328EC23005A983D /* LaunchScreen.storyboard in Resources */,
@@ -737,6 +744,7 @@
 				2685C4672329F492009947EE /* LightViewController.swift in Sources */,
 				8F9C5124260197E6004BB46B /* MusicInfo.swift in Sources */,
 				8F37B7FC26034C4200A69893 /* DataPicker.swift in Sources */,
+				8F37B81226035F6F00A69893 /* CustomColorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

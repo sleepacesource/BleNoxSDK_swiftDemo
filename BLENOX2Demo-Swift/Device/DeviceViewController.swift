@@ -116,6 +116,7 @@ class DeviceViewController: UIViewController {
             else
             {
                 print("upgrade failed")
+                Utils.showMessage("升级失败", controller: self)
             }
         })
     }

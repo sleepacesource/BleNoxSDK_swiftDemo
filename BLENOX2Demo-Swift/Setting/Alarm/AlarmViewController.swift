@@ -107,9 +107,14 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     @objc func rightClick() -> Void {
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, alarmConfig: self.alarmDataNew!, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed {
-                self.navigationController?.popViewController(animated: true)
+                Utils.showMessage("保存成功", controller: self)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
             } else {
                 print("alarmConfig failed")
+                Utils.showDeviceOperationFailed(-1, at: self)
             }
         })
         
@@ -235,6 +240,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
                     self.tableView.reloadData()
                 } else {
                     print("stop preview failed")
+                    Utils.showDeviceOperationFailed(-1, at: self)
                 }
             })
         } else {
@@ -244,6 +250,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
                     self.tableView.reloadData()
                 } else {
                     print("preview failed")
+                    Utils.showDeviceOperationFailed(-1, at: self)
                 }
             })
         }

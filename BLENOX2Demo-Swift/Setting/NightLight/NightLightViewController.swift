@@ -96,7 +96,10 @@ class NightLightViewController: UIViewController,UITableViewDataSource,UITableVi
                 return
             }
             
-            self.navigationController?.popViewController(animated: true)
+            Utils.showMessage("保存成功", controller: self)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.navigationController?.popViewController(animated: true)
+            }
             
             SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOffLightTimeout: 0, callback: { (status:SLPDataTransferStatus, data: Any?) in
                 
