@@ -68,6 +68,8 @@ class CustomColorViewController: UIViewController {
     @IBOutlet weak var color7Label: UILabel!
     @IBOutlet weak var color7Lum: UILabel!
     
+    var cleaned = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -85,12 +87,12 @@ class CustomColorViewController: UIViewController {
         
         self.color7Lum.text = NSLocalizedString("liuguang", comment: "")
         
-        self.color1Send.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
-        self.color2Send.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
-        self.color3Send.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
-        self.color4Send.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
-        self.color5Send.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
-        self.color6Send.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
+        self.color1Send.setTitle(NSLocalizedString("预览", comment: ""), for: UIControl.State.normal)
+        self.color2Send.setTitle(NSLocalizedString("预览", comment: ""), for: UIControl.State.normal)
+        self.color3Send.setTitle(NSLocalizedString("预览", comment: ""), for: UIControl.State.normal)
+        self.color4Send.setTitle(NSLocalizedString("预览", comment: ""), for: UIControl.State.normal)
+        self.color5Send.setTitle(NSLocalizedString("预览", comment: ""), for: UIControl.State.normal)
+        self.color6Send.setTitle(NSLocalizedString("预览", comment: ""), for: UIControl.State.normal)
         
         self.color1Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
         self.color2Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
@@ -98,42 +100,102 @@ class CustomColorViewController: UIViewController {
         self.color4Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
         self.color5Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
         self.color6Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
+        
+        let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        rightButton.setTitle(NSLocalizedString("save", comment: ""), for: UIControl.State.normal)
+        rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+    }
+    
+    @objc func rightClick() -> Void {
+        
+    }
+    
+    func cleanColor(_ colorId: Int) -> Void {
+        
+    }
+    
+    func sendColor(_ r: UInt8, _ g: UInt8, _ b: UInt8, _ w: UInt8, _ colorId: Int) -> Void {
+        
     }
     
     @IBAction func sendColor1(_ sender: Any) {
+        self.sendColor(0, 0, 0, 0, 0)
     }
     
     @IBAction func cleanColor1(_ sender: Any) {
+        if !self.cleaned {
+            self.cleaned = true
+            return
+        }
+        
+        self.cleanColor(0)
     }
     
     
     @IBAction func sendColor2(_ sender: Any) {
+        self.sendColor(0, 0, 0, 0, 1)
     }
     
     @IBAction func cleanColor2(_ sender: Any) {
+        if !self.cleaned {
+            self.cleaned = true
+            return
+        }
+        
+        self.cleanColor(1)
     }
     
     @IBAction func sendColor3(_ sender: Any) {
+        self.sendColor(0, 0, 0, 0, 2)
     }
     
     @IBAction func cleanColor3(_ sender: Any) {
+        if !self.cleaned {
+            self.cleaned = true
+            return
+        }
+        
+        self.cleanColor(2)
     }
     
     @IBAction func sendColor4(_ sender: Any) {
+        self.sendColor(0, 0, 0, 0, 3)
     }
     
     @IBAction func cleanColor4(_ sender: Any) {
+        if !self.cleaned {
+            self.cleaned = true
+            return
+        }
+        
+        self.cleanColor(3)
     }
     
     @IBAction func sendColor5(_ sender: Any) {
+        self.sendColor(0, 0, 0, 0, 4)
     }
     
     @IBAction func cleanColor5(_ sender: Any) {
+        if !self.cleaned {
+            self.cleaned = true
+            return
+        }
+        
+        self.cleanColor(4)
     }
     
     @IBAction func sendColor6(_ sender: Any) {
+        self.sendColor(0, 0, 0, 0, 5)
     }
     
     @IBAction func cleanColor6(_ sender: Any) {
+        if !self.cleaned {
+            self.cleaned = true
+            return
+        }
+        
+        self.cleanColor(5)
     }
 }

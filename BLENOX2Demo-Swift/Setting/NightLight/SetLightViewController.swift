@@ -36,6 +36,17 @@ class SetLightViewController: UIViewController {
         self.brightnessLabel.text = NSLocalizedString("luminance", comment: "")
         self.sendBtn1.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
         self.sendBtn2.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
+        
+        let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        rightButton.setTitle(NSLocalizedString("save", comment: ""), for: UIControl.State.normal)
+        rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+    }
+    
+    @objc func rightClick() ->Void {
+        self.setLightBlock!(self.r!, self.g!, self.b!, self.w!, self.brightness!)
+        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func sendColorAction(_ sender: UIButton) {
@@ -90,7 +101,7 @@ class SetLightViewController: UIViewController {
                 self.b = UInt8(b!)
                 self.w = UInt8(w!)
                 self.brightness = UInt8(brightness)
-                self.setLightBlock!(self.r!, self.g!, self.b!, self.w!, self.brightness!)
+//                self.setLightBlock!(self.r!, self.g!, self.b!, self.w!, self.brightness!)
             })
         } else {
             Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
@@ -119,7 +130,7 @@ class SetLightViewController: UIViewController {
                 }
                 
                 self.brightness = brightness
-                self.setLightBlock!(self.r!, self.g!, self.b!, self.w!, self.brightness!)
+//                self.setLightBlock!(self.r!, self.g!, self.b!, self.w!, self.brightness!)
             })
         } else {
             Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)

@@ -269,6 +269,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     func goSelectMode() -> Void {
         let picker = Bundle.main.loadNibNamed("DataPicker", owner: nil, options: nil)?.first as! DataPicker
+        picker.dataList = [NSLocalizedString("aidMode", comment: ""), NSLocalizedString("lightMode", comment: "")]
         picker.selectedRow = self.openMode
         picker.reload()
         picker.backgroundColor = UIColor.clear

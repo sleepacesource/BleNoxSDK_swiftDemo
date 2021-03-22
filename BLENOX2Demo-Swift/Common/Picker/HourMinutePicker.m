@@ -36,7 +36,7 @@ static const CGFloat kHourMinutePickerTitleFont = 28.0;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *timePicker;
 
-@property (nonatomic, assign) NSInteger hour;
+@property (nonatomic, assign) NSInteger selectedRow;
 
 @property (nonatomic, copy) NSArray *dataList;
 @end
@@ -48,7 +48,7 @@ static const CGFloat kHourMinutePickerTitleFont = 28.0;
     return selectView;
 }
 
-- (void)showInView:(UIView *)view hour:(NSInteger)hour finishHandle:(FinishSelectHourMinuteBlock)finishHandle cancelHandle:(CancelSelectHourMinuteBlock)cancelHandle
+- (void)showInView:(UIView *)view selectedRow:(NSInteger)selectedRow dataList:(NSArray *)dataList finishHandle:(FinishSelectHourMinuteBlock)finishHandle cancelHandle:(CancelSelectHourMinuteBlock)cancelHandle
 {
     [view addSubview:self];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -67,9 +67,10 @@ static const CGFloat kHourMinutePickerTitleFont = 28.0;
     } completion:^(BOOL finished) {
     }];
     
-    self.hour = hour;
+    self.selectedRow = selectedRow;
+    self.dataList = dataList;
     
-    [self performSelectorOnMainThread:@selector(setFirstComponentSelectedRow:) withObject:@(hour) waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(setFirstComponentSelectedRow:) withObject:@(selectedRow) waitUntilDone:NO];
     
     _finishHandle = finishHandle;
     _cancelHandle = cancelHandle;
@@ -105,8 +106,6 @@ static const CGFloat kHourMinutePickerTitleFont = 28.0;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapedBg:)];
     [self.maskView addGestureRecognizer:tap];
-    
-    self.dataList = @[@"0.5", @"1", @"1.5"];
 }
 
 - (void)tapedBg:(UIGestureRecognizer *)ges
@@ -188,6 +187,9 @@ static const CGFloat kHourMinutePickerTitleFont = 28.0;
             break;
         case HourMinutePickerComponent_HourUnit:
             title =NSLocalizedString(@"hour", nil);
+            if (self.selectedRow == 0) {
+                title = @"";
+            }
         default:
             break;
     }
@@ -206,7 +208,8 @@ static const CGFloat kHourMinutePickerTitleFont = 28.0;
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     if (component == 0) {
-        self.hour = row;
+        self.selectedRow = row;
+        [pickerView reloadComponent:1];
     }
 }
 
@@ -219,7 +222,7 @@ static const CGFloat kHourMinutePickerTitleFont = 28.0;
 - (IBAction)done:(id)sender {
     
     if (_finishHandle) {
-        _finishHandle(self.hour);
+        _finishHandle(self.selectedRow);
     }
     [self hideViewWithAnimated:YES];
 }

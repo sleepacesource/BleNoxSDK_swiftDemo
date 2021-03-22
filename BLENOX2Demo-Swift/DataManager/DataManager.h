@@ -27,6 +27,8 @@
 
 @property (nonatomic, assign) NSInteger volumn;
 
+@property (nonatomic, assign) UInt8 playMode;
+
 @property (nonatomic, strong) BleNoxAidInfo *aidInfo;
 
 @property (nonatomic, strong) BleNoxNightLightInfo *nightLightInfo;
@@ -38,6 +40,8 @@
 @property (nonatomic, strong) NSMutableArray *alarmList;
 
 @property (nonatomic, strong) NSMutableArray *timeMissionList;
+
+@property (nonatomic, assign) NSInteger selectCloseRow;
 
 + (DataManager *)sharedDataManager;
 

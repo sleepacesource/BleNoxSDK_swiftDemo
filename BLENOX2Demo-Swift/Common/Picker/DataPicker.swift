@@ -26,6 +26,8 @@ class DataPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var confirmBlock: ConfirmBlock?
     
+    var dataList: Array<String>?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -48,7 +50,7 @@ class DataPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 2
+        return self.dataList!.count
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -60,11 +62,10 @@ class DataPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if row == 0 {
-            return NSLocalizedString("aidMode", comment: "")
-        } else {
-            return NSLocalizedString("lightMode", comment: "")
-        }
+        
+        let text = dataList![row]
+        
+        return text
     }
     
     @IBAction func cancelAction(_ sender: Any) {

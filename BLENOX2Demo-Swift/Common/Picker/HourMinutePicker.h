@@ -24,7 +24,7 @@ typedef NS_ENUM(NSInteger,HourMinutePickerComponent) {
 
 + (HourMinutePicker *)hourMinutePickerSelectView;
 
-- (void)showInView:(UIView *)view hour:(NSInteger)hour finishHandle:(FinishSelectHourMinuteBlock)finishHandle cancelHandle:(CancelSelectHourMinuteBlock)cancelHandle;
+- (void)showInView:(UIView *)view selectedRow:(NSInteger)selectedRow dataList:(NSArray *)dataList finishHandle:(FinishSelectHourMinuteBlock)finishHandle cancelHandle:(CancelSelectHourMinuteBlock)cancelHandle;
 
 @end
 

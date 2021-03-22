@@ -43,6 +43,17 @@ class SetTimeViewController: UIViewController,UITableViewDataSource,UITableViewD
         time24.hour = Int(self.startHour!)
         time24.minute = Int(self.startMinute!)
         self.timePicker.setTime(time24, animated: true)
+        
+        let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        rightButton.setTitle(NSLocalizedString("save", comment: ""), for: UIControl.State.normal)
+        rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+    }
+    
+    @objc func rightClick() ->Void {
+        self.setTimeBlock!(self.startHour!, self.startMinute!, self.endHour!, self.endMinute!)
+        self.navigationController?.popViewController(animated: true)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -133,6 +144,6 @@ class SetTimeViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
         self.tableView.reloadData()
         
-        self.setTimeBlock!(self.startHour!, self.startMinute!, self.endHour!, self.endMinute!)
+//        self.setTimeBlock!(self.startHour!, self.startMinute!, self.endHour!, self.endMinute!)
     }
 }

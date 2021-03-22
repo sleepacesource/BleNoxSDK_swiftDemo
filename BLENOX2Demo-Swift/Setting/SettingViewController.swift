@@ -146,9 +146,10 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     // 倒计时页面
     func goCountDownPage() -> Void {
+        let dataList = ["关闭", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6"];
         let picker = Bundle.main.loadNibNamed("HourMinutePicker", owner: nil, options: nil)?.first as! HourMinutePicker
-        picker.show(in: UIApplication.shared.keyWindow!, hour: 3) { (hour) in
-            
+        picker.show(in: UIApplication.shared.keyWindow!, selectedRow: DataManager.shared().selectCloseRow, dataList: dataList) { (selectedRow) in
+            DataManager.shared()?.selectCloseRow = selectedRow
         } cancelHandle: {
             
         }

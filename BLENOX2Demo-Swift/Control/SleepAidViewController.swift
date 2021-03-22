@@ -15,6 +15,14 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var arrowIcon1: UIImageView!
     @IBOutlet weak var line1: UIView!
     @IBOutlet weak var line2: UIView!
+    
+    @IBOutlet weak var repeatMode: UILabel!
+    @IBOutlet weak var repeatNameLabel: UILabel!
+    @IBOutlet weak var line11: UIView!
+    @IBOutlet weak var line12: UIView!
+    @IBOutlet weak var arrowIcon3: UIImageView!
+    
+    
     @IBOutlet weak var volLabel: UILabel!
     @IBOutlet weak var volTextField: UITextField!
     @IBOutlet weak var sendBtn: UIButton!
@@ -48,12 +56,16 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
 
     var isPlayingMusic = false
     
+    var playMode: UInt8 = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
         self.initData()
+        
+        self.playMode = DataManager.shared().playMode
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,6 +126,8 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
     func setUI() -> Void {
         self.line1.backgroundColor = Theme.normalLineColor()!
         self.line2.backgroundColor = Theme.normalLineColor()!
+        self.line11.backgroundColor = Theme.normalLineColor()!
+        self.line12.backgroundColor = Theme.normalLineColor()!
         self.line3.backgroundColor = Theme.normalLineColor()!
         self.line4.backgroundColor = Theme.normalLineColor()!
         self.line5.backgroundColor = Theme.normalLineColor()!
@@ -121,7 +135,8 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         
         self.arrowIcon1.image = UIImage.init(named: "common_list_icon_leftarrow")
         self.arrowIcon2.image = UIImage.init(named: "common_list_icon_leftarrow")
-        
+        self.arrowIcon3.image = UIImage.init(named: "common_list_icon_leftarrow")
+
         self.setMusicUI()
         
         self.setLightUI()
@@ -132,6 +147,8 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
     func setMusicUI() -> Void {
         self.musicLabel.text = NSLocalizedString("music", comment: "")
         self.volLabel.text = NSLocalizedString("volume", comment: "")
+        self.repeatMode.text = NSLocalizedString("循环模式", comment: "")
+        self.repeatNameLabel.text = NSLocalizedString("顺序循环", comment: "")
         self.musicLabel.textColor = Theme.c4()
         self.volLabel.textColor = Theme.c4()
         
@@ -230,6 +247,25 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func selectRepeatMode(_ sender: UIButton) {
+        let picker = Bundle.main.loadNibNamed("DataPicker", owner: nil, options: nil)?.first as! DataPicker
+        let list = [NSLocalizedString("顺序循环", comment: ""), NSLocalizedString("随机播放", comment: ""), NSLocalizedString("单曲循环", comment: "")]
+        picker.dataList = list
+        picker.selectedRow = Int(self.playMode)
+        picker.reload()
+        picker.backgroundColor = UIColor.clear
+        picker.cancelBlock = {() ->() in
+            picker.removeFromSuperview()
+        }
+        picker.confirmBlock = {(row) ->() in
+            self.playMode = UInt8(row)
+            self.repeatNameLabel.text = list[row]
+            picker.removeFromSuperview()
+        }
+        Utils.addSubView(picker, suitableTo: UIApplication.shared.keyWindow)
+    }
+    
+    
     @IBAction func sendVolAction(_ sender: Any) {
         let len = self.volTextField.text!.count > 0
         if !len {
@@ -260,7 +296,7 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func _playMusic() -> Void {
-        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnsleepAidMusic: UInt16(DataManager.shared().assistMusicID), volume: UInt8(DataManager.shared().volumn), playMode: 2, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnsleepAidMusic: 30001, volume: UInt8(DataManager.shared().volumn), playMode: 0, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             
         })
     }
@@ -414,6 +450,12 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         let g = UInt8(self.colorGTextfFiled.text!)
         let b = UInt8(self.colorBTextFiled.text!)
         let w = UInt8(self.colorWTextFiled.text!)
+        
+        let len = self.colorGTextfFiled.text!.count > 0
+        if !len {
+            Utils.showMessage(NSLocalizedString("input_0_120", comment: ""), controller: self)
+            return
+        }
 
         
         let gValid = (g! >= 0) && (g! <= 120);
@@ -423,6 +465,11 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
             return;
         }
         
+        let bLen = self.brightnessTextFiled.text!.count > 0
+        if !bLen {
+            Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
+            return
+        }
         let brightness = UInt8(self.brightnessTextFiled.text!)
         let brightValid = (brightness! >= 0) && (brightness! <= 100);
         if (!brightValid) {
@@ -430,6 +477,11 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
             return;
         }
         
+        let vLen = self.volTextField.text!.count > 0
+        if !vLen {
+            Utils.showMessage(NSLocalizedString("input_0_16", comment: ""), controller: self)
+            return
+        }
         let volumn = UInt8(self.volTextField.text!)
         if (volumn! < 1 || volumn! > 16) {
             Utils.showMessage(NSLocalizedString("input_0_16", comment: ""), controller: self)
