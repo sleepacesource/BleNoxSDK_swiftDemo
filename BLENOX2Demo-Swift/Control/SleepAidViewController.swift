@@ -296,7 +296,7 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func _playMusic() -> Void {
-        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnsleepAidMusic: 30001, volume: UInt8(DataManager.shared().volumn), playMode: 0, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnsleepAidMusic: UInt16(DataManager.shared().assistMusicID), volume: UInt8(DataManager.shared().volumn), playMode: self.playMode, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             
         })
     }
