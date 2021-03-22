@@ -332,7 +332,7 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
                 }
             })
         } else {
-            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnsleepAidMusic: UInt16(DataManager.shared().assistMusicID), volume: UInt8(DataManager.shared().volumn), playMode: 2, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnsleepAidMusic: UInt16(DataManager.shared().assistMusicID), volume: UInt8(DataManager.shared().volumn), playMode: self.playMode, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
                 if status != SLPDataTransferStatus.succeed  {
                     Utils.showDeviceOperationFailed(-1, at: self)
                 } else {
