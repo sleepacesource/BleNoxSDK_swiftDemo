@@ -10,6 +10,7 @@
 #import <BleNox/BleNoxAidInfo.h>
 #import <BleNox/BleNoxNightLightInfo.h>
 #import <BleNox/BleNoxUpgradeInfo.h>
+#import <BleNox/BleNoxTimeMission.h>
 
 #define SharedDataManager [DataManager sharedDataManager]
 @class CBPeripheral;
@@ -39,9 +40,9 @@
 
 @property (nonatomic, strong) NSMutableArray *alarmList;
 
-@property (nonatomic, strong) NSMutableArray *timeMissionList;
+@property (nonatomic, strong) NSArray<BleNoxTimeMission *> *timeMissionList;
 
-@property (nonatomic, assign) NSInteger selectCloseRow;
+@property (nonatomic, assign) UInt16 delayTime;
 
 + (DataManager *)sharedDataManager;
 

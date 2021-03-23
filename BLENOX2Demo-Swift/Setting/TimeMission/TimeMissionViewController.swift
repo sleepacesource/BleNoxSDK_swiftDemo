@@ -10,8 +10,9 @@ import UIKit
 
 class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    var alarmDataNew:BleNoxAlarmInfo?
-    var addAlarmID: UInt64?
+    var timeMissionNew: BleNoxTimeMission?
+    
+    var originTimeMission: BleNoxTimeMission?
     
     var mode: Int?
     
@@ -23,48 +24,43 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         var musicList = [MusicInfo]()
         
         var musicInfo = MusicInfo()
-        musicInfo.musicID = 31001
-        musicInfo.musicName = NSLocalizedString("alarm_list_1", comment: "")
+        musicInfo.musicID = 30001
+        musicInfo.musicName = NSLocalizedString("music_list_sea", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
-        musicInfo.musicID = 31002
-        musicInfo.musicName = NSLocalizedString("alarm_list_2", comment: "")
+        musicInfo.musicID = 30002
+        musicInfo.musicName = NSLocalizedString("music_list_sun", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
-        musicInfo.musicID = 31003
-        musicInfo.musicName = NSLocalizedString("alarm_list_3", comment: "")
+        musicInfo.musicID = 30003
+        musicInfo.musicName = NSLocalizedString("music_list_dance", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
-        musicInfo.musicID = 31004
-        musicInfo.musicName = NSLocalizedString("alarm_list_4", comment: "")
+        musicInfo.musicID = 30004
+        musicInfo.musicName = NSLocalizedString("music_list_star", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
-        musicInfo.musicID = 31005
-        musicInfo.musicName = NSLocalizedString("alarm_list_5", comment: "")
+        musicInfo.musicID = 30005
+        musicInfo.musicName = NSLocalizedString("music_list_solo", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
-        musicInfo.musicID = 31006
-        musicInfo.musicName = NSLocalizedString("alarm_list_6", comment: "")
+        musicInfo.musicID = 30006
+        musicInfo.musicName = NSLocalizedString("music_list_rain", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
-        musicInfo.musicID = 31007
-        musicInfo.musicName = NSLocalizedString("alarm_list_7", comment: "")
+        musicInfo.musicID = 30007
+        musicInfo.musicName = NSLocalizedString("music_list_wind", comment: "")
         musicList.append(musicInfo)
         
         musicInfo = MusicInfo()
-        musicInfo.musicID = 31008
-        musicInfo.musicName = NSLocalizedString("alarm_list_8", comment: "")
-        musicList.append(musicInfo)
-        
-        musicInfo = MusicInfo()
-        musicInfo.musicID = 31009
-        musicInfo.musicName = NSLocalizedString("alarm_list_9", comment: "")
+        musicInfo.musicID = 30008
+        musicInfo.musicName = NSLocalizedString("music_list_summer", comment: "")
         musicList.append(musicInfo)
         
         return musicList
@@ -79,21 +75,56 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     func initData() -> Void {
-        self.addAlarmID = 1000
         
-        self.alarmDataNew = BleNoxAlarmInfo()
-        self.alarmDataNew!.alarmID = self.addAlarmID!;
-        self.alarmDataNew!.isOpen = true;
-        self.alarmDataNew!.hour = 8;
-        self.alarmDataNew!.minute = 0;
-        self.alarmDataNew!.repeat = 0;
-        self.alarmDataNew!.snoozeTime = 6;
-        self.alarmDataNew!.snoozeLength = 9;
-        self.alarmDataNew!.volume = 16;
-        self.alarmDataNew!.brightness = 100;
-        self.alarmDataNew!.shake = false;
-        self.alarmDataNew!.musicID = 31001;
-        self.alarmDataNew!.timestamp = UInt32(NSDate().timeIntervalSince1970)
+        // 0： 添加  1：编辑
+        if self.mode == 0 {
+            let timeMissionNew = BleNoxTimeMission()
+            timeMissionNew.timeID = 0;
+            timeMissionNew.isOpen = true;
+            timeMissionNew.startHour = 20;
+            timeMissionNew.startMinute = 0;
+            timeMissionNew.endHour = 21;
+            timeMissionNew.startMinute = 0;
+            timeMissionNew.repeat = 0;
+            timeMissionNew.mode = 1;
+            
+            let light = SLPLight()
+            light.r = 155;
+            light.g = 32;
+            light.b = 93;
+            light.w = 255;
+            timeMissionNew.light = light;
+            
+            timeMissionNew.brightness = 100;
+            timeMissionNew.musicID = 30001;
+            timeMissionNew.volume = 10;
+            timeMissionNew.valid = 1
+            
+            self.timeMissionNew = timeMissionNew
+        } else {
+            let timeMissionNew = BleNoxTimeMission()
+            timeMissionNew.timeID = self.originTimeMission!.timeID
+            timeMissionNew.isOpen = self.originTimeMission!.isOpen
+            timeMissionNew.startHour = self.originTimeMission!.startHour
+            timeMissionNew.startMinute = self.originTimeMission!.startMinute
+            timeMissionNew.endHour = self.originTimeMission!.endHour
+            timeMissionNew.startMinute = self.originTimeMission!.endMinute
+            timeMissionNew.repeat = self.originTimeMission!.repeat
+            timeMissionNew.mode = self.originTimeMission!.mode
+            
+            let light = SLPLight()
+            light.r = self.originTimeMission!.light.r
+            light.g = self.originTimeMission!.light.g
+            light.b = self.originTimeMission!.light.b
+            light.w = self.originTimeMission!.light.w
+            timeMissionNew.light = self.originTimeMission!.light
+            
+            timeMissionNew.brightness = self.originTimeMission!.brightness
+            timeMissionNew.musicID = self.originTimeMission!.musicID
+            timeMissionNew.volume = self.originTimeMission!.volume
+            timeMissionNew.valid = self.originTimeMission!.valid
+            self.timeMissionNew = timeMissionNew
+        }
     }
     
     func setUI() -> Void {
@@ -107,25 +138,29 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     @objc func rightClick() -> Void {
-        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, alarmConfig: self.alarmDataNew!, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-            if status == SLPDataTransferStatus.succeed {
-                SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOffLightTimeout: 0, callback: { (status:SLPDataTransferStatus, data: Any?) in
-                    
-                })
+        self.timeMissionNew!.valid = 1
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, timeMissionConfig: self.timeMissionNew, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+            if status != SLPDataTransferStatus.succeed {
+                Utils.showDeviceOperationFailed(-1, at: self)
+                return
+            }
+            
+            Utils.showMessage(NSLocalizedString("save_succeed", comment: ""), controller: self)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.navigationController?.popViewController(animated: true)
-            } else {
-                print("alarmConfig failed")
             }
         })
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.timeMissionNew!.mode == 1 {
+            return 5
+        }
         return 6
     }
     
-    func getAlarmTimeString(_ dataModel: BleNoxAlarmInfo) -> String {
-        let timeStr = String(format: "%.2d:%.2d", dataModel.hour, dataModel.minute)
+    func getAlarmTimeString(_ hour: UInt8, _ minute: UInt8) -> String {
+        let timeStr = String(format: "%.2d:%.2d", hour, minute)
         return timeStr
     }
     
@@ -150,25 +185,25 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
             normalCell.titleLabel?.text = NSLocalizedString("start_time", comment: "")
-            normalCell.subTitleLabel?.text = self.getAlarmTimeString(self.alarmDataNew!)
+            normalCell.subTitleLabel?.text = self.getAlarmTimeString(self.timeMissionNew!.startHour, self.timeMissionNew!.startMinute)
             return normalCell
         } else if indexPath.row == 1 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
             normalCell.titleLabel?.text = NSLocalizedString("closeTime", comment: "")
-            normalCell.subTitleLabel?.text = self.getAlarmTimeString(self.alarmDataNew!)
+            normalCell.subTitleLabel?.text = self.getAlarmTimeString(self.timeMissionNew!.endHour, self.timeMissionNew!.endMinute)
             return normalCell
         }
         else if indexPath.row == 2 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
             normalCell.titleLabel?.text = NSLocalizedString("reply", comment: "")
-            normalCell.subTitleLabel?.text = SLPWeekDay.getAlarmRepeatDayString(withWeekDay: self.alarmDataNew!.repeat)
+            normalCell.subTitleLabel?.text = SLPWeekDay.getAlarmRepeatDayString(withWeekDay: self.timeMissionNew!.repeat)
             return normalCell
         } else if indexPath.row == 3 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            if self.openMode == 1 {
+            if self.timeMissionNew!.mode == 1 {
                 normalCell.subTitleLabel?.text = NSLocalizedString("lightMode", comment: "")
             } else {
                 normalCell.subTitleLabel?.text = NSLocalizedString("aidMode", comment: "")
@@ -183,7 +218,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         } else if indexPath.row == 5 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.subTitleLabel?.text = self.getMusicName(self.alarmDataNew!.musicID)
+//            normalCell.subTitleLabel?.text = self.getMusicName(self.timeMissionNew!.musicID)
             normalCell.titleLabel?.text = NSLocalizedString("setMusic", comment: "")
             return normalCell
         }
@@ -242,12 +277,9 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     @objc func deleteMission() {
-        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, stopAlarmRreviewTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-            if status == SLPDataTransferStatus.succeed {
-                self.navigationController?.popViewController(animated: true)
-            } else {
-                
-            }
+        self.timeMissionNew!.valid = 0
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, timeMissionConfig: self.timeMissionNew, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+            
         })
     }
     
@@ -258,8 +290,8 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
             values.append(i)
         }
         minuteSelectView.iValues = values
-        minuteSelectView.show(in: UIApplication.shared.keyWindow!, mode: SLPMinutePickerMode.second, time: Int(self.alarmDataNew!.volume)) { (volume) in
-            self.alarmDataNew!.volume = UInt8(volume)
+        minuteSelectView.show(in: UIApplication.shared.keyWindow!, mode: SLPMinutePickerMode.second, time: Int(self.timeMissionNew!.volume)) { (volume) in
+            self.timeMissionNew!.volume = UInt8(volume)
             self.tableView.reloadData()
         } cancelHandle: {
             
@@ -277,7 +309,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
             picker.removeFromSuperview()
         }
         picker.confirmBlock = {(row) ->() in
-            self.openMode = row
+            self.timeMissionNew!.mode = UInt8(row)
             self.tableView.reloadData()
             picker.removeFromSuperview()
         }
@@ -297,9 +329,9 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         vc.title = NSLocalizedString("setMusic", comment: "")
         let musicList = self.getMusicList()
         vc.musicList = musicList
-        vc.musicID = self.alarmDataNew!.musicID
+        vc.musicID = self.timeMissionNew!.musicID
         vc.selectMusicBlock = {(musicID) ->() in
-            self.alarmDataNew!.musicID = musicID
+            self.timeMissionNew!.musicID = musicID
             self.tableView!.reloadData()
         }
         self.navigationController?.pushViewController(vc, animated: true)
@@ -307,13 +339,13 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     func goSelectEndTime() -> Void {
         let time = SLPTime24.init()
-        time.hour = Int(self.alarmDataNew!.hour)
-        time.minute = Int(self.alarmDataNew!.minute)
+        time.hour = Int(self.timeMissionNew!.endHour)
+        time.minute = Int(self.timeMissionNew!.endMinute)
         
         let timePicker = Bundle.main.loadNibNamed("TimePickerSelectView", owner: nil, options: nil)?.first as! TimePickerSelectView
         timePicker.show(in: UIApplication.shared.keyWindow!, mode: SLPTimePickerMode._24Hour, time: time) { (time24) in
-            self.alarmDataNew!.hour = UInt8(time24.hour)
-            self.alarmDataNew!.minute = UInt8(time24.minute)
+            self.timeMissionNew!.endHour = UInt8(time24.hour)
+            self.timeMissionNew!.endMinute = UInt8(time24.minute)
             self.tableView.reloadData()
         } cancelHandle: {
             
@@ -322,13 +354,13 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     func goSelectTime() -> Void {
         let time = SLPTime24.init()
-        time.hour = Int(self.alarmDataNew!.hour)
-        time.minute = Int(self.alarmDataNew!.minute)
+        time.hour = Int(self.timeMissionNew!.startHour)
+        time.minute = Int(self.timeMissionNew!.startMinute)
         
         let timePicker = Bundle.main.loadNibNamed("TimePickerSelectView", owner: nil, options: nil)?.first as! TimePickerSelectView
         timePicker.show(in: UIApplication.shared.keyWindow!, mode: SLPTimePickerMode._24Hour, time: time) { (time24) in
-            self.alarmDataNew!.hour = UInt8(time24.hour)
-            self.alarmDataNew!.minute = UInt8(time24.minute)
+            self.timeMissionNew!.startHour = UInt8(time24.hour)
+            self.timeMissionNew!.startMinute = UInt8(time24.minute)
             self.tableView.reloadData()
         } cancelHandle: {
             
@@ -339,9 +371,9 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     func goSelectWeekdayPage() -> Void {
         let vc = WeekdaySelectViewController()
         vc.title = NSLocalizedString("reply", comment: "")
-        vc.selectWeekDay = self.alarmDataNew!.repeat
+        vc.selectWeekDay = self.timeMissionNew!.repeat
         vc.selectWeekdayBlock = {(weekday) ->() in
-            self.alarmDataNew!.repeat = weekday
+            self.timeMissionNew!.repeat = weekday
             self.tableView!.reloadData()
         }
         self.navigationController?.pushViewController(vc, animated: true)

@@ -90,10 +90,10 @@
 		8F9C51672601EBC4004BB46B /* SetTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9C51652601EBC4004BB46B /* SetTimeViewController.xib */; };
 		8F9C51712601F4C9004BB46B /* Utils+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C516E2601F4C8004BB46B /* Utils+UI.m */; };
 		8F9C51722601F4C9004BB46B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C516F2601F4C8004BB46B /* Utils.m */; };
-		8FD51C222602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD51C202602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.swift */; };
-		8FD51C232602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD51C212602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.xib */; };
 		8FD51C292602F0CF002C02A0 /* TimeMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD51C272602F0CF002C02A0 /* TimeMissionViewController.swift */; };
 		8FD51C2A2602F0CF002C02A0 /* TimeMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD51C282602F0CF002C02A0 /* TimeMissionViewController.xib */; };
+		8FDBE57326097DD90070824C /* TitleValueSwitchCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBE57126097DD90070824C /* TitleValueSwitchCellTableViewCell.swift */; };
+		8FDBE57426097DD90070824C /* TitleValueSwitchCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDBE57226097DD90070824C /* TitleValueSwitchCellTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,10 +223,10 @@
 		8F9C516E2601F4C8004BB46B /* Utils+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Utils+UI.m"; sourceTree = "<group>"; };
 		8F9C516F2601F4C8004BB46B /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		8F9C51702601F4C9004BB46B /* UtilsHeads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilsHeads.h; sourceTree = "<group>"; };
-		8FD51C202602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueSwitchCellTableViewCell.swift; sourceTree = "<group>"; };
-		8FD51C212602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleValueSwitchCellTableViewCell.xib; sourceTree = "<group>"; };
 		8FD51C272602F0CF002C02A0 /* TimeMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMissionViewController.swift; sourceTree = "<group>"; };
 		8FD51C282602F0CF002C02A0 /* TimeMissionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeMissionViewController.xib; sourceTree = "<group>"; };
+		8FDBE57126097DD90070824C /* TitleValueSwitchCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueSwitchCellTableViewCell.swift; sourceTree = "<group>"; };
+		8FDBE57226097DD90070824C /* TitleValueSwitchCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleValueSwitchCellTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,12 +465,12 @@
 				8F9C50FF2600A34E004BB46B /* BaseTableViewCell.swift */,
 				8F9C51122600B70A004BB46B /* SelectItemCell.swift */,
 				8F9C51132600B70A004BB46B /* SelectItemCell.xib */,
-				8FD51C202602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.swift */,
-				8FD51C212602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.xib */,
 				8F37B7D32603330000A69893 /* TitleCell.swift */,
 				8F37B7D42603330000A69893 /* TitleCell.xib */,
 				8F37B7F426033D4400A69893 /* TitleArrowCell.swift */,
 				8F37B7F526033D4400A69893 /* TitleArrowCell.xib */,
+				8FDBE57126097DD90070824C /* TitleValueSwitchCellTableViewCell.swift */,
+				8FDBE57226097DD90070824C /* TitleValueSwitchCellTableViewCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -674,6 +674,7 @@
 				2685C4622329E03B009947EE /* MainViewController.xib in Resources */,
 				8F37B8302604364D00A69893 /* Localizable.strings in Resources */,
 				26E279252328EC20005A983D /* Main.storyboard in Resources */,
+				8FDBE57426097DD90070824C /* TitleValueSwitchCellTableViewCell.xib in Resources */,
 				8F9C51602601EA9E004BB46B /* SetLightViewController.xib in Resources */,
 				2685C4712329F534009947EE /* SearchViewController.xib in Resources */,
 				8F9C51522601D33B004BB46B /* SLPMinuteSelectView.xib in Resources */,
@@ -683,7 +684,6 @@
 				2685C4682329F492009947EE /* LightViewController.xib in Resources */,
 				26D84AD32334824600311489 /* device_btn_refresh_nor@3x.png in Resources */,
 				2684E8EA2490C23900ADF97E /* SN902B_V1.28_20191129.MVA in Resources */,
-				8FD51C232602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.xib in Resources */,
 				8F9C50D8260097F0004BB46B /* TimeMissionListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -709,13 +709,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FD51C222602ED30002C02A0 /* TitleValueSwitchCellTableViewCell.swift in Sources */,
 				8F9C50D1260097F0004BB46B /* GestureViewController.swift in Sources */,
 				8F9C50FA2600A0E4004BB46B /* SwtichTableViewCell.swift in Sources */,
 				2685C4552329DF75009947EE /* DeviceViewController.swift in Sources */,
 				8F9C513F2601C9D3004BB46B /* Theme.m in Sources */,
 				26F4AEF02332217700575C02 /* DataManager.m in Sources */,
 				8F9C512C2601C9C0004BB46B /* TimePickerSelectView.m in Sources */,
+				8FDBE57326097DD90070824C /* TitleValueSwitchCellTableViewCell.swift in Sources */,
 				8F9C51002600A34E004BB46B /* BaseTableViewCell.swift in Sources */,
 				8FD51C292602F0CF002C02A0 /* TimeMissionViewController.swift in Sources */,
 				8F9C51712601F4C9004BB46B /* Utils+UI.m in Sources */,

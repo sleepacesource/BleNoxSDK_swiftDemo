@@ -20,6 +20,16 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         NotificationCenter.default.addObserver(self, selector: #selector(deviceConnected), name: NSNotification.Name(rawValue: kNotificationNameBLEDeviceConnected), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deviceDisConnected), name: NSNotification.Name(rawValue: kNotificationNameBLEDeviceDisconnect), object: nil)
+        
+        self.initData()
+    }
+    
+    func initData() -> Void {
+//        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, getTimeMissionListTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+//            if status == SLPDataTransferStatus.succeed {
+//                DataManager.shared()?.timeMissionList = data as? [BleNoxTimeMission]
+//            }
+//        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -147,9 +157,26 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     // 倒计时页面
     func goCountDownPage() -> Void {
         let dataList = ["关闭", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6"];
+        
+        let delayTime = DataManager.shared().delayTime
+        let minuteList: Array<UInt16> = [0, 30, 60, 90, 120, 150,180, 210, 240, 270, 300, 330, 360]
+        
+        var selectedRow = 0
+        for i in 0..<minuteList.count {
+            let minute = minuteList[i]
+            if minute == delayTime {
+                selectedRow = i
+                break
+            }
+        }
         let picker = Bundle.main.loadNibNamed("HourMinutePicker", owner: nil, options: nil)?.first as! HourMinutePicker
-        picker.show(in: UIApplication.shared.keyWindow!, selectedRow: DataManager.shared().selectCloseRow, dataList: dataList) { (selectedRow) in
-            DataManager.shared()?.selectCloseRow = selectedRow
+        picker.show(in: UIApplication.shared.keyWindow!, selectedRow: selectedRow, dataList: dataList) { (selectedRow) in
+            let selectedValue = minuteList[selectedRow]
+            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, delayCloseTimeConfig: selectedValue, timeout: 0, completion: { (status: SLPDataTransferStatus, data: Any?) in
+                if (status == SLPDataTransferStatus.succeed) {
+                    Utils.showMessage("设置成功", controller: self)
+                }
+            })
         } cancelHandle: {
             
         }

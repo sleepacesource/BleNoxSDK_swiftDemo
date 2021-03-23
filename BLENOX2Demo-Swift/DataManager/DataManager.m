@@ -36,11 +36,11 @@
         
         _nightLightInfo = [[BleNoxNightLightInfo alloc] init];
         _nightLightInfo.enable = NO;
-        _nightLightInfo.brightness = 0;
+        _nightLightInfo.brightness = 38;
         
         SLPLight *light = [[SLPLight alloc] init];
-        light.r = 0;
-        light.g = 0;
+        light.r = 255;
+        light.g = 35;
         light.b = 0;
         light.w = 0;
         _nightLightInfo.light = light;
@@ -51,7 +51,54 @@
         
         _alarmList = [NSMutableArray array];
         
-        _timeMissionList = [NSMutableArray array];
+        NSMutableArray *list = [NSMutableArray array];
+        BleNoxTimeMission *info = [[BleNoxTimeMission alloc] init];
+        info.timeID = 0;
+        info.isOpen = YES;
+        info.startHour = 22;
+        info.startMinute = 0;
+        info.endHour = 7;
+        info.startMinute = 0;
+        info.repeat = 1;
+        info.mode = 1;
+        
+        SLPLight *light1 = [[SLPLight alloc] init];
+        light1.r = 255;
+        light1.g = 0;
+        light1.b = 0;
+        light1.w = 0;
+        info.light = light1;
+        
+        info.brightness = 80;
+        info.musicID = 30001;
+        info.volume = 10;
+        info.valid = 1;
+        [list addObject:info];
+        
+        info = [[BleNoxTimeMission alloc] init];
+        info.timeID = 0;
+        info.isOpen = NO;
+        info.startHour = 22;
+        info.startMinute = 0;
+        info.endHour = 7;
+        info.startMinute = 0;
+        info.repeat = 1;
+        info.mode = 0;
+        
+        light1 = [[SLPLight alloc] init];
+        light1.r = 255;
+        light1.g = 0;
+        light1.b = 0;
+        light1.w = 0;
+        info.light = light1;
+        
+        info.brightness = 80;
+        info.musicID = 30003;
+        info.volume = 10;
+        info.valid = 1;
+        [list addObject:info];
+        
+        self.timeMissionList = list;
     }
     
     return self;
