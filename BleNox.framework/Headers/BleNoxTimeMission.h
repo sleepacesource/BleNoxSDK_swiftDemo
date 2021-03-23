@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) UInt8 brightness;//亮度 0-100
 @property (nonatomic, assign) UInt16 musicID;//音乐ID
 @property (nonatomic, assign) UInt8 volume;//音量大小 0-16
+@property (nonatomic, assign) UInt8 playMode;//播放模式
 @property (nonatomic, assign) UInt8 valid;//0表示该任务已经删除 1该任务有效
 
 @end

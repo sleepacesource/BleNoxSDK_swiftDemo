@@ -320,5 +320,5 @@
 /**
  预览自定义颜色
  */
-- (void)bleNox:(CBPeripheral *)peripheral previewCustomColor:(SLPLight *)light timeout:(CGFloat)timeout completion:(SLPTransforCallback)handle;
+- (void)bleNox:(CBPeripheral *)peripheral operationCode:(UInt8)operationCode previewCustomColor:(SLPLight *)light timeout:(CGFloat)timeout completion:(SLPTransforCallback)handle;
 @end

@@ -11,6 +11,7 @@
 #import <BleNox/BleNoxNightLightInfo.h>
 #import <BleNox/BleNoxUpgradeInfo.h>
 #import <BleNox/BleNoxTimeMission.h>
+#import <BleNox/WaveCustomColor.h>
 
 #define SharedDataManager [DataManager sharedDataManager]
 @class CBPeripheral;
@@ -43,6 +44,8 @@
 @property (nonatomic, strong) NSArray<BleNoxTimeMission *> *timeMissionList;
 
 @property (nonatomic, assign) UInt16 delayTime;
+
+@property (nonatomic, assign) NSArray<WaveCustomColor *> *customColorList;
 
 + (DataManager *)sharedDataManager;
 

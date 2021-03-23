@@ -208,6 +208,9 @@
                                                 <constraint firstAttribute="height" constant="50" id="PGb-uI-0CY"/>
                                             </constraints>
                                             <state key="normal" title="发送"/>
+                                            <connections>
+                                                <action selector="sendColor1:" destination="-1" eventType="touchUpInside" id="7Ur-ma-OIw"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YO-xj-VFC">
                                             <rect key="frame" x="309" y="130.5" width="90" height="50"/>
@@ -217,6 +220,9 @@
                                                 <constraint firstAttribute="width" constant="90" id="igJ-cV-5zv"/>
                                             </constraints>
                                             <state key="normal" title="删除"/>
+                                            <connections>
+                                                <action selector="cleanColor1:" destination="-1" eventType="touchUpInside" id="MDG-Ou-p6V"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -376,6 +382,9 @@
                                                 <constraint firstAttribute="height" constant="50" id="cFX-s8-tty"/>
                                             </constraints>
                                             <state key="normal" title="发送"/>
+                                            <connections>
+                                                <action selector="sendColor2:" destination="-1" eventType="touchUpInside" id="73n-V5-FyO"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEF-pu-fbi">
                                             <rect key="frame" x="309" y="130.5" width="90" height="50"/>
@@ -385,6 +394,9 @@
                                                 <constraint firstAttribute="width" constant="90" id="pGf-xK-rn7"/>
                                             </constraints>
                                             <state key="normal" title="删除"/>
+                                            <connections>
+                                                <action selector="cleanColor2:" destination="-1" eventType="touchUpInside" id="x1a-oa-yHY"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -545,7 +557,7 @@
                                             </constraints>
                                             <state key="normal" title="发送"/>
                                             <connections>
-                                                <action selector="sendColor1:" destination="-1" eventType="touchUpInside" id="eQu-uu-jFE"/>
+                                                <action selector="sendColor3:" destination="-1" eventType="touchUpInside" id="Iih-Bc-8pX"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5k-ah-dnN">
@@ -558,6 +570,7 @@
                                             <state key="normal" title="删除"/>
                                             <connections>
                                                 <action selector="cleanColor1:" destination="-1" eventType="touchUpInside" id="7NP-XK-wMI"/>
+                                                <action selector="cleanColor3:" destination="-1" eventType="touchUpInside" id="nc3-QA-kCN"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -719,7 +732,6 @@
                                             </constraints>
                                             <state key="normal" title="发送"/>
                                             <connections>
-                                                <action selector="sendColor2:" destination="-1" eventType="touchUpInside" id="apy-fh-RGa"/>
                                                 <action selector="sendColor4:" destination="-1" eventType="touchUpInside" id="RzV-vA-wMu"/>
                                             </connections>
                                         </button>
@@ -732,7 +744,6 @@
                                             </constraints>
                                             <state key="normal" title="删除"/>
                                             <connections>
-                                                <action selector="cleanColor2:" destination="-1" eventType="touchUpInside" id="9rk-RO-ioP"/>
                                                 <action selector="cleanColor4:" destination="-1" eventType="touchUpInside" id="LI6-UX-riM"/>
                                             </connections>
                                         </button>
@@ -895,7 +906,6 @@
                                             </constraints>
                                             <state key="normal" title="发送"/>
                                             <connections>
-                                                <action selector="sendColor3:" destination="-1" eventType="touchUpInside" id="EUa-vn-N8Y"/>
                                                 <action selector="sendColor5:" destination="-1" eventType="touchUpInside" id="5Pt-xq-BgT"/>
                                             </connections>
                                         </button>
@@ -908,7 +918,6 @@
                                             </constraints>
                                             <state key="normal" title="删除"/>
                                             <connections>
-                                                <action selector="cleanColor3:" destination="-1" eventType="touchUpInside" id="tQ8-a3-N7s"/>
                                                 <action selector="cleanColor5:" destination="-1" eventType="touchUpInside" id="YWQ-eI-Onk"/>
                                             </connections>
                                         </button>

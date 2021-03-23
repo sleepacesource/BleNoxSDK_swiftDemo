@@ -25,11 +25,11 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     
     func initData() -> Void {
-//        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, getTimeMissionListTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-//            if status == SLPDataTransferStatus.succeed {
-//                DataManager.shared()?.timeMissionList = data as? [BleNoxTimeMission]
-//            }
-//        })
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, getTimeMissionListTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+            if status == SLPDataTransferStatus.succeed {
+                DataManager.shared()?.timeMissionList = data as? [BleNoxTimeMission]
+            }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {

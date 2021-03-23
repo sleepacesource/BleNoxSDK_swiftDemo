@@ -233,6 +233,7 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func goMusicList(_ sender: Any) {
         let vc = MusicListViewController()
+        vc.title = NSLocalizedString("music_list", comment: "")
         vc.musicList = self.getSleepAidMusicList()
         vc.musicID = UInt16(DataManager.shared().assistMusicID)
         vc.mode = 1

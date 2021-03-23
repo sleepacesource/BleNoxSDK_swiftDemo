@@ -98,6 +98,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
             timeMissionNew.brightness = 100;
             timeMissionNew.musicID = 30001;
             timeMissionNew.volume = 10;
+            timeMissionNew.playMode = 0
             timeMissionNew.valid = 1
             
             self.timeMissionNew = timeMissionNew
@@ -123,6 +124,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
             timeMissionNew.musicID = self.originTimeMission!.musicID
             timeMissionNew.volume = self.originTimeMission!.volume
             timeMissionNew.valid = self.originTimeMission!.valid
+            timeMissionNew.playMode = self.originTimeMission!.playMode
             self.timeMissionNew = timeMissionNew
         }
     }
@@ -279,7 +281,9 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     @objc func deleteMission() {
         self.timeMissionNew!.valid = 0
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, timeMissionConfig: self.timeMissionNew, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-            
+            if status == SLPDataTransferStatus.succeed {
+                self.navigationController?.popViewController(animated: true)
+            }
         })
     }
     
@@ -325,15 +329,11 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     func goSelectMusic() -> Void {
-        let vc = MusicListViewController()
+        let vc = MusicInfoSettingViewController()
         vc.title = NSLocalizedString("setMusic", comment: "")
-        let musicList = self.getMusicList()
-        vc.musicList = musicList
         vc.musicID = self.timeMissionNew!.musicID
-        vc.selectMusicBlock = {(musicID) ->() in
-            self.timeMissionNew!.musicID = musicID
-            self.tableView!.reloadData()
-        }
+        vc.volume = self.timeMissionNew!.volume
+        vc.playMode = self.timeMissionNew!.playMode
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -94,6 +94,8 @@
 		8FD51C2A2602F0CF002C02A0 /* TimeMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD51C282602F0CF002C02A0 /* TimeMissionViewController.xib */; };
 		8FDBE57326097DD90070824C /* TitleValueSwitchCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBE57126097DD90070824C /* TitleValueSwitchCellTableViewCell.swift */; };
 		8FDBE57426097DD90070824C /* TitleValueSwitchCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDBE57226097DD90070824C /* TitleValueSwitchCellTableViewCell.xib */; };
+		8FDBE63E2609B3670070824C /* MusicInfoSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBE63C2609B3670070824C /* MusicInfoSettingViewController.swift */; };
+		8FDBE63F2609B3670070824C /* MusicInfoSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDBE63D2609B3670070824C /* MusicInfoSettingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +229,8 @@
 		8FD51C282602F0CF002C02A0 /* TimeMissionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeMissionViewController.xib; sourceTree = "<group>"; };
 		8FDBE57126097DD90070824C /* TitleValueSwitchCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueSwitchCellTableViewCell.swift; sourceTree = "<group>"; };
 		8FDBE57226097DD90070824C /* TitleValueSwitchCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleValueSwitchCellTableViewCell.xib; sourceTree = "<group>"; };
+		8FDBE63C2609B3670070824C /* MusicInfoSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfoSettingViewController.swift; sourceTree = "<group>"; };
+		8FDBE63D2609B3670070824C /* MusicInfoSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicInfoSettingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,6 +454,8 @@
 				8F9C50CE260097F0004BB46B /* TimeMissionListViewController.xib */,
 				8FD51C272602F0CF002C02A0 /* TimeMissionViewController.swift */,
 				8FD51C282602F0CF002C02A0 /* TimeMissionViewController.xib */,
+				8FDBE63C2609B3670070824C /* MusicInfoSettingViewController.swift */,
+				8FDBE63D2609B3670070824C /* MusicInfoSettingViewController.xib */,
 			);
 			path = TimeMission;
 			sourceTree = "<group>";
@@ -665,6 +671,7 @@
 				2685C4562329DF75009947EE /* DeviceViewController.xib in Resources */,
 				8F37B7F726033D4400A69893 /* TitleArrowCell.xib in Resources */,
 				2685C46C2329F4B1009947EE /* SleepAidViewController.xib in Resources */,
+				8FDBE63F2609B3670070824C /* MusicInfoSettingViewController.xib in Resources */,
 				8F9C51152600B70A004BB46B /* SelectItemCell.xib in Resources */,
 				8FD51C2A2602F0CF002C02A0 /* TimeMissionViewController.xib in Resources */,
 				2684E8E22490BE4D00ADF97E /* SN902B_20200610.1.29.MVA in Resources */,
@@ -728,6 +735,7 @@
 				8F9C51512601D33B004BB46B /* SLPMinuteSelectView.m in Sources */,
 				2685C4592329DF8A009947EE /* ControlViewController.swift in Sources */,
 				8F9C51532601D33B004BB46B /* SLPMinutePicker.m in Sources */,
+				8FDBE63E2609B3670070824C /* MusicInfoSettingViewController.swift in Sources */,
 				8F9C51382601C9C7004BB46B /* SLPTime24.m in Sources */,
 				2685C4702329F534009947EE /* SearchViewController.swift in Sources */,
 				8F9C51722601F4C9004BB46B /* Utils.m in Sources */,
