@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomColorViewController: UIViewController {
+class CustomColorViewController: UIViewController, UIScrollViewDelegate {
     
     // 颜色1
     @IBOutlet weak var color1Label: UILabel!
@@ -249,6 +249,8 @@ class CustomColorViewController: UIViewController {
     }
     
     func setUI() -> Void {
+        
+        
         self.initColorField()
         
         self.color1Label.text = String(format: "%@ 1", NSLocalizedString("color", comment: ""))
@@ -585,5 +587,9 @@ class CustomColorViewController: UIViewController {
     
     @IBAction func cleanColor6(_ sender: Any) {
         self.cleanColor(5)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view?.endEditing(true)
     }
 }

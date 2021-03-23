@@ -31,6 +31,8 @@ class SetLightViewController: UIViewController {
     @IBOutlet weak var sendBtn2: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setUI()
 
         self.colorLabel.text = NSLocalizedString("color", comment: "")
         self.brightnessLabel.text = NSLocalizedString("luminance", comment: "")
@@ -42,6 +44,28 @@ class SetLightViewController: UIViewController {
         rightButton.setTitle(NSLocalizedString("save", comment: ""), for: UIControl.State.normal)
         rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+    }
+    
+    func setUI() -> Void {
+        if self.r != nil {
+            self.colorRTextField.text = String(format: "%d", self.r!)
+        }
+        
+        if self.g != nil {
+            self.colorGTextField.text = String(format: "%d", self.g!)
+        }
+        
+        if self.b != nil {
+            self.colorBTextField.text = String(format: "%d", self.b!)
+        }
+        
+        if self.w != nil {
+            self.colorWTextField.text = String(format: "%d", self.w!)
+        }
+        
+        if self.brightness != nil {
+            self.brightnessTextFiled.text = String(format: "%d", self.brightness!)
+        }
     }
     
     @objc func rightClick() ->Void {

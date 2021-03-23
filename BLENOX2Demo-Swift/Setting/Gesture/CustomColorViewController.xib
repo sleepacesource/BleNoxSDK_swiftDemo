@@ -1177,6 +1177,9 @@
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="wc9-7D-aX4"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="e4U-vo-RKB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="eIX-YG-N6I"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

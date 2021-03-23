@@ -14,9 +14,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     var originTimeMission: BleNoxTimeMission?
     
-    var mode: Int?
-    
-    var openMode = 0
+    var mode: Int?  // 0： 添加  1：编辑
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -76,7 +74,6 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     func initData() -> Void {
         
-        // 0： 添加  1：编辑
         if self.mode == 0 {
             let timeMissionNew = BleNoxTimeMission()
             timeMissionNew.timeID = 0;
@@ -97,7 +94,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
             
             timeMissionNew.brightness = 100;
             timeMissionNew.musicID = 30001;
-            timeMissionNew.volume = 10;
+            timeMissionNew.volume = 6;
             timeMissionNew.playMode = 0
             timeMissionNew.valid = 1
             
@@ -309,7 +306,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     func goSelectMode() -> Void {
         let picker = Bundle.main.loadNibNamed("DataPicker", owner: nil, options: nil)?.first as! DataPicker
         picker.dataList = [NSLocalizedString("aidMode", comment: ""), NSLocalizedString("lightMode", comment: "")]
-        picker.selectedRow = self.openMode
+        picker.selectedRow = Int(self.timeMissionNew!.mode)
         picker.reload()
         picker.backgroundColor = UIColor.clear
         picker.cancelBlock = {() ->() in
@@ -317,6 +314,21 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         }
         picker.confirmBlock = {(row) ->() in
             self.timeMissionNew!.mode = UInt8(row)
+            if self.mode == 0 {
+                if row == 1 {
+                    self.timeMissionNew!.light.r = 155
+                    self.timeMissionNew!.light.g = 32
+                    self.timeMissionNew!.light.b = 93
+                    self.timeMissionNew!.light.w = 255
+                    self.timeMissionNew!.brightness = 100
+                } else {
+                    self.timeMissionNew!.light.r = 255
+                    self.timeMissionNew!.light.g = 35
+                    self.timeMissionNew!.light.b = 0
+                    self.timeMissionNew!.light.w = 0
+                    self.timeMissionNew!.brightness = 30
+                }
+            }
             self.tableView.reloadData()
             picker.removeFromSuperview()
         }
@@ -326,7 +338,17 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     func goSetLight() -> Void {
         let vc = SetLightViewController()
         vc.title = NSLocalizedString("setLight", comment: "")
+        vc.r = self.timeMissionNew!.light.r
+        vc.g = self.timeMissionNew!.light.g
+        vc.b = self.timeMissionNew!.light.b
+        vc.w = self.timeMissionNew!.light.w
+        vc.brightness = self.timeMissionNew!.brightness
         vc.setLightBlock = {(r,g,b,w,brightness) ->() in
+            self.timeMissionNew!.light.r = r
+            self.timeMissionNew!.light.g = g
+            self.timeMissionNew!.light.b = b
+            self.timeMissionNew!.light.w = w
+            self.timeMissionNew!.brightness = brightness
         }
         self.navigationController?.pushViewController(vc, animated: true)
     }

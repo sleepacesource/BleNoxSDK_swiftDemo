@@ -21,7 +21,7 @@ enum GestureActionMode: UInt8 {
     case disable = 0xFF // 停用
 }
 
-class GestureViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
+class GestureViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
