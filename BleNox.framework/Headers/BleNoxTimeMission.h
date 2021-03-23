@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) UInt8 volume;//音量大小 0-16
 @property (nonatomic, assign) UInt8 playMode;//播放模式
 @property (nonatomic, assign) UInt8 valid;//0表示该任务已经删除 1该任务有效
+@property (nonatomic, assign) UInt32 timeStamp;//时间戳
 
 @end
 

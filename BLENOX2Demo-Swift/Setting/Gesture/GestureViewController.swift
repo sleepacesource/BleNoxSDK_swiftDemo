@@ -235,7 +235,7 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
     
     func goSetCustomLight() -> Void {
         let vc = CustomColorViewController()
-//        vc.title = NSLocalizedString("setColor", comment: "")
+        vc.title = NSLocalizedString("setLight", comment: "")
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

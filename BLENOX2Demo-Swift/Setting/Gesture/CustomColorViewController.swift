@@ -275,11 +275,34 @@ class CustomColorViewController: UIViewController {
         self.color5Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
         self.color6Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
         
+        let leftButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        leftButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
+//        leftButton.setTitle("返回", for: UIControl.State.normal)
+        leftButton.setImage(UIImage.init(named: "common_nav_btn_back_nor"), for: UIControl.State.normal)
+        leftButton.addTarget(self, action: #selector(leftClick), for: UIControl.Event.touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
+        
         let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
         rightButton.setTitle(NSLocalizedString("save", comment: ""), for: UIControl.State.normal)
         rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+    }
+    
+    @objc func leftClick() -> Void {
+        self.closeLight()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func closeLight() -> Void {
+        let light = SLPLight.init()
+        light.r = 0
+        light.g = 0
+        light.b = 0
+        light.w = 0
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, operationCode: 0, previewCustomColor: light, timeout: 0, completion: { (status: SLPDataTransferStatus, data: Any?) in
+            
+        })
     }
     
     @objc func rightClick() -> Void {
@@ -289,6 +312,8 @@ class CustomColorViewController: UIViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.navigationController?.popViewController(animated: true)
                 }
+                
+                self.closeLight()
             } else {
                 Utils.showDeviceOperationFailed(-1, at: self)
             }
@@ -373,7 +398,11 @@ class CustomColorViewController: UIViewController {
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, operationCode: 1, previewCustomColor: light, timeout: 0, completion: { (status: SLPDataTransferStatus, data: Any?) in
             if status != SLPDataTransferStatus.succeed {
                 Utils.showDeviceOperationFailed(-1, at: self)
+                return
             }
+            
+            let color = self.colorList![colorId]
+            color.light = light
         })
     }
     
@@ -428,7 +457,7 @@ class CustomColorViewController: UIViewController {
                 return
             }
             
-            self.sendColor(r!, g!, b!, w!, 0)
+            self.sendColor(r!, g!, b!, w!, 1)
         } else {
             Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
         }
@@ -458,7 +487,7 @@ class CustomColorViewController: UIViewController {
                 return
             }
             
-            self.sendColor(r!, g!, b!, w!, 0)
+            self.sendColor(r!, g!, b!, w!, 2)
         } else {
             Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
         }
@@ -488,7 +517,7 @@ class CustomColorViewController: UIViewController {
                 return
             }
             
-            self.sendColor(r!, g!, b!, w!, 0)
+            self.sendColor(r!, g!, b!, w!, 3)
         } else {
             Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
         }
@@ -518,7 +547,7 @@ class CustomColorViewController: UIViewController {
                 return
             }
             
-            self.sendColor(r!, g!, b!, w!, 0)
+            self.sendColor(r!, g!, b!, w!, 4)
         } else {
             Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
         }
@@ -548,7 +577,7 @@ class CustomColorViewController: UIViewController {
                 return
             }
             
-            self.sendColor(r!, g!, b!, w!, 0)
+            self.sendColor(r!, g!, b!, w!, 5)
         } else {
             Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
         }

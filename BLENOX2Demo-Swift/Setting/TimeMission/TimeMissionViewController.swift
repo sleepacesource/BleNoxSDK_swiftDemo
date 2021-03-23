@@ -125,6 +125,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
             timeMissionNew.volume = self.originTimeMission!.volume
             timeMissionNew.valid = self.originTimeMission!.valid
             timeMissionNew.playMode = self.originTimeMission!.playMode
+            timeMissionNew.timeStamp = self.originTimeMission!.timeStamp
             self.timeMissionNew = timeMissionNew
         }
     }
@@ -141,6 +142,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     @objc func rightClick() -> Void {
         self.timeMissionNew!.valid = 1
+        self.timeMissionNew!.timeStamp = UInt32(NSDate.init().timeIntervalSince1970)
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, timeMissionConfig: self.timeMissionNew, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status != SLPDataTransferStatus.succeed {
                 Utils.showDeviceOperationFailed(-1, at: self)
@@ -280,6 +282,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     @objc func deleteMission() {
         self.timeMissionNew!.valid = 0
+        self.timeMissionNew!.timeStamp = UInt32(NSDate.init().timeIntervalSince1970)
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, timeMissionConfig: self.timeMissionNew, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed {
                 self.navigationController?.popViewController(animated: true)

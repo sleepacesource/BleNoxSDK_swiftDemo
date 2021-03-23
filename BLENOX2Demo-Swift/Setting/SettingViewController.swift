@@ -175,6 +175,8 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
             SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, delayCloseTimeConfig: selectedValue, timeout: 0, completion: { (status: SLPDataTransferStatus, data: Any?) in
                 if (status == SLPDataTransferStatus.succeed) {
                     Utils.showMessage("设置成功", controller: self)
+                } else {
+                    Utils.showDeviceOperationFailed(-1, at: self)
                 }
             })
         } cancelHandle: {
