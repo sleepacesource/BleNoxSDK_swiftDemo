@@ -69,6 +69,40 @@ class SetLightViewController: UIViewController {
     }
     
     @objc func rightClick() ->Void {
+        let valueR = self.colorRTextField.text!.count > 0
+        let valueG = self.colorGTextField.text!.count > 0
+        let valueB = self.colorBTextField.text!.count > 0
+        let valueW = self.colorWTextField.text!.count > 0
+        let valueBrightness = self.brightnessTextFiled.text!.count > 0
+        if valueR && valueG && valueB && valueW && valueBrightness {
+            let r = Int(self.colorRTextField.text!)
+            let g = Int(self.colorGTextField.text!)
+            let b = Int(self.colorBTextField.text!)
+            let w = Int(self.colorWTextField.text!)
+            let brightness = UInt8(self.brightnessTextFiled.text!)
+            
+            let rValid = (r! >= 0) && (r! <= 255);
+            let gValid = (g! >= 0) && (g! <= 255);
+            let bValid = (b! >= 0) && (b! <= 255);
+            let wValid = (w! >= 0) && (w! <= 255);
+            if !(rValid && gValid && bValid && wValid)  {
+                Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
+                return
+            }
+            
+            if (!(brightness! >= 0) && (brightness! <= 100)) {
+                Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
+                return
+            }
+            
+            self.r = UInt8(r!)
+            self.g = UInt8(g!)
+            self.b = UInt8(b!)
+            self.w = UInt8(w!)
+            self.brightness = UInt8(brightness!)
+        } else {
+            Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
+        }
         self.setLightBlock!(self.r!, self.g!, self.b!, self.w!, self.brightness!)
         self.navigationController?.popViewController(animated: true)
     }
