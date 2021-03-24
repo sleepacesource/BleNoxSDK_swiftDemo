@@ -10,10 +10,15 @@ import UIKit
 
 class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+    var originAlarm: BleNoxAlarmInfo?
     var alarmDataNew:BleNoxAlarmInfo?
-    var addAlarmID: UInt64?
+    var addAlarmID: UInt64 = 0
     
     var isPreviewing: Bool = false
+    
+    var mode: Int?  // 0： 添加  1：编辑
+    
+    var reloadDataBlock: ReloadDataBlock?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -77,21 +82,38 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     
     func initData() -> Void {
-        self.addAlarmID = 1000
-        
-        self.alarmDataNew = BleNoxAlarmInfo()
-        self.alarmDataNew!.alarmID = self.addAlarmID!;
-        self.alarmDataNew!.isOpen = true;
-        self.alarmDataNew!.hour = 8;
-        self.alarmDataNew!.minute = 0;
-        self.alarmDataNew!.repeat = 0;
-        self.alarmDataNew!.snoozeTime = 6;
-        self.alarmDataNew!.snoozeLength = 9;
-        self.alarmDataNew!.volume = 16;
-        self.alarmDataNew!.brightness = 100;
-        self.alarmDataNew!.shake = false;
-        self.alarmDataNew!.musicID = 31001;
-        self.alarmDataNew!.timestamp = UInt32(NSDate().timeIntervalSince1970)
+        if self.mode == 0 {
+            self.alarmDataNew = BleNoxAlarmInfo()
+            self.alarmDataNew!.alarmID = self.addAlarmID;
+            self.alarmDataNew!.isOpen = true;
+            self.alarmDataNew!.hour = 8;
+            self.alarmDataNew!.minute = 0;
+            self.alarmDataNew!.repeat = 0;
+            self.alarmDataNew!.snoozeTime = 6;
+            self.alarmDataNew!.snoozeLength = 9;
+            self.alarmDataNew!.volume = 16;
+            self.alarmDataNew!.brightness = 100;
+            self.alarmDataNew!.shake = false;
+            self.alarmDataNew!.musicID = 31001;
+            self.alarmDataNew!.timestamp = UInt32(NSDate().timeIntervalSince1970)
+        } else {
+            let alarmDataNew = BleNoxAlarmInfo()
+            alarmDataNew.alarmID = self.originAlarm!.alarmID
+            alarmDataNew.isOpen = self.originAlarm!.isOpen
+            alarmDataNew.hour = self.originAlarm!.hour
+            alarmDataNew.minute = self.originAlarm!.minute
+            alarmDataNew.repeat = self.originAlarm!.repeat
+            alarmDataNew.snoozeTime = self.originAlarm!.snoozeTime
+            alarmDataNew.snoozeLength = self.originAlarm!.snoozeLength
+            alarmDataNew.volume = self.originAlarm!.volume
+            alarmDataNew.brightness = self.originAlarm!.brightness
+            alarmDataNew.musicID = self.originAlarm!.musicID
+            alarmDataNew.volume = self.originAlarm!.volume
+            alarmDataNew.shake = self.originAlarm!.shake
+            alarmDataNew.musicID = self.originAlarm!.musicID
+            alarmDataNew.timestamp = self.originAlarm!.timestamp
+            self.alarmDataNew = alarmDataNew
+        }
     }
     
     func setUI() -> Void {
@@ -107,6 +129,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     @objc func rightClick() -> Void {
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, alarmConfig: self.alarmDataNew!, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed {
+                self.reloadDataBlock!()
                 Utils.showMessage(NSLocalizedString("save_succeed", comment: ""), controller: self)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.navigationController?.popViewController(animated: true)

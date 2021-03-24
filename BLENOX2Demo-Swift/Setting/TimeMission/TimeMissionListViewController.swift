@@ -16,14 +16,6 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
     
     var timeMissionList: NSMutableArray?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.setUI()
-        
-        self.initData()
-    }
-    
     func getMusicList() -> Array<MusicInfo> {
         var musicList = [MusicInfo]()
         
@@ -68,6 +60,14 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
         musicList.append(musicInfo)
         
         return musicList
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.setUI()
+        
+        self.initData()
     }
     
     func initData() -> Void {
@@ -118,7 +118,10 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     @objc func rightClick() -> Void {
-        
+        if (self.timeMissionList!.count >= 10) {
+            Utils.showMessage(NSLocalizedString("设置已达上限", comment: ""), controller: self)
+            return;
+        }
         var timeID: UInt8 = 0
         let list = self.timeMissionList!
         if list.count > 0 {
@@ -180,7 +183,14 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
         switcherCell.switcher.isOn = info.isOpen
         
         switcherCell.switcherBlock = {(switcher) -> () in
-
+            let isOn = switcher.isOn
+            info.isOpen = isOn
+            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, timeMissionConfig: info, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+                if status != SLPDataTransferStatus.succeed {
+                    Utils.showDeviceOperationFailed(-1, at: self)
+                    return
+                }
+            })
         }
         return switcherCell
     }

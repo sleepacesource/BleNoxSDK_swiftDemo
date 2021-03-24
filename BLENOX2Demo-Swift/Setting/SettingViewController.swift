@@ -30,6 +30,12 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
                 DataManager.shared()?.timeMissionList = data as? [BleNoxTimeMission]
             }
         })
+        
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, getAlarmListTimeout: 0, completion: { (status: SLPDataTransferStatus, data: Any?) in
+            if status == SLPDataTransferStatus.succeed {
+                DataManager.shared()?.alarmList = data as? [BleNoxAlarmInfo]
+            }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -134,10 +140,13 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     // 闹钟页面
     func goAlarmPage() -> Void {
-        let searchVC = AlarmViewController ()
-        searchVC.title = NSLocalizedString("alarm", comment: "")
-        searchVC.addAlarmID = UInt64(NSDate().timeIntervalSince1970)
-        self.navigationController?.pushViewController(searchVC, animated: true)
+        let vc = AlarmListViewController()
+        vc.title = NSLocalizedString("alarm", comment: "")
+        self.navigationController?.pushViewController(vc, animated: true)
+//        let searchVC = AlarmViewController ()
+//        searchVC.title = NSLocalizedString("alarm", comment: "")
+//        searchVC.addAlarmID = UInt64(NSDate().timeIntervalSince1970)
+//        self.navigationController?.pushViewController(searchVC, animated: true)
     }
     
     // 小夜灯页面

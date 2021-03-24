@@ -12,6 +12,7 @@
 #import <BleNox/BleNoxUpgradeInfo.h>
 #import <BleNox/BleNoxTimeMission.h>
 #import <BleNox/WaveCustomColor.h>
+#import <BleNox/BleNoxAlarmInfo.h>
 
 #define SharedDataManager [DataManager sharedDataManager]
 @class CBPeripheral;
@@ -39,7 +40,7 @@
 
 @property (nonatomic, assign) UInt8 hoverAction;
 
-@property (nonatomic, strong) NSMutableArray *alarmList;
+@property (nonatomic, strong) NSArray<BleNoxAlarmInfo *> *alarmList;
 
 @property (nonatomic, strong) NSArray<BleNoxTimeMission *> *timeMissionList;
 

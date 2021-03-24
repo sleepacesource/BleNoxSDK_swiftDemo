@@ -145,6 +145,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     @objc func rightClick() -> Void {
         self.timeMissionNew!.valid = 1
+        self.timeMissionNew!.isOpen = true
         self.timeMissionNew!.timeStamp = UInt32(NSDate.init().timeIntervalSince1970)
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, timeMissionConfig: self.timeMissionNew, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status != SLPDataTransferStatus.succeed {
