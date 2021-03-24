@@ -162,6 +162,7 @@ class DeviceViewController: UIViewController {
             }
             else
             {
+                self.progressLabel.text = ""
                 print("upgrade failed")
                 Utils.showMessage(NSLocalizedString("up_failed", comment: ""), controller: self)
             }

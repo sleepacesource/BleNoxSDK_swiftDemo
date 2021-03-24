@@ -36,6 +36,13 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
                 DataManager.shared()?.alarmList = data as? [BleNoxAlarmInfo]
             }
         })
+        
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, getDelayCloseInfoTimeout: 0, completion: { (status: SLPDataTransferStatus, data: Any?) in
+            if status == SLPDataTransferStatus.succeed {
+                let delayTime = data as! NSNumber
+                DataManager.shared()?.delayTime = delayTime.uint16Value
+            }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -222,6 +229,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
             let selectedValue = minuteList[selectedRow]
             SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, delayCloseTimeConfig: selectedValue, timeout: 0, completion: { (status: SLPDataTransferStatus, data: Any?) in
                 if (status == SLPDataTransferStatus.succeed) {
+                    DataManager.shared()?.delayTime = selectedValue
                     Utils.showMessage("设置成功", controller: self)
                 } else {
                     Utils.showDeviceOperationFailed(-1, at: self)
