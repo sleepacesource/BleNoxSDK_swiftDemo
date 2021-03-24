@@ -215,6 +215,15 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
                     }
                 }
                 
+                let hasData = self.timeMissionList!.count > 0
+                
+                if hasData {
+                    self.emptyLbl.isHidden = true
+                    self.tableView.isHidden = false
+                } else {
+                    self.emptyLbl.isHidden = false
+                    self.tableView.isHidden = true
+                }
                 self.tableView.reloadData()
             }
         })

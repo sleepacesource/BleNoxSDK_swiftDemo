@@ -228,12 +228,14 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if self.mode == 1 {
+            return 164
+        }
         return 104
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
-        
         let btn = UIButton()
         btn.addTarget(self, action: #selector(previewAndStopAlarm), for: UIControl.Event.touchUpInside)
         if self.isPreviewing {
@@ -249,9 +251,40 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         btn.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true  //顶部约束
         btn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true  //左端约束
         btn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true  //右端约束
-        btn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true  //底部约束
+//        btn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true  //底部约束
+        btn.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
+        if self.mode == 1 {
+            let btn1 = UIButton()
+            btn1.addTarget(self, action: #selector(deleteAlarm), for: UIControl.Event.touchUpInside)
+            btn1.setTitle(NSLocalizedString("delete_alram", comment: ""), for: UIControl.State.normal)
+            view.addSubview(btn1)
+            btn1.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
+            btn1.layer.cornerRadius = 2.0;
+            btn1.layer.masksToBounds = true;
+            btn1.translatesAutoresizingMaskIntoConstraints = false
+            btn1.topAnchor.constraint(equalTo: btn.bottomAnchor, constant: 30).isActive = true  //顶部约束
+            btn1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true  //左端约束
+            btn1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true  //右端约束
+            btn1.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        }
+//        btn1.widthAnchor.constraint(equalToConstant: 60).isActive = true
         
         return view
+    }
+    
+    @objc func deleteAlarm() -> Void {
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, delAlarm: self.alarmDataNew!.alarmID, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+            if status == SLPDataTransferStatus.succeed {
+                self.reloadDataBlock!()
+                Utils.showMessage(NSLocalizedString("删除成功", comment: ""), controller: self)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            } else {
+                Utils.showDeviceOperationFailed(-1, at: self)
+            }
+        })
     }
     
     @objc func previewAndStopAlarm() {

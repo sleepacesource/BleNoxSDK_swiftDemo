@@ -27,13 +27,16 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     func initData() -> Void {
         self.alarmList = NSMutableArray.init()
         
+        self.emptyLbl.text = NSLocalizedString("sa_no_timer", comment: "")
+        
+        self.reload()
+    }
+    
+    func reload() -> Void {
         let alarmList = DataManager.shared().alarmList!
         for alarm in alarmList {
             self.alarmList?.add(alarm)
         }
-        
-        self.emptyLbl.text = NSLocalizedString("sa_no_timer", comment: "")
-        
         let hasData = self.alarmList!.count > 0
         
         if hasData {
@@ -95,11 +98,7 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
                 DataManager.shared()?.alarmList = data as? [BleNoxAlarmInfo]
                 
                 self.alarmList?.removeAllObjects()
-                let alarmList = DataManager.shared().alarmList!
-                for alarm in alarmList {
-                    self.alarmList?.add(alarm)
-                }
-                
+                self.reload()
                 self.tableView.reloadData()
             }
         })
