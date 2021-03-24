@@ -91,7 +91,7 @@ class MusicListViewController: UIViewController, UITableViewDataSource,UITableVi
     
     func playMusic(_ musicID:UInt16) -> Void {
         print(musicID)
-        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnMusic: musicID, volume: 16, playMode: 0, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnMusic: musicID, volume: 12, playMode: 0, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
                 print("play music succeed !")

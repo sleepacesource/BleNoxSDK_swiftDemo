@@ -291,7 +291,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, timeMissionConfig: self.timeMissionNew, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed {
                 self.reloadDataBlock!()
-                Utils.showMessage(NSLocalizedString("删除成功", comment: ""), controller: self)
+                Utils.showMessage(NSLocalizedString("已删除", comment: ""), controller: self)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.navigationController?.popViewController(animated: true)
                 }
