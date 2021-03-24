@@ -24,6 +24,52 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
         self.initData()
     }
     
+    func getMusicList() -> Array<MusicInfo> {
+        var musicList = [MusicInfo]()
+        
+        var musicInfo = MusicInfo()
+        musicInfo.musicID = 30001
+        musicInfo.musicName = NSLocalizedString("music_list_sea", comment: "")
+        musicList.append(musicInfo)
+        
+        musicInfo = MusicInfo()
+        musicInfo.musicID = 30002
+        musicInfo.musicName = NSLocalizedString("music_list_sun", comment: "")
+        musicList.append(musicInfo)
+        
+        musicInfo = MusicInfo()
+        musicInfo.musicID = 30003
+        musicInfo.musicName = NSLocalizedString("music_list_dance", comment: "")
+        musicList.append(musicInfo)
+        
+        musicInfo = MusicInfo()
+        musicInfo.musicID = 30004
+        musicInfo.musicName = NSLocalizedString("music_list_star", comment: "")
+        musicList.append(musicInfo)
+        
+        musicInfo = MusicInfo()
+        musicInfo.musicID = 30005
+        musicInfo.musicName = NSLocalizedString("music_list_solo", comment: "")
+        musicList.append(musicInfo)
+        
+        musicInfo = MusicInfo()
+        musicInfo.musicID = 30006
+        musicInfo.musicName = NSLocalizedString("music_list_rain", comment: "")
+        musicList.append(musicInfo)
+        
+        musicInfo = MusicInfo()
+        musicInfo.musicID = 30007
+        musicInfo.musicName = NSLocalizedString("music_list_wind", comment: "")
+        musicList.append(musicInfo)
+        
+        musicInfo = MusicInfo()
+        musicInfo.musicID = 30008
+        musicInfo.musicName = NSLocalizedString("music_list_summer", comment: "")
+        musicList.append(musicInfo)
+        
+        return musicList
+    }
+    
     func initData() -> Void {
         self.timeMissionList = NSMutableArray.init()
         
@@ -57,9 +103,26 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
     }
     
+    func getMusicName(_ musicID: UInt16) -> String {
+        let musicList = self.getMusicList()
+        
+        var musicName = ""
+        for music in musicList {
+            if music.musicID == musicID {
+                musicName = music.musicName!
+                break
+            }
+        }
+        
+        return musicName
+    }
+    
     @objc func rightClick() -> Void {
         let vc = TimeMissionViewController()
         vc.mode = 0
+        vc.reloadDataBlock = {()->() in
+            self.getDataAndReload()
+        }
         vc.title = NSLocalizedString("addTimeMission", comment: "")
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -84,6 +147,16 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
             switcherCell.titleLbel.text = NSLocalizedString("aidMode", comment: "")
         }
         
+        let repeatStr = SLPWeekDay.getAlarmRepeatDayString(withWeekDay: info.repeat)
+        let startStr = String(format: "%.2d:%.2d", info.startHour, info.startMinute)
+        let endStr = String(format: "%.2d:%.2d", info.endHour, info.endMinute)
+        let musicName = self.getMusicName(info.musicID)
+        if mode == 0 {
+            switcherCell.subTitleLabel.text = String(format: "%@-%@ %@ %@", startStr, endStr, repeatStr!, musicName)
+        } else {
+            switcherCell.subTitleLabel.text = String(format: "%@-%@ %@", startStr, endStr, repeatStr!)
+        }
+        
         switcherCell.switcher.isOn = info.isOpen
         
         switcherCell.switcherBlock = {(switcher) -> () in
@@ -99,11 +172,32 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
         self.goEditTimeMission(timeMission)
     }
     
+    func getDataAndReload() -> Void {
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, getTimeMissionListTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+            if status == SLPDataTransferStatus.succeed {
+                DataManager.shared()?.timeMissionList = data as? [BleNoxTimeMission]
+                
+                self.timeMissionList?.removeAllObjects()
+                let timeMissionList = DataManager.shared().timeMissionList!
+                for timeMission in timeMissionList {
+                    if timeMission.valid == 1 {
+                        self.timeMissionList?.add(timeMission)
+                    }
+                }
+                
+                self.tableView.reloadData()
+            }
+        })
+    }
+    
     func goEditTimeMission(_ timeMission: BleNoxTimeMission) -> Void {
         let vc = TimeMissionViewController()
         vc.mode = 1
         vc.originTimeMission = timeMission
         vc.title = NSLocalizedString("编辑定时任务", comment: "")
+        vc.reloadDataBlock = {()->() in
+            self.getDataAndReload()
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

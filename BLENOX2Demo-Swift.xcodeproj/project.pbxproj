@@ -29,7 +29,6 @@
 		26C570B924C0001C00F3FE17 /* BluetoothManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C570B824C0001C00F3FE17 /* BluetoothManager.framework */; };
 		26D84AD22334824600311489 /* device_btn_refresh_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */; };
 		26D84AD32334824600311489 /* device_btn_refresh_nor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */; };
-		26DCD645245190CE0082DF69 /* BleNox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DCD643245190CE0082DF69 /* BleNox.framework */; };
 		26DCD646245190CE0082DF69 /* SLPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DCD644245190CE0082DF69 /* SLPCommon.framework */; };
 		26E279202328EC20005A983D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2791F2328EC20005A983D /* AppDelegate.swift */; };
 		26E279222328EC20005A983D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E279212328EC20005A983D /* ViewController.swift */; };
@@ -96,6 +95,7 @@
 		8FDBE57426097DD90070824C /* TitleValueSwitchCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDBE57226097DD90070824C /* TitleValueSwitchCellTableViewCell.xib */; };
 		8FDBE63E2609B3670070824C /* MusicInfoSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBE63C2609B3670070824C /* MusicInfoSettingViewController.swift */; };
 		8FDBE63F2609B3670070824C /* MusicInfoSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDBE63D2609B3670070824C /* MusicInfoSettingViewController.xib */; };
+		8FDBE643260AC0430070824C /* BleNox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DCD643245190CE0082DF69 /* BleNox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,7 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26DCD645245190CE0082DF69 /* BleNox.framework in Frameworks */,
+				8FDBE643260AC0430070824C /* BleNox.framework in Frameworks */,
 				262846E9232A3D000018E84D /* libc++.tbd in Frameworks */,
 				26DCD646245190CE0082DF69 /* SLPCommon.framework in Frameworks */,
 				26C570B924C0001C00F3FE17 /* BluetoothManager.framework in Frameworks */,

@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias MusicInfoSettingBlock = (UInt8, UInt16, UInt8) -> ()
+
 class MusicInfoSettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
@@ -15,6 +17,9 @@ class MusicInfoSettingViewController: UIViewController, UITableViewDelegate, UIT
     var playMode: UInt8?
     var musicID: UInt16?
     var volume: UInt8?
+    
+    var musicInfoSettingBlock: MusicInfoSettingBlock?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,9 +77,17 @@ class MusicInfoSettingViewController: UIViewController, UITableViewDelegate, UIT
     func setUI() -> Void {
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
-        
+        let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        rightButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        rightButton.setTitle(NSLocalizedString("save", comment: ""), for: UIControl.State.normal)
+        rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
     }
 
+    @objc func rightClick() -> Void {
+        self.musicInfoSettingBlock!(self.playMode!, self.musicID!, self.volume!)
+        self.navigationController?.popViewController(animated: true)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3

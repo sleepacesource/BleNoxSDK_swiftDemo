@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias ReloadDataBlock = () -> ()
+
 class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     var timeMissionNew: BleNoxTimeMission?
@@ -15,6 +17,9 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     var originTimeMission: BleNoxTimeMission?
     
     var mode: Int?  // 0： 添加  1：编辑
+    
+    var reloadDataBlock: ReloadDataBlock?
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -106,7 +111,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
             timeMissionNew.startHour = self.originTimeMission!.startHour
             timeMissionNew.startMinute = self.originTimeMission!.startMinute
             timeMissionNew.endHour = self.originTimeMission!.endHour
-            timeMissionNew.startMinute = self.originTimeMission!.endMinute
+            timeMissionNew.endMinute = self.originTimeMission!.endMinute
             timeMissionNew.repeat = self.originTimeMission!.repeat
             timeMissionNew.mode = self.originTimeMission!.mode
             
@@ -146,6 +151,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
                 return
             }
             
+            self.reloadDataBlock!()
             Utils.showMessage(NSLocalizedString("save_succeed", comment: ""), controller: self)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.navigationController?.popViewController(animated: true)
@@ -282,7 +288,13 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         self.timeMissionNew!.timeStamp = UInt32(NSDate.init().timeIntervalSince1970)
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, timeMissionConfig: self.timeMissionNew, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed {
-                self.navigationController?.popViewController(animated: true)
+                self.reloadDataBlock!()
+                Utils.showMessage(NSLocalizedString("删除成功", comment: ""), controller: self)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            } else {
+                Utils.showDeviceOperationFailed(-1, at: self)
             }
         })
     }
@@ -359,6 +371,11 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         vc.musicID = self.timeMissionNew!.musicID
         vc.volume = self.timeMissionNew!.volume
         vc.playMode = self.timeMissionNew!.playMode
+        vc.musicInfoSettingBlock = {(playMode, musicID, volume) ->() in
+            self.timeMissionNew!.musicID = musicID
+            self.timeMissionNew!.volume = volume
+            self.timeMissionNew!.playMode = playMode
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
