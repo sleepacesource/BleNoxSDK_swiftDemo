@@ -96,7 +96,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         colorList.append(color1)
         
         color1 = WaveCustomColor.init()
-        color1.colorId = 0;
+        color1.colorId = 1;
         colorLight = SLPLight.init()
         colorLight.r = 255;
         colorLight.g = 100;
@@ -107,7 +107,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         colorList.append(color1)
         
         color1 = WaveCustomColor.init()
-        color1.colorId = 0;
+        color1.colorId = 2;
         colorLight = SLPLight.init()
         colorLight.r = 0;
         colorLight.g = 255;
@@ -118,7 +118,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         colorList.append(color1)
         
         color1 = WaveCustomColor.init()
-        color1.colorId = 0;
+        color1.colorId = 3;
         colorLight = SLPLight.init()
         colorLight.r = 0;
         colorLight.g = 125;
@@ -129,7 +129,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         colorList.append(color1)
         
         color1 = WaveCustomColor.init()
-        color1.colorId = 0;
+        color1.colorId = 4;
         colorLight = SLPLight.init()
         colorLight.r = 125;
         colorLight.g = 0;
@@ -140,7 +140,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         colorList.append(color1)
         
         color1 = WaveCustomColor.init()
-        color1.colorId = 0;
+        color1.colorId = 5;
         colorLight = SLPLight.init()
         colorLight.r = 155;
         colorLight.g = 32;
@@ -151,7 +151,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         colorList.append(color1)
         
         color1 = WaveCustomColor.init()
-        color1.colorId = 0;
+        color1.colorId = 6;
         colorLight = SLPLight.init()
         colorLight.r = 255;
         colorLight.g = 0;

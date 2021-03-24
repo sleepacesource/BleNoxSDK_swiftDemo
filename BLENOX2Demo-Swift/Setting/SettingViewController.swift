@@ -138,6 +138,45 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 1 {
+            return 104
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView()
+        if section == 1 {
+            let btn = UIButton()
+            btn.addTarget(self, action: #selector(resetDevice), for: UIControl.Event.touchUpInside)
+            btn.setTitle(NSLocalizedString("factory_reset", comment: ""), for: UIControl.State.normal)
+            view.addSubview(btn)
+            btn.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
+            btn.layer.cornerRadius = 2.0;
+            btn.layer.masksToBounds = true;
+            btn.translatesAutoresizingMaskIntoConstraints = false
+            btn.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true  //顶部约束
+            btn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true  //左端约束
+            btn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true  //右端约束
+            btn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true  //底部约束
+        }
+        
+        return view
+    }
+    
+    @objc func resetDevice() -> Void {
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, deviceInitTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+            if (status != SLPDataTransferStatus.succeed) {
+                Utils.showDeviceOperationFailed(-1, at: self)
+            }else{
+                DataManager.shared()?.reset()
+                
+                Utils.showMessage(NSLocalizedString("factory_reset_send", comment: ""), controller: self)
+            }
+        })
+    }
+    
     // 闹钟页面
     func goAlarmPage() -> Void {
         let vc = AlarmListViewController()

@@ -49,11 +49,11 @@ class LightViewController: UIViewController {
         self.brightnessLabel.text = NSLocalizedString("luminance", comment: "")
         
         ///default value(example)
-        self.rText.text = "50"
-        self.gText.text = "50"
-        self.bText.text = "50"
-        self.wText.text = "1"
-        self.brightnessText.text = "50"
+        self.rText.text = ""
+        self.gText.text = ""
+        self.bText.text = ""
+        self.wText.text = ""
+        self.brightnessText.text = ""
 
     }
     
