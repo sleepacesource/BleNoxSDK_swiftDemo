@@ -69,17 +69,12 @@ class SetLightViewController: UIViewController {
     }
     
     @objc func rightClick() ->Void {
-        let valueR = self.colorRTextField.text!.count > 0
-        let valueG = self.colorGTextField.text!.count > 0
-        let valueB = self.colorBTextField.text!.count > 0
-        let valueW = self.colorWTextField.text!.count > 0
-        let valueBrightness = self.brightnessTextFiled.text!.count > 0
-        if valueR && valueG && valueB && valueW && valueBrightness {
-            let r = Int(self.colorRTextField.text!)
-            let g = Int(self.colorGTextField.text!)
-            let b = Int(self.colorBTextField.text!)
-            let w = Int(self.colorWTextField.text!)
-            let brightness = UInt8(self.brightnessTextFiled.text!)
+        let r = Int(self.colorRTextField.text!)
+        let g = Int(self.colorGTextField.text!)
+        let b = Int(self.colorBTextField.text!)
+        let w = Int(self.colorWTextField.text!)
+        let brightness = UInt8(self.brightnessTextFiled.text!)
+        if r != nil && g != nil && b != nil && w != nil && brightness != nil {
             
             let rValid = (r! >= 0) && (r! <= 255);
             let gValid = (g! >= 0) && (g! <= 255);
@@ -108,15 +103,11 @@ class SetLightViewController: UIViewController {
     }
 
     @IBAction func sendColorAction(_ sender: UIButton) {
-        let valueR = self.colorRTextField.text!.count > 0
-        let valueG = self.colorGTextField.text!.count > 0
-        let valueB = self.colorBTextField.text!.count > 0
-        let valueW = self.colorWTextField.text!.count > 0
-        if valueR && valueG && valueB && valueW {
-            let r = Int(self.colorRTextField.text!)
-            let g = Int(self.colorGTextField.text!)
-            let b = Int(self.colorBTextField.text!)
-            let w = Int(self.colorWTextField.text!)
+        let r = Int(self.colorRTextField.text!)
+        let g = Int(self.colorGTextField.text!)
+        let b = Int(self.colorBTextField.text!)
+        let w = Int(self.colorWTextField.text!)
+        if r != nil && g != nil && b != nil && w != nil {
             
             let rValid = (r! >= 0) && (r! <= 255);
             let gValid = (g! >= 0) && (g! <= 255);

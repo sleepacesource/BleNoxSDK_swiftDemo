@@ -307,7 +307,249 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         })
     }
     
+    func color1Valid() -> Void {
+        var r = UInt8(self.color1R.text!)
+        var g = UInt8(self.color1G.text!)
+        var b = UInt8(self.color1B.text!)
+        var w = UInt8(self.color1W.text!)
+        if r != nil || g != nil || b != nil || w != nil {
+            if r == nil {
+                r = 0
+            }
+            if g == nil {
+                g = 0
+            }
+            if b == nil {
+                b = 0
+            }
+            if w == nil {
+                w = 0
+            }
+            let rValid = (r! >= 0) && (r! <= 255);
+            let gValid = (g! >= 0) && (g! <= 255);
+            let bValid = (b! >= 0) && (b! <= 255);
+            let wValid = (w! >= 0) && (w! <= 255);
+            if !(rValid && gValid && bValid && wValid)  {
+                Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
+                return
+            }
+            
+            let color = self.colorList![0]
+            color.valid = 1
+            color.light.r = r!
+            color.light.g = g!
+            color.light.b = b!
+            color.light.w = w!
+        } else {
+            let color = self.colorList![0]
+            color.valid = 0
+        }
+    }
+    
+    func color2Valid() -> Void {
+        var r = UInt8(self.color2R.text!)
+        var g = UInt8(self.color2G.text!)
+        var b = UInt8(self.color2B.text!)
+        var w = UInt8(self.color2W.text!)
+        if r != nil || g != nil || b != nil || w != nil {
+            if r == nil {
+                r = 0
+            }
+            if g == nil {
+                g = 0
+            }
+            if b == nil {
+                b = 0
+            }
+            if w == nil {
+                w = 0
+            }
+            let rValid = (r! >= 0) && (r! <= 255);
+            let gValid = (g! >= 0) && (g! <= 255);
+            let bValid = (b! >= 0) && (b! <= 255);
+            let wValid = (w! >= 0) && (w! <= 255);
+            if !(rValid && gValid && bValid && wValid)  {
+                Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
+                return
+            }
+            
+            let color = self.colorList![1]
+            color.valid = 1
+            color.light.r = r!
+            color.light.g = g!
+            color.light.b = b!
+            color.light.w = w!
+        } else {
+            let color = self.colorList![1]
+            color.valid = 0
+        }
+    }
+    
+    func color3Valid() -> Void {
+        var r = UInt8(self.color3R.text!)
+        var g = UInt8(self.color3G.text!)
+        var b = UInt8(self.color3B.text!)
+        var w = UInt8(self.color3W.text!)
+        if r != nil || g != nil || b != nil || w != nil {
+            if r == nil {
+                r = 0
+            }
+            if g == nil {
+                g = 0
+            }
+            if b == nil {
+                b = 0
+            }
+            if w == nil {
+                w = 0
+            }
+            let rValid = (r! >= 0) && (r! <= 255);
+            let gValid = (g! >= 0) && (g! <= 255);
+            let bValid = (b! >= 0) && (b! <= 255);
+            let wValid = (w! >= 0) && (w! <= 255);
+            if !(rValid && gValid && bValid && wValid)  {
+                Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
+                return
+            }
+            
+            let color = self.colorList![2]
+            color.valid = 1
+            color.light.r = r!
+            color.light.g = g!
+            color.light.b = b!
+            color.light.w = w!
+        } else {
+            let color = self.colorList![2]
+            color.valid = 0
+        }
+    }
+    
+    func color4Valid() -> Void {
+        var r = UInt8(self.color4R.text!)
+        var g = UInt8(self.color4G.text!)
+        var b = UInt8(self.color4B.text!)
+        var w = UInt8(self.color4W.text!)
+        if r != nil || g != nil || b != nil || w != nil {
+            if r == nil {
+                r = 0
+            }
+            if g == nil {
+                g = 0
+            }
+            if b == nil {
+                b = 0
+            }
+            if w == nil {
+                w = 0
+            }
+            let rValid = (r! >= 0) && (r! <= 255);
+            let gValid = (g! >= 0) && (g! <= 255);
+            let bValid = (b! >= 0) && (b! <= 255);
+            let wValid = (w! >= 0) && (w! <= 255);
+            if !(rValid && gValid && bValid && wValid)  {
+                Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
+                return
+            }
+            
+            let color = self.colorList![3]
+            color.valid = 1
+            color.light.r = r!
+            color.light.g = g!
+            color.light.b = b!
+            color.light.w = w!
+        } else {
+            let color = self.colorList![3]
+            color.valid = 0
+        }
+    }
+    
+    func color5Valid() -> Void {
+        var r = UInt8(self.color5R.text!)
+        var g = UInt8(self.color5G.text!)
+        var b = UInt8(self.color5B.text!)
+        var w = UInt8(self.color5W.text!)
+        if r != nil || g != nil || b != nil || w != nil {
+            if r == nil {
+                r = 0
+            }
+            if g == nil {
+                g = 0
+            }
+            if b == nil {
+                b = 0
+            }
+            if w == nil {
+                w = 0
+            }
+            let rValid = (r! >= 0) && (r! <= 255);
+            let gValid = (g! >= 0) && (g! <= 255);
+            let bValid = (b! >= 0) && (b! <= 255);
+            let wValid = (w! >= 0) && (w! <= 255);
+            if !(rValid && gValid && bValid && wValid)  {
+                Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
+                return
+            }
+            
+            let color = self.colorList![4]
+            color.valid = 1
+            color.light.r = r!
+            color.light.g = g!
+            color.light.b = b!
+            color.light.w = w!
+        } else {
+            let color = self.colorList![4]
+            color.valid = 0
+        }
+    }
+    
+    func color6Valid() -> Void {
+        var r = UInt8(self.color6R.text!)
+        var g = UInt8(self.color6G.text!)
+        var b = UInt8(self.color6B.text!)
+        var w = UInt8(self.color6W.text!)
+        if r != nil || g != nil || b != nil || w != nil {
+            if r == nil {
+                r = 0
+            }
+            if g == nil {
+                g = 0
+            }
+            if b == nil {
+                b = 0
+            }
+            if w == nil {
+                w = 0
+            }
+            let rValid = (r! >= 0) && (r! <= 255);
+            let gValid = (g! >= 0) && (g! <= 255);
+            let bValid = (b! >= 0) && (b! <= 255);
+            let wValid = (w! >= 0) && (w! <= 255);
+            if !(rValid && gValid && bValid && wValid)  {
+                Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
+                return
+            }
+            
+            let color = self.colorList![5]
+            color.valid = 1
+            color.light.r = r!
+            color.light.g = g!
+            color.light.b = b!
+            color.light.w = w!
+        } else {
+            let color = self.colorList![5]
+            color.valid = 0
+        }
+    }
+    
     @objc func rightClick() -> Void {
+        
+        self.color1Valid()
+        self.color2Valid()
+        self.color3Valid()
+        self.color4Valid()
+        self.color5Valid()
+        self.color6Valid()
+        
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, waveColorListConfig: self.colorList!, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed {
                 Utils.showMessage(NSLocalizedString("save_succeed", comment: ""), controller: self)
@@ -383,6 +625,37 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         
         let color = self.colorList![colorId]
         color.valid = 0
+        if colorId == 0 {
+            self.color1R.text = ""
+            self.color1G.text = ""
+            self.color1B.text = ""
+            self.color1W.text = ""
+        } else if colorId == 1 {
+            self.color2R.text = ""
+            self.color2G.text = ""
+            self.color2B.text = ""
+            self.color2W.text = ""
+        } else if colorId == 2 {
+            self.color3R.text = ""
+            self.color3G.text = ""
+            self.color3B.text = ""
+            self.color3W.text = ""
+        } else if colorId == 3 {
+            self.color4R.text = ""
+            self.color4G.text = ""
+            self.color4B.text = ""
+            self.color4W.text = ""
+        } else if colorId == 4 {
+            self.color5R.text = ""
+            self.color5G.text = ""
+            self.color5B.text = ""
+            self.color5W.text = ""
+        } else if colorId == 5 {
+            self.color6R.text = ""
+            self.color6G.text = ""
+            self.color6B.text = ""
+            self.color6W.text = ""
+        }
     }
     
     func sendColor(_ r: UInt8, _ g: UInt8, _ b: UInt8, _ w: UInt8, _ colorId: Int) -> Void {
@@ -409,16 +682,11 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func sendColor1(_ sender: Any) {
-        let valueR = self.color1R.text!.count > 0
-        let valueG = self.color1G.text!.count > 0
-        let valueB = self.color1B.text!.count > 0
-        let valueW = self.color1W.text!.count > 0
-        if valueR && valueG && valueB && valueW {
-            let r = UInt8(self.color1R.text!)
-            let g = UInt8(self.color1G.text!)
-            let b = UInt8(self.color1B.text!)
-            let w = UInt8(self.color1W.text!)
-            
+        let r = UInt8(self.color1R.text!)
+        let g = UInt8(self.color1G.text!)
+        let b = UInt8(self.color1B.text!)
+        let w = UInt8(self.color1W.text!)
+        if r != nil && g != nil && b != nil && w != nil {
             let rValid = (r! >= 0) && (r! <= 255);
             let gValid = (g! >= 0) && (g! <= 255);
             let bValid = (b! >= 0) && (b! <= 255);
@@ -440,16 +708,11 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
     
     
     @IBAction func sendColor2(_ sender: Any) {
-        let valueR = self.color2R.text!.count > 0
-        let valueG = self.color2G.text!.count > 0
-        let valueB = self.color2B.text!.count > 0
-        let valueW = self.color2W.text!.count > 0
-        if valueR && valueG && valueB && valueW {
-            let r = UInt8(self.color2R.text!)
-            let g = UInt8(self.color2G.text!)
-            let b = UInt8(self.color2B.text!)
-            let w = UInt8(self.color2W.text!)
-            
+        let r = UInt8(self.color2R.text!)
+        let g = UInt8(self.color2G.text!)
+        let b = UInt8(self.color2B.text!)
+        let w = UInt8(self.color2W.text!)
+        if r != nil && g != nil && b != nil && w != nil {
             let rValid = (r! >= 0) && (r! <= 255);
             let gValid = (g! >= 0) && (g! <= 255);
             let bValid = (b! >= 0) && (b! <= 255);
@@ -470,15 +733,12 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func sendColor3(_ sender: Any) {
-        let valueR = self.color3R.text!.count > 0
-        let valueG = self.color3G.text!.count > 0
-        let valueB = self.color3B.text!.count > 0
-        let valueW = self.color3W.text!.count > 0
-        if valueR && valueG && valueB && valueW {
-            let r = UInt8(self.color3R.text!)
-            let g = UInt8(self.color3G.text!)
-            let b = UInt8(self.color3B.text!)
-            let w = UInt8(self.color3W.text!)
+        let r = UInt8(self.color3R.text!)
+        let g = UInt8(self.color3G.text!)
+        let b = UInt8(self.color3B.text!)
+        let w = UInt8(self.color3W.text!)
+        if r != nil && g != nil && b != nil && w != nil {
+            
             
             let rValid = (r! >= 0) && (r! <= 255);
             let gValid = (g! >= 0) && (g! <= 255);
@@ -500,15 +760,11 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func sendColor4(_ sender: Any) {
-        let valueR = self.color4R.text!.count > 0
-        let valueG = self.color4G.text!.count > 0
-        let valueB = self.color4B.text!.count > 0
-        let valueW = self.color4W.text!.count > 0
-        if valueR && valueG && valueB && valueW {
-            let r = UInt8(self.color4R.text!)
-            let g = UInt8(self.color4G.text!)
-            let b = UInt8(self.color4B.text!)
-            let w = UInt8(self.color4W.text!)
+        let r = UInt8(self.color4R.text!)
+        let g = UInt8(self.color4G.text!)
+        let b = UInt8(self.color4B.text!)
+        let w = UInt8(self.color4W.text!)
+        if r != nil && g != nil && b != nil && w != nil {
             
             let rValid = (r! >= 0) && (r! <= 255);
             let gValid = (g! >= 0) && (g! <= 255);
@@ -530,15 +786,11 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func sendColor5(_ sender: Any) {
-        let valueR = self.color5R.text!.count > 0
-        let valueG = self.color5G.text!.count > 0
-        let valueB = self.color5B.text!.count > 0
-        let valueW = self.color5W.text!.count > 0
-        if valueR && valueG && valueB && valueW {
-            let r = UInt8(self.color5R.text!)
-            let g = UInt8(self.color5G.text!)
-            let b = UInt8(self.color5B.text!)
-            let w = UInt8(self.color5W.text!)
+        let r = UInt8(self.color5R.text!)
+        let g = UInt8(self.color5G.text!)
+        let b = UInt8(self.color5B.text!)
+        let w = UInt8(self.color5W.text!)
+        if r != nil && g != nil && b != nil && w != nil {
             
             let rValid = (r! >= 0) && (r! <= 255);
             let gValid = (g! >= 0) && (g! <= 255);
@@ -560,15 +812,11 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func sendColor6(_ sender: Any) {
-        let valueR = self.color6R.text!.count > 0
-        let valueG = self.color6G.text!.count > 0
-        let valueB = self.color6B.text!.count > 0
-        let valueW = self.color6W.text!.count > 0
-        if valueR && valueG && valueB && valueW {
-            let r = UInt8(self.color6R.text!)
-            let g = UInt8(self.color6G.text!)
-            let b = UInt8(self.color6B.text!)
-            let w = UInt8(self.color6W.text!)
+        let r = UInt8(self.color6R.text!)
+        let g = UInt8(self.color6G.text!)
+        let b = UInt8(self.color6B.text!)
+        let w = UInt8(self.color6W.text!)
+        if r != nil && g != nil && b != nil && w != nil {
             
             let rValid = (r! >= 0) && (r! <= 255);
             let gValid = (g! >= 0) && (g! <= 255);

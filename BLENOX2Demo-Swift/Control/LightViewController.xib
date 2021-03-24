@@ -175,7 +175,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0~100" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvT-3r-5Ls">
-                    <rect key="frame" x="15" y="216" width="69.5" height="50"/>
+                    <rect key="frame" x="15" y="216" width="235" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="0Uo-E0-Nl8"/>
                     </constraints>
@@ -183,7 +183,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xci-eF-aOB">
-                    <rect key="frame" x="104.5" y="216" width="90" height="50"/>
+                    <rect key="frame" x="270" y="216" width="90" height="50"/>
                     <color key="backgroundColor" red="0.1647058824" green="0.59215686270000001" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Cog-nR-Lb7"/>
@@ -217,6 +217,7 @@
                 <constraint firstItem="wEY-zg-Jsk" firstAttribute="top" secondItem="GJO-iF-6NW" secondAttribute="bottom" constant="22" id="8gV-XV-SrL"/>
                 <constraint firstItem="Z8i-Wn-9mv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="C93-aC-5jI"/>
                 <constraint firstItem="Z8i-Wn-9mv" firstAttribute="top" secondItem="GJO-iF-6NW" secondAttribute="bottom" constant="20" id="Epy-mm-HrX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xci-eF-aOB" secondAttribute="trailing" constant="15" id="FNB-KB-hqM"/>
                 <constraint firstItem="kZw-nY-cSn" firstAttribute="top" secondItem="tvT-3r-5Ls" secondAttribute="bottom" constant="30" id="H1z-yw-btd"/>
                 <constraint firstItem="GJO-iF-6NW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="HDP-y2-paO"/>
                 <constraint firstItem="Xci-eF-aOB" firstAttribute="top" secondItem="tvT-3r-5Ls" secondAttribute="top" id="NxH-Na-bdM"/>

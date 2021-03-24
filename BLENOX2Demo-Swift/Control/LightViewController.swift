@@ -59,52 +59,50 @@ class LightViewController: UIViewController {
     
     
     @IBAction func changeColor(_ sender: Any) {
-        let r  = UInt8(self.rText.text!)
-        let g  = UInt8(self.gText.text!)
-        let b  = UInt8(self.bText.text!)
-        let w  = UInt8(self.wText.text!)
-        let br = UInt8(self.brightnessText.text!)!
-
-        let light: SLPLight = SLPLight()
-        light.r = r ?? 0
-        light.g = g ?? 0
-        light.b = b ?? 0
-        light.w = w ?? 0
         
-        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnColorLight: light, brightness: br, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-            if status == SLPDataTransferStatus.succeed
-            {
-                print("change color succeed !")
+        let r = UInt8(self.rText.text!)
+        let g = UInt8(self.gText.text!)
+        let b = UInt8(self.bText.text!)
+        let w = UInt8(self.wText.text!)
+        
+        var br = UInt8(self.brightnessText.text!)
+        if r != nil && g != nil && b != nil && w != nil {
+            let light: SLPLight = SLPLight()
+            light.r = r!
+            light.g = g!
+            light.b = b!
+            light.w = w!
+            
+            if br == nil {
+                br = 50
             }
-            else
-            {
-                print("change color failed !")
-            }
-        })
+            
+            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnColorLight: light, brightness: br!, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+                if status != SLPDataTransferStatus.succeed {
+                    Utils.showDeviceOperationFailed(-1, at: self)
+                }
+            })
+        } else {
+            Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
+        }
     }
     
     @IBAction func changeBrightness(_ sender: Any) {
+        let br = UInt8(self.brightnessText.text!)
+        if br == nil {
+            Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
+            return
+        }
         
-        let r  = UInt8(self.rText.text!)
-        let g  = UInt8(self.gText.text!)
-        let b  = UInt8(self.gText.text!)
-        let w  = UInt8(self.wText.text!)
-        let br = UInt8(self.brightnessText.text!)!
+        let valid = (br! >= 0) && (br! <= 100);
+        if !valid {
+            Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
+            return
+        }
         
-        let light: SLPLight = SLPLight()
-        light.r = r ?? 0
-        light.g = g ?? 0
-        light.b = b ?? 0
-        light.w = w ?? 0
-        
-        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnColorLight: light, brightness: br, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-            if status == SLPDataTransferStatus.succeed
-            {
-                print("change brightness succeed !")
-            }
-            else
-            {
-                print("change brightness failed !")
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, lightBrightness: br!, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any) in
+            if status != SLPDataTransferStatus.succeed {
+                Utils.showDeviceOperationFailed(-1, at: self)
             }
         })
     }
@@ -112,13 +110,8 @@ class LightViewController: UIViewController {
     
     @IBAction func closeLight(_ sender: Any) {
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOffLightTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-            if status == SLPDataTransferStatus.succeed
-            {
-                print("close succeed !")
-            }
-            else
-            {
-               print("close failed !")
+            if status != SLPDataTransferStatus.succeed {
+                Utils.showDeviceOperationFailed(-1, at: self)
             }
         })
     }
