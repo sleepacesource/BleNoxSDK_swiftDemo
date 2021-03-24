@@ -118,7 +118,27 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     @objc func rightClick() -> Void {
+        
+        var timeID: UInt8 = 0
+        let list = self.timeMissionList!
+        if list.count > 0 {
+            for i in 0...9 {
+                var exist = false
+                for timeMission in list {
+                    let mission = timeMission as? BleNoxTimeMission
+                    if i == mission!.timeID {
+                        exist = true
+                    }
+                }
+                
+                if !exist {
+                    timeID = UInt8(i)
+                    break
+                }
+            }
+        }
         let vc = TimeMissionViewController()
+        vc.timeID = timeID
         vc.mode = 0
         vc.reloadDataBlock = {()->() in
             self.getDataAndReload()

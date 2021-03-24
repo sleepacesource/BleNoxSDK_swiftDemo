@@ -12,6 +12,8 @@ typealias ReloadDataBlock = () -> ()
 
 class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+    var timeID:UInt8 = 0
+    
     var timeMissionNew: BleNoxTimeMission?
     
     var originTimeMission: BleNoxTimeMission?
@@ -19,8 +21,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     var mode: Int?  // 0： 添加  1：编辑
     
     var reloadDataBlock: ReloadDataBlock?
-    
-    
+
     @IBOutlet weak var tableView: UITableView!
     
     func getMusicList() -> Array<MusicInfo> {
@@ -81,7 +82,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         
         if self.mode == 0 {
             let timeMissionNew = BleNoxTimeMission()
-            timeMissionNew.timeID = 0;
+            timeMissionNew.timeID = self.timeID
             timeMissionNew.isOpen = true;
             timeMissionNew.startHour = 20;
             timeMissionNew.startMinute = 0;
