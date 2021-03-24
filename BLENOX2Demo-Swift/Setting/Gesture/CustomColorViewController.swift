@@ -72,13 +72,6 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
     
     var colorList: Array<WaveCustomColor>?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.initData()
-
-        self.setUI()
-    }
     
     func getColorList() -> [WaveCustomColor] {
         // 颜色
@@ -164,8 +157,31 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         return colorList
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.initData()
+
+        self.setUI()
+    }
+    
+    
     func initData() -> Void {
         self.colorList = self.getColorList()
+        
+        let colorList = DataManager.shared().customColorList!
+        if colorList.count > 0 {
+            self.colorList = colorList
+        } else {
+            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, getWaveColorListTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+                if status == SLPDataTransferStatus.succeed {
+                    DataManager.shared()?.customColorList = data as? [WaveCustomColor]
+                    let colorList = DataManager.shared().customColorList!
+                    self.colorList = colorList
+                    self.initColorField()
+                }
+            })
+        }
     }
     
     func initColorField() -> Void {

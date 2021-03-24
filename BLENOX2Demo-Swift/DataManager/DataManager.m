@@ -49,9 +49,11 @@
         _nightLightInfo.startMinute = 0;
         _nightLightInfo.duration = 420;
         
-        _alarmList = [NSMutableArray array];
+        _alarmList = [NSArray array];
         
         _timeMissionList = [NSArray array];
+        
+        _customColorList = [NSArray array];
         
 //        NSMutableArray *list = [NSMutableArray array];
 //        BleNoxTimeMission *info = [[BleNoxTimeMission alloc] init];

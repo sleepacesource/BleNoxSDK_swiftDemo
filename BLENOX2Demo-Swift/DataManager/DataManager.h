@@ -46,7 +46,7 @@
 
 @property (nonatomic, assign) UInt16 delayTime;
 
-@property (nonatomic, assign) NSArray<WaveCustomColor *> *customColorList;
+@property (nonatomic, strong) NSArray<WaveCustomColor *> *customColorList;
 
 + (DataManager *)sharedDataManager;
 
