@@ -115,11 +115,12 @@
     
     _aidInfo.aidStopDuration = 1;
     _aidInfo.r = 255;
+    _aidInfo.g = 35;
     _aidInfo.b = 0;
     _aidInfo.w = 0;
-    _aidInfo.brightness = 0;
+    _aidInfo.brightness = 30;
 //    _aidInfo.aromaRate = 2;
-    _volumn = 0;
+    _volumn = 6;
 }
 
 - (void)toInit {

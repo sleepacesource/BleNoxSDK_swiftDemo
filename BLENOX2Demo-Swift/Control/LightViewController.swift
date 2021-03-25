@@ -26,9 +26,20 @@ class LightViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.setUI();
         
+        NotificationCenter.default.addObserver(self, selector: #selector(setDefaultValue), name: Notification.Name(rawValue: kRESETDEVICENOTIFICATION), object: nil)
+    }
+    
+    @objc func setDefaultValue() -> Void {
+        self.rText.text = String(format: "%d", 155)
+        self.gText.text = String(format: "%d", 32)
+        self.bText.text = String(format: "%d", 93)
+        self.wText.text = String(format: "%d", 255)
+        self.brightnessText.text = String(format: "%d", 100)
     }
 
+
     func setUI() -> Void {
+        self.setDefaultValue()
         
         self.sendBT1.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.sendBT1.layer.cornerRadius = 2.0;
@@ -47,14 +58,6 @@ class LightViewController: UIViewController {
         
         self.colorTitleLabel.text = NSLocalizedString("color", comment: "")
         self.brightnessLabel.text = NSLocalizedString("luminance", comment: "")
-        
-        ///default value(example)
-        self.rText.text = ""
-        self.gText.text = ""
-        self.bText.text = ""
-        self.wText.text = ""
-        self.brightnessText.text = ""
-
     }
     
     

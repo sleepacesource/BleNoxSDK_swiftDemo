@@ -8,6 +8,8 @@
 
 import UIKit
 
+let kRESETDEVICENOTIFICATION = "kRESETDEVICENOTIFICATION"
+
 class SettingViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -180,6 +182,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
                 DataManager.shared()?.reset()
                 
                 Utils.showMessage(NSLocalizedString("factory_reset_send", comment: ""), controller: self)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: kRESETDEVICENOTIFICATION), object: nil)
             }
         })
     }

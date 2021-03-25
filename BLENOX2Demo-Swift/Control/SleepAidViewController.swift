@@ -66,15 +66,34 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         self.initData()
         
         self.playMode = DataManager.shared().playMode
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setDefaultValue), name: Notification.Name(rawValue: kRESETDEVICENOTIFICATION), object: nil)
+        
+        self.setUI();
+    }
+    
+    @objc func setDefaultValue() -> Void {
+        self.colorRTextField.text = String(format: "%d", 255)
+        self.colorGTextfFiled.text = String(format: "%d", 35)
+        self.colorBTextFiled.text = String(format: "%d", 0)
+        self.colorWTextFiled.text = String(format: "%d", 0)
+        self.brightnessTextFiled.text = String(format: "%d", 30)
+        self.volTextField.text = String(format: "%d", 6)
+        if (DataManager.shared().aidInfo.volume > 0) {
+            self.volTextField.text = String(format: "%d", DataManager.shared().aidInfo.volume)
+        }
+        if (DataManager.shared().aidInfo.g > 0) {
+            self.colorGTextfFiled.text = String(format: "%d", DataManager.shared().aidInfo.g)
+        }
+        
+        if (DataManager.shared().aidInfo.brightness > 0) {
+            self.brightnessTextFiled.text = String(format: "%d", DataManager.shared().aidInfo.brightness)
+        }
+        self.musicNameLabel.text = self.getMusicNameWithMusicID(musicId: DataManager.shared().assistMusicID)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.colorGTextfFiled.text = "";
-        self.brightnessTextFiled.text = "";
-        self.volTextField.text = "";
-        self.setUI();
     }
     
     func getSleepAidMusicList() -> Array<MusicInfo> {
@@ -142,6 +161,8 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         self.setLightUI()
         
         self.setAromaUI()
+        
+        self.setDefaultValue()
     }
     
     func setMusicUI() -> Void {
@@ -157,16 +178,9 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         self.sendBtn.setTitle(NSLocalizedString("send", comment: ""), for: UIControl.State.normal)
         self.stopMusicBtn.layer.masksToBounds = true;
         self.stopMusicBtn.layer.cornerRadius = 5;
-        
-        if (DataManager.shared().aidInfo.volume > 0) {
-            self.volTextField.text = String(format: "%d", DataManager.shared().aidInfo.volume)
-        }
     }
     
     func setLightUI() -> Void {
-        self.colorRTextField.text = String(format: "%d", 255)
-        self.colorBTextFiled.text = String(format: "%d", 0)
-        self.colorWTextFiled.text = String(format: "%d", 0)
         
         self.colorLabel.text = NSLocalizedString("color", comment: "")
         self.brightnessLabel.text = NSLocalizedString("luminance", comment: "")
@@ -188,17 +202,7 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         self.openLightBtn.layer.masksToBounds = true;
         self.openLightBtn.layer.cornerRadius = 5;
         
-        self.musicNameLabel.text = self.getMusicNameWithMusicID(musicId: DataManager.shared().assistMusicID)
-        
         self.stopMusicBtn.setTitle(NSLocalizedString("play", comment: ""), for: UIControl.State.normal)
-        
-        if (DataManager.shared().aidInfo.g > 0) {
-            self.colorGTextfFiled.text = String(format: "%d", DataManager.shared().aidInfo.g)
-        }
-        
-        if (DataManager.shared().aidInfo.brightness > 0) {
-            self.brightnessTextFiled.text = String(format: "%d", DataManager.shared().aidInfo.brightness)
-        }
     }
     
     func getMusicNameWithMusicID(musicId: Int) -> String {
