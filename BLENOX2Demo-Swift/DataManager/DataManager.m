@@ -121,6 +121,8 @@
     _aidInfo.brightness = 30;
 //    _aidInfo.aromaRate = 2;
     _volumn = 6;
+    
+    _playMode = 0;
 }
 
 - (void)toInit {

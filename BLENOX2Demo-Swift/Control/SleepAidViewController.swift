@@ -90,6 +90,8 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
             self.brightnessTextFiled.text = String(format: "%d", DataManager.shared().aidInfo.brightness)
         }
         self.musicNameLabel.text = self.getMusicNameWithMusicID(musicId: DataManager.shared().assistMusicID)
+        
+        self.repeatNameLabel.text = NSLocalizedString("顺序循环", comment: "")
     }
     
     override func viewWillAppear(_ animated: Bool) {
