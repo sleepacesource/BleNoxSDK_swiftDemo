@@ -20,8 +20,6 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         NotificationCenter.default.addObserver(self, selector: #selector(deviceConnected), name: NSNotification.Name(rawValue: kNotificationNameBLEDeviceConnected), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deviceDisConnected), name: NSNotification.Name(rawValue: kNotificationNameBLEDeviceDisconnect), object: nil)
-        
-        self.initData()
     }
     
     func initData() -> Void {
@@ -49,6 +47,8 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         super.viewWillAppear(animated)
         
         self.showConnected(connected: DataManager.shared().connected)
+        
+        self.initData()
     }
     
     @objc func deviceConnected() {

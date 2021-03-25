@@ -91,6 +91,11 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         let bleOpen = SLPBLEManager.shared()?.blueToothIsOpen()
         if !bleOpen! {
             print("ble not open!")
+            let isOpen = SLPBLEManager.shared()?.blueToothIsOpen()
+            if !(isOpen!) {
+                Utils.showMessage(NSLocalizedString("phone_bluetooth_not_open", comment: ""), controller: self);
+                return
+            }
             return ;
         }
         
@@ -127,6 +132,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
             }
             else
             {
+                Utils.showDeviceOperationFailed(-1, at: self)
                 print("connect failed")
             }
         })

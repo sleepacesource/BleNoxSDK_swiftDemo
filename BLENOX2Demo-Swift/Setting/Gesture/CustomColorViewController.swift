@@ -169,19 +169,14 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
     func initData() -> Void {
         self.colorList = self.getColorList()
         
-        let colorList = DataManager.shared().customColorList!
-        if colorList.count > 0 {
-            self.colorList = colorList
-        } else {
-            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, getWaveColorListTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-                if status == SLPDataTransferStatus.succeed {
-                    DataManager.shared()?.customColorList = data as? [WaveCustomColor]
-                    let colorList = DataManager.shared().customColorList!
-                    self.colorList = colorList
-                    self.initColorField()
-                }
-            })
-        }
+        SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, getWaveColorListTimeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+            if status == SLPDataTransferStatus.succeed {
+                DataManager.shared()?.customColorList = data as? [WaveCustomColor]
+                let colorList = DataManager.shared().customColorList!
+                self.colorList = colorList
+                self.initColorField()
+            }
+        })
     }
     
     func initColorField() -> Void {

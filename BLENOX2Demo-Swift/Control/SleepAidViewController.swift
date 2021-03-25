@@ -378,6 +378,11 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
             }
         }
         
+        if g == nil {
+//            Utils.showMessage(NSLocalizedString("input_0_120", comment: ""), controller: self)
+            return
+        }
+        
         let light = SLPLight()
         light.r = UInt8(r!)
         light.g = UInt8(g!)
@@ -404,8 +409,8 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
             return
         }
         
-        let g = UInt8(self.colorGTextfFiled.text!)
-        let isValid = (g! >= 0) && (g! <= 100);
+        let brightness = UInt8(self.brightnessTextFiled.text!)
+        let isValid = (brightness! >= 0) && (brightness! <= 100);
         if !isValid {
             Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
             return

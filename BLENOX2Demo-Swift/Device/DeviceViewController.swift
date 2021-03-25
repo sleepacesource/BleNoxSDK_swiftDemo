@@ -103,6 +103,11 @@ class DeviceViewController: UIViewController {
                 
             })
         } else {
+            let isOpen = SLPBLEManager.shared()?.blueToothIsOpen()
+            if !(isOpen!) {
+                Utils.showMessage(NSLocalizedString("phone_bluetooth_not_open", comment: ""), controller: self);
+                return
+            }
             let searchVC = SearchViewController ()
             searchVC.title = NSLocalizedString("search_ble", comment: "")
             self.navigationController?.pushViewController(searchVC, animated: true)
@@ -158,7 +163,7 @@ class DeviceViewController: UIViewController {
             if status == SLPDataTransferStatus.succeed
             {
                 let info: BleNoxUpgradeInfo = data as! BleNoxUpgradeInfo
-                let progress = Int(info.progress * 100)
+                let progress = Int(info.progress)
                 self.progressLabel.text = "\(Int(info.progress * 100))" + "%"
                 if progress == 1 {
                     Utils.showMessage(NSLocalizedString("up_success", comment: ""), controller: self)

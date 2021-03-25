@@ -60,14 +60,14 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     }
 
     @objc func rightClick() -> Void {
-        if (self.alarmList!.count >= 5) {
-            Utils.showMessage(NSLocalizedString("more_5", comment: ""), controller: self)
+        if (self.alarmList!.count >= 10) {
+            Utils.showMessage(NSLocalizedString("设置已达上限", comment: ""), controller: self)
             return;
         }
         var alarmID: UInt64 = 0
         let list = self.alarmList!
         if list.count > 0 {
-            for i in 0...4 {
+            for i in 0...9 {
                 var exist = false
                 for item in list {
                     let alarm = item as? BleNoxAlarmInfo
