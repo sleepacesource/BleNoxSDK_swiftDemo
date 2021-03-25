@@ -179,6 +179,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
             if (status != SLPDataTransferStatus.succeed) {
                 Utils.showDeviceOperationFailed(-1, at: self)
             }else{
+                self.initData()
                 DataManager.shared()?.reset()
                 
                 Utils.showMessage(NSLocalizedString("factory_reset_send", comment: ""), controller: self)
@@ -214,7 +215,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     // 倒计时页面
     func goCountDownPage() -> Void {
-        let dataList = ["关闭", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6"];
+        let dataList = [NSLocalizedString("close", comment: ""), "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6"];
         
         let delayTime = DataManager.shared().delayTime
         let minuteList: Array<UInt16> = [0, 30, 60, 90, 120, 150,180, 210, 240, 270, 300, 330, 360]
@@ -233,7 +234,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
             SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, delayCloseTimeConfig: selectedValue, timeout: 0, completion: { (status: SLPDataTransferStatus, data: Any?) in
                 if (status == SLPDataTransferStatus.succeed) {
                     DataManager.shared()?.delayTime = selectedValue
-                    Utils.showMessage("设置成功", controller: self)
+                    Utils.showMessage(NSLocalizedString("settingSucceed", comment: ""), controller: self)
                 } else {
                     Utils.showDeviceOperationFailed(-1, at: self)
                 }

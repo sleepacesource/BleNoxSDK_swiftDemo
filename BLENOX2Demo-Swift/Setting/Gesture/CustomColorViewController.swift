@@ -193,7 +193,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
             self.color1W.text = ""
         }
         
-        let color2 = self.colorList![0]
+        let color2 = self.colorList![1]
         if color2.valid == 1 {
             self.color2R.text = String(format: "%d", color2.light.r)
             self.color2G.text = String(format: "%d", color2.light.g)
@@ -206,7 +206,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
             self.color2W.text = ""
         }
         
-        let color3 = self.colorList![0]
+        let color3 = self.colorList![2]
         if color1.valid == 1 {
             self.color3R.text = String(format: "%d", color3.light.r)
             self.color3G.text = String(format: "%d", color3.light.g)
@@ -219,7 +219,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
             self.color3W.text = ""
         }
         
-        let color4 = self.colorList![0]
+        let color4 = self.colorList![3]
         if color4.valid == 1 {
             self.color4R.text = String(format: "%d", color4.light.r)
             self.color4G.text = String(format: "%d", color4.light.g)
@@ -232,7 +232,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
             self.color4W.text = ""
         }
         
-        let color5 = self.colorList![0]
+        let color5 = self.colorList![4]
         if color1.valid == 1 {
             self.color5R.text = String(format: "%d", color5.light.r)
             self.color5G.text = String(format: "%d", color5.light.g)
@@ -245,7 +245,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
             self.color5W.text = ""
         }
         
-        let color6 = self.colorList![0]
+        let color6 = self.colorList![5]
         if color6.valid == 1 {
             self.color6R.text = String(format: "%d", color6.light.r)
             self.color6G.text = String(format: "%d", color6.light.g)
@@ -274,12 +274,12 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         
         self.color7Lum.text = NSLocalizedString("liuguang", comment: "")
         
-        self.color1Send.setTitle(NSLocalizedString("预览", comment: ""), for: UIControl.State.normal)
-        self.color2Send.setTitle(NSLocalizedString("预览", comment: ""), for: UIControl.State.normal)
-        self.color3Send.setTitle(NSLocalizedString("预览", comment: ""), for: UIControl.State.normal)
-        self.color4Send.setTitle(NSLocalizedString("预览", comment: ""), for: UIControl.State.normal)
-        self.color5Send.setTitle(NSLocalizedString("预览", comment: ""), for: UIControl.State.normal)
-        self.color6Send.setTitle(NSLocalizedString("预览", comment: ""), for: UIControl.State.normal)
+        self.color1Send.setTitle(NSLocalizedString("preview", comment: ""), for: UIControl.State.normal)
+        self.color2Send.setTitle(NSLocalizedString("preview", comment: ""), for: UIControl.State.normal)
+        self.color3Send.setTitle(NSLocalizedString("preview", comment: ""), for: UIControl.State.normal)
+        self.color4Send.setTitle(NSLocalizedString("preview", comment: ""), for: UIControl.State.normal)
+        self.color5Send.setTitle(NSLocalizedString("preview", comment: ""), for: UIControl.State.normal)
+        self.color6Send.setTitle(NSLocalizedString("preview", comment: ""), for: UIControl.State.normal)
         
         self.color1Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
         self.color2Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
@@ -577,9 +577,9 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
     
     func cleanColor(_ colorId: Int) -> Void {
         if !self.cleaned {
-            let alertVc = UIAlertController(title: "清空灯光颜色", message: "清空后用户挥手控制灯光时不再出现此颜色的灯光，是否确认删除此颜色的灯光？", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-                    let okAction = UIAlertAction(title: "确定", style: .default, handler: {
+            let alertVc = UIAlertController(title: NSLocalizedString("cleanColor", comment: ""), message: NSLocalizedString("confirmCleanColor", comment: ""), preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel, handler: nil)
+            let okAction = UIAlertAction(title: NSLocalizedString("confirm", comment: ""), style: .default, handler: {
                         action in
                         let color = self.colorList![colorId]
                         color.valid = 0
@@ -630,7 +630,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         }
         
         if validCount <= 3 {
-            Utils.showMessage(NSLocalizedString("不得少于3种颜色", comment: ""), controller: self)
+            Utils.showMessage(NSLocalizedString("at_Least_3", comment: ""), controller: self)
             return
         }
         

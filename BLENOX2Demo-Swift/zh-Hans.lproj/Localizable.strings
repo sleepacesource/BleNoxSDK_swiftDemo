@@ -156,3 +156,15 @@
 "noCustom"="不支持自定义";
 "liuguang"="流光";
 "cleanColor"="清空";
+"cycleMode"="循环模式";
+"sequencePlay"="顺序循环";
+"randomPlay"="随机播放";
+"singlePlay"="单曲循环";
+"deleteMission"="删除定时任务";
+"confirmDeleteMission"="确认是否删除此定时任务？";
+"deleted"="已删除";
+"settingSucceed"="设置成功";
+"preview"="预览";
+"at_Least_3"="不得少于3种颜色";
+"cleanColor"="清空灯光颜色";
+"confirmCleanColor"="清空后用户挥手控制灯光时不再出现此颜色的灯光，是否确认删除此颜色的灯光？";

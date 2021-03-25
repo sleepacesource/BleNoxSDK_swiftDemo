@@ -91,7 +91,7 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         }
         self.musicNameLabel.text = self.getMusicNameWithMusicID(musicId: DataManager.shared().assistMusicID)
         
-        self.repeatNameLabel.text = NSLocalizedString("顺序循环", comment: "")
+        self.repeatNameLabel.text = NSLocalizedString("sequencePlay", comment: "")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -170,8 +170,8 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
     func setMusicUI() -> Void {
         self.musicLabel.text = NSLocalizedString("music", comment: "")
         self.volLabel.text = NSLocalizedString("volume", comment: "")
-        self.repeatMode.text = NSLocalizedString("循环模式", comment: "")
-        self.repeatNameLabel.text = NSLocalizedString("顺序循环", comment: "")
+        self.repeatMode.text = NSLocalizedString("cycleMode", comment: "")
+        self.repeatNameLabel.text = NSLocalizedString("sequencePlay", comment: "")
         self.musicLabel.textColor = Theme.c4()
         self.volLabel.textColor = Theme.c4()
         
@@ -256,7 +256,7 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func selectRepeatMode(_ sender: UIButton) {
         let picker = Bundle.main.loadNibNamed("DataPicker", owner: nil, options: nil)?.first as! DataPicker
-        let list = [NSLocalizedString("顺序循环", comment: ""), NSLocalizedString("随机播放", comment: ""), NSLocalizedString("单曲循环", comment: "")]
+        let list = [NSLocalizedString("sequencePlay", comment: ""), NSLocalizedString("randomPlay", comment: ""), NSLocalizedString("singlePlay", comment: "")]
         picker.dataList = list
         picker.selectedRow = Int(self.playMode)
         picker.reload()

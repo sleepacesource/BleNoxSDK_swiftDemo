@@ -288,16 +288,16 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     @objc func deleteMission() {
         
         
-        let alertVc = UIAlertController(title: "删除定时任务", message: "确认是否删除此定时任务？", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-                let okAction = UIAlertAction(title: "确定", style: .default, handler: {
+        let alertVc = UIAlertController(title: NSLocalizedString("deleteMission", comment: ""), message: NSLocalizedString("confirmDeleteMission", comment: ""), preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel, handler: nil)
+                let okAction = UIAlertAction(title: NSLocalizedString("confirm", comment: ""), style: .default, handler: {
                     action in
                     self.timeMissionNew!.valid = 0
                     self.timeMissionNew!.timeStamp = UInt32(NSDate.init().timeIntervalSince1970)
                     SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, timeMissionConfig: self.timeMissionNew, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
                         if status == SLPDataTransferStatus.succeed {
                             self.reloadDataBlock!()
-                            Utils.showMessage(NSLocalizedString("已删除", comment: ""), controller: self)
+                            Utils.showMessage(NSLocalizedString("deleted", comment: ""), controller: self)
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 self.navigationController?.popViewController(animated: true)
                             }
