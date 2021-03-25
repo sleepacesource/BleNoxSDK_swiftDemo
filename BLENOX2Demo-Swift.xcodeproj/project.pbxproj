@@ -10,8 +10,6 @@
 		262846E9232A3D000018E84D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 262846E8232A3D000018E84D /* libc++.tbd */; };
 		2642755B233086AC003F5BA7 /* CustomStyleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26427559233086AC003F5BA7 /* CustomStyleButton.m */; };
 		2642755C233086AC003F5BA7 /* CustomColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2642755A233086AC003F5BA7 /* CustomColorButton.m */; };
-		2684E8E22490BE4D00ADF97E /* SN902B_20200610.1.29.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 2684E8E12490BE4D00ADF97E /* SN902B_20200610.1.29.MVA */; };
-		2684E8EA2490C23900ADF97E /* SN902B_V1.28_20191129.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 2684E8E92490C23900ADF97E /* SN902B_V1.28_20191129.MVA */; };
 		2685C4552329DF75009947EE /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C4532329DF75009947EE /* DeviceViewController.swift */; };
 		2685C4562329DF75009947EE /* DeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685C4542329DF75009947EE /* DeviceViewController.xib */; };
 		2685C4592329DF8A009947EE /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685C4572329DF8A009947EE /* ControlViewController.swift */; };
@@ -38,6 +36,7 @@
 		26E279352328EC24005A983D /* BLENOX2Demo_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E279342328EC24005A983D /* BLENOX2Demo_SwiftTests.swift */; };
 		26E279402328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2793F2328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift */; };
 		26F4AEF02332217700575C02 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4AEEF2332217600575C02 /* DataManager.m */; };
+		8F3332A4260C1B7300F9DD70 /* SN902B_V1.30_20210325.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 8F3332A3260C1B7300F9DD70 /* SN902B_V1.30_20210325.MVA */; };
 		8F37B7D52603330000A69893 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B7D32603330000A69893 /* TitleCell.swift */; };
 		8F37B7D62603330000A69893 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B7D42603330000A69893 /* TitleCell.xib */; };
 		8F37B7F626033D4400A69893 /* TitleArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B7F426033D4400A69893 /* TitleArrowCell.swift */; };
@@ -122,8 +121,6 @@
 		26427559233086AC003F5BA7 /* CustomStyleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomStyleButton.m; sourceTree = "<group>"; };
 		2642755A233086AC003F5BA7 /* CustomColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomColorButton.m; sourceTree = "<group>"; };
 		2642755D23308959003F5BA7 /* BLENOX2Demo-Swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BLENOX2Demo-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
-		2684E8E12490BE4D00ADF97E /* SN902B_20200610.1.29.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_20200610.1.29.MVA; sourceTree = "<group>"; };
-		2684E8E92490C23900ADF97E /* SN902B_V1.28_20191129.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_V1.28_20191129.MVA; sourceTree = "<group>"; };
 		2685C4532329DF75009947EE /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		2685C4542329DF75009947EE /* DeviceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceViewController.xib; sourceTree = "<group>"; };
 		2685C4572329DF8A009947EE /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +155,7 @@
 		26E279412328EC24005A983D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26F4AEEE2332217600575C02 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		26F4AEEF2332217600575C02 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		8F3332A3260C1B7300F9DD70 /* SN902B_V1.30_20210325.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_V1.30_20210325.MVA; sourceTree = "<group>"; };
 		8F37B7D32603330000A69893 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		8F37B7D42603330000A69893 /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
 		8F37B7F426033D4400A69893 /* TitleArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleArrowCell.swift; sourceTree = "<group>"; };
@@ -348,6 +346,7 @@
 		26E2791E2328EC20005A983D /* BLENOX2Demo-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				8F3332A3260C1B7300F9DD70 /* SN902B_V1.30_20210325.MVA */,
 				26E2791F2328EC20005A983D /* AppDelegate.swift */,
 				26E279212328EC20005A983D /* ViewController.swift */,
 				2685C45F2329E03B009947EE /* MainViewController.swift */,
@@ -363,8 +362,6 @@
 				26E279262328EC23005A983D /* Assets.xcassets */,
 				26E279282328EC23005A983D /* LaunchScreen.storyboard */,
 				26E2792B2328EC23005A983D /* Info.plist */,
-				2684E8E92490C23900ADF97E /* SN902B_V1.28_20191129.MVA */,
-				2684E8E12490BE4D00ADF97E /* SN902B_20200610.1.29.MVA */,
 				26D84AD02334824500311489 /* device_btn_refresh_nor@2x.png */,
 				26D84AD12334824600311489 /* device_btn_refresh_nor@3x.png */,
 				8F37B8322604364D00A69893 /* Localizable.strings */,
@@ -665,6 +662,7 @@
 				8F9C50F42600A0CA004BB46B /* NormalTableViewCell.xib in Resources */,
 				26E279272328EC23005A983D /* Assets.xcassets in Resources */,
 				8F9C512D2601C9C0004BB46B /* TimePickerSelectView.xib in Resources */,
+				8F3332A4260C1B7300F9DD70 /* SN902B_V1.30_20210325.MVA in Resources */,
 				8F9C511F260195A2004BB46B /* MusicListViewController.xib in Resources */,
 				8F9C50FB2600A0E4004BB46B /* SwtichTableViewCell.xib in Resources */,
 				8F37B80426034C5600A69893 /* DataPicker.xib in Resources */,
@@ -674,7 +672,6 @@
 				8FDBE63F2609B3670070824C /* MusicInfoSettingViewController.xib in Resources */,
 				8F9C51152600B70A004BB46B /* SelectItemCell.xib in Resources */,
 				8FD51C2A2602F0CF002C02A0 /* TimeMissionViewController.xib in Resources */,
-				2684E8E22490BE4D00ADF97E /* SN902B_20200610.1.29.MVA in Resources */,
 				8F9C51672601EBC4004BB46B /* SetTimeViewController.xib in Resources */,
 				8F9C50D3260097F0004BB46B /* NightLightViewController.xib in Resources */,
 				8F9C50D2260097F0004BB46B /* GestureViewController.xib in Resources */,
@@ -690,7 +687,6 @@
 				8F9C50D6260097F0004BB46B /* CountDownViewController.xib in Resources */,
 				2685C4682329F492009947EE /* LightViewController.xib in Resources */,
 				26D84AD32334824600311489 /* device_btn_refresh_nor@3x.png in Resources */,
-				2684E8EA2490C23900ADF97E /* SN902B_V1.28_20191129.MVA in Resources */,
 				8F9C50D8260097F0004BB46B /* TimeMissionListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
