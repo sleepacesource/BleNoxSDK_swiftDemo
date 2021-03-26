@@ -24,6 +24,12 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
 
     @IBOutlet weak var tableView: UITableView!
     
+    var preAidLight: SLPLight?  // 记录上一次的助眠颜色
+    var preAidBrightness: UInt8? // 记录上一次的助眠亮度
+    
+    var preLight: SLPLight? // 记录上一次的照明颜色
+    var preBrightness: UInt8? // 记录上一次的照明亮度
+    
     func getMusicList() -> Array<MusicInfo> {
         var musicList = [MusicInfo]()
         
@@ -80,6 +86,20 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     func initData() -> Void {
         
+        self.preAidLight = SLPLight.init()
+        self.preAidLight!.r = 255
+        self.preAidLight!.g = 35
+        self.preAidLight!.b = 0
+        self.preAidLight!.w = 0
+        self.preBrightness = 30
+        
+        self.preLight = SLPLight.init()
+        self.preLight!.r = 155
+        self.preLight!.g = 32
+        self.preLight!.b = 93
+        self.preLight!.w = 255
+        self.preAidBrightness = 100
+        
         if self.mode == 0 {
             let timeMissionNew = BleNoxTimeMission()
             timeMissionNew.timeID = self.timeID
@@ -130,6 +150,20 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
             timeMissionNew.playMode = self.originTimeMission!.playMode
             timeMissionNew.timeStamp = self.originTimeMission!.timeStamp
             self.timeMissionNew = timeMissionNew
+            
+            if self.timeMissionNew!.mode == 0 {
+                self.preAidLight!.r = self.timeMissionNew!.light.r
+                self.preAidLight!.g = self.timeMissionNew!.light.g
+                self.preAidLight!.b = self.timeMissionNew!.light.b
+                self.preAidLight!.w = self.timeMissionNew!.light.w
+                self.preAidBrightness = self.timeMissionNew!.brightness
+            } else {
+                self.preLight!.r = self.timeMissionNew!.light.r
+                self.preLight!.g = self.timeMissionNew!.light.g
+                self.preLight!.b = self.timeMissionNew!.light.b
+                self.preLight!.w = self.timeMissionNew!.light.w
+                self.preBrightness = self.timeMissionNew!.brightness
+            }
         }
     }
     
@@ -338,21 +372,21 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         }
         picker.confirmBlock = {(row) ->() in
             self.timeMissionNew!.mode = UInt8(row)
-            if self.mode == 0 {
-                if row == 1 {
-                    self.timeMissionNew!.light.r = 155
-                    self.timeMissionNew!.light.g = 32
-                    self.timeMissionNew!.light.b = 93
-                    self.timeMissionNew!.light.w = 255
-                    self.timeMissionNew!.brightness = 100
-                } else {
-                    self.timeMissionNew!.light.r = 255
-                    self.timeMissionNew!.light.g = 35
-                    self.timeMissionNew!.light.b = 0
-                    self.timeMissionNew!.light.w = 0
-                    self.timeMissionNew!.brightness = 30
-                }
+            
+            if self.timeMissionNew!.mode == 0 {
+                self.timeMissionNew!.light.r = self.preAidLight!.r
+                self.timeMissionNew!.light.g = self.preAidLight!.g
+                self.timeMissionNew!.light.b = self.preAidLight!.b
+                self.timeMissionNew!.light.w = self.preAidLight!.w
+                self.timeMissionNew!.brightness = self.preAidBrightness!
+            } else {
+                self.timeMissionNew!.light.r = self.preLight!.r
+                self.timeMissionNew!.light.g = self.preLight!.g
+                self.timeMissionNew!.light.b = self.preLight!.b
+                self.timeMissionNew!.light.w = self.preLight!.w
+                self.timeMissionNew!.brightness = self.preBrightness!
             }
+            
             self.tableView.reloadData()
             picker.removeFromSuperview()
         }
@@ -377,6 +411,20 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
             self.timeMissionNew!.light.b = b
             self.timeMissionNew!.light.w = w
             self.timeMissionNew!.brightness = brightness
+            
+            if self.timeMissionNew!.mode == 0 {
+                self.preAidLight!.r = self.timeMissionNew!.light.r
+                self.preAidLight!.g = self.timeMissionNew!.light.g
+                self.preAidLight!.b = self.timeMissionNew!.light.b
+                self.preAidLight!.w = self.timeMissionNew!.light.w
+                self.preAidBrightness = self.timeMissionNew!.brightness
+            } else {
+                self.preLight!.r = self.timeMissionNew!.light.r
+                self.preLight!.g = self.timeMissionNew!.light.g
+                self.preLight!.b = self.timeMissionNew!.light.b
+                self.preLight!.w = self.timeMissionNew!.light.w
+                self.preBrightness = self.timeMissionNew!.brightness
+            }
         }
         self.navigationController?.pushViewController(vc, animated: true)
     }

@@ -30,11 +30,11 @@ class LightViewController: UIViewController {
     }
     
     @objc func setDefaultValue() -> Void {
-        self.rText.text = String(format: "%d", 155)
-        self.gText.text = String(format: "%d", 32)
-        self.bText.text = String(format: "%d", 93)
-        self.wText.text = String(format: "%d", 255)
-        self.brightnessText.text = String(format: "%d", 100)
+        self.rText.text = String(format: "%d", DataManager.shared()!.lightR)
+        self.gText.text = String(format: "%d", DataManager.shared()!.lightG)
+        self.bText.text = String(format: "%d", DataManager.shared()!.lightB)
+        self.wText.text = String(format: "%d", DataManager.shared()!.lightW)
+        self.brightnessText.text = String(format: "%d", DataManager.shared()!.lightBR)
     }
 
 
@@ -83,7 +83,13 @@ class LightViewController: UIViewController {
             SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnColorLight: light, brightness: br!, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
                 if status != SLPDataTransferStatus.succeed {
                     Utils.showDeviceOperationFailed(-1, at: self)
+                    return
                 }
+                
+                DataManager.shared()?.lightR = r!
+                DataManager.shared()?.lightG = g!
+                DataManager.shared()?.lightB = b!
+                DataManager.shared()?.lightW = w!
             })
         } else {
             Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
@@ -106,7 +112,10 @@ class LightViewController: UIViewController {
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, lightBrightness: br!, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any) in
             if status != SLPDataTransferStatus.succeed {
                 Utils.showDeviceOperationFailed(-1, at: self)
+                return
             }
+            
+            DataManager.shared()?.lightBR = br!
         })
     }
     

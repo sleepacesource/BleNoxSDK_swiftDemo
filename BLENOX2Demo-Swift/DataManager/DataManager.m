@@ -28,9 +28,11 @@
         _aidInfo = [[BleNoxAidInfo alloc] init];
         _aidInfo.aidStopDuration = 1;
         _aidInfo.r = 255;
+        _aidInfo.g = 35;
         _aidInfo.b = 0;
         _aidInfo.w = 0;
-        _aidInfo.brightness = 0;
+        _aidInfo.brightness = 30;
+        _aidInfo.volume = 6;
 //        _aidInfo.aromaRate = 2;
         _volumn = 0;
         
@@ -54,55 +56,15 @@
         _timeMissionList = [NSArray array];
         
         _customColorList = [NSArray array];
+
         
-//        NSMutableArray *list = [NSMutableArray array];
-//        BleNoxTimeMission *info = [[BleNoxTimeMission alloc] init];
-//        info.timeID = 0;
-//        info.isOpen = YES;
-//        info.startHour = 22;
-//        info.startMinute = 0;
-//        info.endHour = 7;
-//        info.startMinute = 0;
-//        info.repeat = 1;
-//        info.mode = 1;
-//
-//        SLPLight *light1 = [[SLPLight alloc] init];
-//        light1.r = 255;
-//        light1.g = 0;
-//        light1.b = 0;
-//        light1.w = 0;
-//        info.light = light1;
-//
-//        info.brightness = 80;
-//        info.musicID = 30001;
-//        info.volume = 10;
-//        info.valid = 1;
-//        [list addObject:info];
-//
-//        info = [[BleNoxTimeMission alloc] init];
-//        info.timeID = 0;
-//        info.isOpen = NO;
-//        info.startHour = 22;
-//        info.startMinute = 0;
-//        info.endHour = 7;
-//        info.startMinute = 0;
-//        info.repeat = 1;
-//        info.mode = 0;
-//
-//        light1 = [[SLPLight alloc] init];
-//        light1.r = 255;
-//        light1.g = 0;
-//        light1.b = 0;
-//        light1.w = 0;
-//        info.light = light1;
-//
-//        info.brightness = 80;
-//        info.musicID = 30003;
-//        info.volume = 10;
-//        info.valid = 1;
-//        [list addObject:info];
-//
-//        self.timeMissionList = list;
+        //
+        
+        _lightR = 155;
+        _lightG = 32;
+        _lightB = 93;
+        _lightW = 255;
+        _lightBR = 100;
     }
     
     return self;
@@ -120,9 +82,15 @@
     _aidInfo.w = 0;
     _aidInfo.brightness = 30;
 //    _aidInfo.aromaRate = 2;
-    _volumn = 6;
+    _aidInfo.volume = 6;
     
     _playMode = 0;
+    
+    _lightR = 155;
+    _lightG = 32;
+    _lightB = 93;
+    _lightW = 255;
+    _lightBR = 100;
 }
 
 - (void)toInit {

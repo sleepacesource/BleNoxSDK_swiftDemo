@@ -73,25 +73,16 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func setDefaultValue() -> Void {
-        self.colorRTextField.text = String(format: "%d", 255)
-        self.colorGTextfFiled.text = String(format: "%d", 35)
-        self.colorBTextFiled.text = String(format: "%d", 0)
-        self.colorWTextFiled.text = String(format: "%d", 0)
-        self.brightnessTextFiled.text = String(format: "%d", 30)
-        self.volTextField.text = String(format: "%d", 6)
-        if (DataManager.shared().aidInfo.volume > 0) {
-            self.volTextField.text = String(format: "%d", DataManager.shared().aidInfo.volume)
-        }
-        if (DataManager.shared().aidInfo.g > 0) {
-            self.colorGTextfFiled.text = String(format: "%d", DataManager.shared().aidInfo.g)
-        }
+        self.colorRTextField.text = String(format: "%d", DataManager.shared()!.aidInfo.r)
+        self.colorGTextfFiled.text = String(format: "%d", DataManager.shared()!.aidInfo.g)
+        self.colorBTextFiled.text = String(format: "%d", DataManager.shared()!.aidInfo.b)
+        self.colorWTextFiled.text = String(format: "%d", DataManager.shared()!.aidInfo.w)
+        self.brightnessTextFiled.text = String(format: "%d", DataManager.shared()!.aidInfo.brightness)
+        self.volTextField.text = String(format: "%d", DataManager.shared()!.aidInfo.volume)
         
-        if (DataManager.shared().aidInfo.brightness > 0) {
-            self.brightnessTextFiled.text = String(format: "%d", DataManager.shared().aidInfo.brightness)
-        }
         self.musicNameLabel.text = self.getMusicNameWithMusicID(musicId: DataManager.shared().assistMusicID)
         
-        self.repeatNameLabel.text = NSLocalizedString("sequencePlay", comment: "")
+        self.repeatNameLabel.text = self.getRepeatStr(self.playMode)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -171,7 +162,7 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         self.musicLabel.text = NSLocalizedString("music", comment: "")
         self.volLabel.text = NSLocalizedString("volume", comment: "")
         self.repeatMode.text = NSLocalizedString("cycleMode", comment: "")
-        self.repeatNameLabel.text = NSLocalizedString("sequencePlay", comment: "")
+        self.repeatNameLabel.text = self.getRepeatStr(self.playMode)
         self.musicLabel.textColor = Theme.c4()
         self.volLabel.textColor = Theme.c4()
         
@@ -182,7 +173,24 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         self.stopMusicBtn.layer.cornerRadius = 5;
     }
     
+    func getRepeatStr(_ mode: UInt8) -> String {
+        var text = NSLocalizedString("sequencePlay", comment: "")
+        switch mode {
+        case 1:
+            text = NSLocalizedString("randomPlay", comment: "")
+        case 2:
+            NSLocalizedString("singlePlay", comment: "")
+        default:
+            text = NSLocalizedString("sequencePlay", comment: "")
+        }
+        
+        return text
+    }
+    
     func setLightUI() -> Void {
+        self.colorRTextField.backgroundColor = UIColor.lightGray
+        self.colorBTextFiled.backgroundColor = UIColor.lightGray
+        self.colorWTextFiled.backgroundColor = UIColor.lightGray
         
         self.colorLabel.text = NSLocalizedString("color", comment: "")
         self.brightnessLabel.text = NSLocalizedString("luminance", comment: "")
@@ -206,6 +214,8 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         
         self.stopMusicBtn.setTitle(NSLocalizedString("play", comment: ""), for: UIControl.State.normal)
     }
+    
+    
     
     func getMusicNameWithMusicID(musicId: Int) -> String {
         let musicList = self.getSleepAidMusicList()
@@ -283,6 +293,11 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         }
         
         let volume = UInt8(self.volTextField.text!)
+        if volume == nil {
+            Utils.showMessage(NSLocalizedString("input_0_16", comment: ""), controller: self)
+            return
+        }
+        
         let isValid = (volume! >= 0) && (volume! <= 16);
         if !isValid {
             Utils.showMessage(NSLocalizedString("input_0_16", comment: ""), controller: self)
@@ -299,14 +314,16 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
             if status != SLPDataTransferStatus.succeed  {
                 Utils.showDeviceOperationFailed(-1, at: self)
             } else {
-                DataManager.shared()?.volumn = Int(volume!)
+//                DataManager.shared()?.volumn = Int(volume!)
             }
         })
     }
     
     func _playMusic() -> Void {
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnsleepAidMusic: UInt16(DataManager.shared().assistMusicID), volume: UInt8(DataManager.shared().volumn), playMode: self.playMode, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
-            
+            if status == SLPDataTransferStatus.succeed {
+                DataManager.shared()!.playMode = self.playMode
+            }
         })
     }
     
@@ -341,10 +358,11 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
                 }
             })
         } else {
-            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnsleepAidMusic: UInt16(DataManager.shared().assistMusicID), volume: UInt8(DataManager.shared().volumn), playMode: self.playMode, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, turnOnsleepAidMusic: UInt16(DataManager.shared().assistMusicID), volume: volume!, playMode: self.playMode, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
                 if status != SLPDataTransferStatus.succeed  {
                     Utils.showDeviceOperationFailed(-1, at: self)
                 } else {
+                    DataManager.shared()!.playMode = self.playMode
                     sender.isSelected = true
                     self.stopMusicBtn.setTitle(NSLocalizedString("pause", comment: ""), for: UIControl.State.normal)
                     self.isPlayingMusic = true
@@ -521,6 +539,12 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
             if status != SLPDataTransferStatus.succeed  {
                 Utils.showDeviceOperationFailed(-1, at: self)
             } else {
+                DataManager.shared()!.aidInfo.r = aidInfo.r
+                DataManager.shared()!.aidInfo.g = aidInfo.g
+                DataManager.shared()!.aidInfo.b = aidInfo.b
+                DataManager.shared()!.aidInfo.w = aidInfo.r
+                DataManager.shared()!.aidInfo.brightness = aidInfo.brightness
+                DataManager.shared()!.aidInfo.volume = aidInfo.volume
                 Utils.showMessage(NSLocalizedString("save_succeed", comment: ""), controller: self)
             }
         })

@@ -48,6 +48,13 @@
 
 @property (nonatomic, strong) NSArray<WaveCustomColor *> *customColorList;
 
+
+@property (nonatomic, assign) UInt8 lightR;
+@property (nonatomic, assign) UInt8 lightG;
+@property (nonatomic, assign) UInt8 lightB;
+@property (nonatomic, assign) UInt8 lightW;
+@property (nonatomic, assign) UInt8 lightBR;
+
 + (DataManager *)sharedDataManager;
 
 - (void)toInit;
