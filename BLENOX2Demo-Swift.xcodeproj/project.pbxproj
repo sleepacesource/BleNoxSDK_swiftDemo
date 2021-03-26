@@ -36,7 +36,7 @@
 		26E279352328EC24005A983D /* BLENOX2Demo_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E279342328EC24005A983D /* BLENOX2Demo_SwiftTests.swift */; };
 		26E279402328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2793F2328EC24005A983D /* BLENOX2Demo_SwiftUITests.swift */; };
 		26F4AEF02332217700575C02 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4AEEF2332217600575C02 /* DataManager.m */; };
-		8F3332A4260C1B7300F9DD70 /* SN902B_V1.30_20210325.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 8F3332A3260C1B7300F9DD70 /* SN902B_V1.30_20210325.MVA */; };
+		8F3332CC260DA92100F9DD70 /* SN902B_20210326_1.31.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 8F3332CB260DA92100F9DD70 /* SN902B_20210326_1.31.MVA */; };
 		8F37B7D52603330000A69893 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B7D32603330000A69893 /* TitleCell.swift */; };
 		8F37B7D62603330000A69893 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B7D42603330000A69893 /* TitleCell.xib */; };
 		8F37B7F626033D4400A69893 /* TitleArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B7F426033D4400A69893 /* TitleArrowCell.swift */; };
@@ -155,7 +155,7 @@
 		26E279412328EC24005A983D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26F4AEEE2332217600575C02 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		26F4AEEF2332217600575C02 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		8F3332A3260C1B7300F9DD70 /* SN902B_V1.30_20210325.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_V1.30_20210325.MVA; sourceTree = "<group>"; };
+		8F3332CB260DA92100F9DD70 /* SN902B_20210326_1.31.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_20210326_1.31.MVA; sourceTree = "<group>"; };
 		8F37B7D32603330000A69893 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		8F37B7D42603330000A69893 /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
 		8F37B7F426033D4400A69893 /* TitleArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleArrowCell.swift; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 		26E2791E2328EC20005A983D /* BLENOX2Demo-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				8F3332A3260C1B7300F9DD70 /* SN902B_V1.30_20210325.MVA */,
+				8F3332CB260DA92100F9DD70 /* SN902B_20210326_1.31.MVA */,
 				26E2791F2328EC20005A983D /* AppDelegate.swift */,
 				26E279212328EC20005A983D /* ViewController.swift */,
 				2685C45F2329E03B009947EE /* MainViewController.swift */,
@@ -653,6 +653,7 @@
 			files = (
 				8F37B7D62603330000A69893 /* TitleCell.xib in Resources */,
 				8F9C50DF26009ABD004BB46B /* AlarmViewController.xib in Resources */,
+				8F3332CC260DA92100F9DD70 /* SN902B_20210326_1.31.MVA in Resources */,
 				8F37B80B260358A800A69893 /* HourMinutePicker.xib in Resources */,
 				8F37B81326035F6F00A69893 /* CustomColorViewController.xib in Resources */,
 				2685C45E2329DF9B009947EE /* SettingViewController.xib in Resources */,
@@ -662,7 +663,6 @@
 				8F9C50F42600A0CA004BB46B /* NormalTableViewCell.xib in Resources */,
 				26E279272328EC23005A983D /* Assets.xcassets in Resources */,
 				8F9C512D2601C9C0004BB46B /* TimePickerSelectView.xib in Resources */,
-				8F3332A4260C1B7300F9DD70 /* SN902B_V1.30_20210325.MVA in Resources */,
 				8F9C511F260195A2004BB46B /* MusicListViewController.xib in Resources */,
 				8F9C50FB2600A0E4004BB46B /* SwtichTableViewCell.xib in Resources */,
 				8F37B80426034C5600A69893 /* DataPicker.xib in Resources */,

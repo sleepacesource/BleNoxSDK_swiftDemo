@@ -19,6 +19,8 @@ class SetLightViewController: UIViewController {
     
     var setLightBlock: SetLightBlock?
     
+    var fromMode = 0    // 0： from小夜灯   1: from定时任务,且模式为助眠模式
+    
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var brightnessLabel: UILabel!
     @IBOutlet weak var colorRTextField: UITextField!
@@ -47,6 +49,16 @@ class SetLightViewController: UIViewController {
     }
     
     func setUI() -> Void {
+        if self.fromMode == 1 {
+            self.colorRTextField.isEnabled = false
+            self.colorBTextField.isEnabled = false
+            self.colorWTextField.isEnabled = false
+            
+            self.colorRTextField.backgroundColor = UIColor.lightGray
+            self.colorBTextField.backgroundColor = UIColor.lightGray
+            self.colorWTextField.backgroundColor = UIColor.lightGray
+        }
+        
         if self.r != nil {
             self.colorRTextField.text = String(format: "%d", self.r!)
         }

@@ -218,7 +218,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         let dataList = [NSLocalizedString("close", comment: ""), "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6"];
         
         let delayTime = DataManager.shared().delayTime
-        let minuteList: Array<UInt16> = [0, 30, 60, 90, 120, 150,180, 210, 240, 270, 300, 330, 360]
+        let minuteList: Array<UInt16> = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
         
         var selectedRow = 0
         for i in 0..<minuteList.count {

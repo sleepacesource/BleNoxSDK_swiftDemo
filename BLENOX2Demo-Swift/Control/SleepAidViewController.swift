@@ -255,6 +255,8 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func selectRepeatMode(_ sender: UIButton) {
+        self.view.endEditing(true)
+        
         let picker = Bundle.main.loadNibNamed("DataPicker", owner: nil, options: nil)?.first as! DataPicker
         let list = [NSLocalizedString("sequencePlay", comment: ""), NSLocalizedString("randomPlay", comment: ""), NSLocalizedString("singlePlay", comment: "")]
         picker.dataList = list

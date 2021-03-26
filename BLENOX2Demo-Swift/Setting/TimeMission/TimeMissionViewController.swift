@@ -367,6 +367,10 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         vc.b = self.timeMissionNew!.light.b
         vc.w = self.timeMissionNew!.light.w
         vc.brightness = self.timeMissionNew!.brightness
+        if self.timeMissionNew!.mode == 0 {
+            vc.fromMode = 1
+        }
+        
         vc.setLightBlock = {(r,g,b,w,brightness) ->() in
             self.timeMissionNew!.light.r = r
             self.timeMissionNew!.light.g = g

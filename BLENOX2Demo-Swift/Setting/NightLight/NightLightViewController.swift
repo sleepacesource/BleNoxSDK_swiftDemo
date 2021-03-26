@@ -79,6 +79,7 @@ class NightLightViewController: UIViewController,UITableViewDataSource,UITableVi
         light.g = self.g!
         light.b = self.b!
         light.w = self.w!
+        info.light = light
         info.enable = self.enable!;
         info.brightness = self.brightness!;
         info.startHour = self.startHour!;
