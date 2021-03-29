@@ -91,14 +91,14 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         self.preAidLight!.g = 35
         self.preAidLight!.b = 0
         self.preAidLight!.w = 0
-        self.preBrightness = 30
+        self.preAidBrightness = 30
         
         self.preLight = SLPLight.init()
         self.preLight!.r = 155
         self.preLight!.g = 32
         self.preLight!.b = 93
         self.preLight!.w = 255
-        self.preAidBrightness = 100
+        self.preBrightness = 100
         
         if self.mode == 0 {
             let timeMissionNew = BleNoxTimeMission()

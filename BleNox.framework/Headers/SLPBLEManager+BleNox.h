@@ -286,7 +286,7 @@
 - (void)bleNox:(CBPeripheral *)peripheral configurePINWithEnable:(UInt8)enable timeout:(CGFloat)timeout completion:(SLPTransforCallback)handle;
 
 /*添加或修改定时任务
- timeMissionInfo: 任务信息信息
+ timeMissionInfo: 定时任务信息
  timeout:超时
  */
 - (void)bleNox:(CBPeripheral *)peripheral timeMissionConfig:(BleNoxTimeMission *)timeMissionInfo
@@ -294,6 +294,7 @@
 
 /**
  获取定时任务列表
+ handle 回调 返回 NSArray<BleNoxTimeMission *>
  */
 - (void)bleNox:(CBPeripheral *)peripheral getTimeMissionListTimeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
 
@@ -314,11 +315,13 @@
 
 /**
  获取自定义挥手颜色列表
+ handle 回调 返回 NSArray<WaveCustomColor *>
  */
 - (void)bleNox:(CBPeripheral *)peripheral getWaveColorListTimeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
 
 /**
  预览自定义颜色
+ operationCode：  0:关闭     1:打开
  */
 - (void)bleNox:(CBPeripheral *)peripheral operationCode:(UInt8)operationCode previewCustomColor:(SLPLight *)light timeout:(CGFloat)timeout completion:(SLPTransforCallback)handle;
 @end
