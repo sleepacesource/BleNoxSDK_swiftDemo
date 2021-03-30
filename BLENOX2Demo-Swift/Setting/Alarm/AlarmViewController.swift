@@ -434,7 +434,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     func selectMaxTime() -> Void {
         let minuteSelectView = Bundle.main.loadNibNamed("SLPMinuteSelectView", owner: nil, options: nil)?.first as! SLPMinuteSelectView
         var values = [Int]()
-        for i in 1...60 {
+        for i in 1...10 {
             values.append(i)
         }
         minuteSelectView.iValues = values
@@ -464,7 +464,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     func selectSnoothLTime() -> Void {
         let minuteSelectView = Bundle.main.loadNibNamed("SLPMinuteSelectView", owner: nil, options: nil)?.first as! SLPMinuteSelectView
         var values = [Int]()
-        for i in 1...60 {
+        for i in 1...5 {
             values.append(i)
         }
         minuteSelectView.iValues = values
