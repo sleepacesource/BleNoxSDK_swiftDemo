@@ -26,7 +26,7 @@
         _assistMusicID = 30001;
         
         _aidInfo = [[BleNoxAidInfo alloc] init];
-        _aidInfo.aidStopDuration = 1;
+        _aidInfo.aidStopDuration = 45;
         _aidInfo.r = 255;
         _aidInfo.g = 35;
         _aidInfo.b = 0;
@@ -75,7 +75,7 @@
     _selectItemsNum = 7;
     _assistMusicID = 30001;
     
-    _aidInfo.aidStopDuration = 1;
+    _aidInfo.aidStopDuration = 45;
     _aidInfo.r = 255;
     _aidInfo.g = 35;
     _aidInfo.b = 0;

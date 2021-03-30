@@ -197,6 +197,7 @@ class MusicInfoSettingViewController: UIViewController, UITableViewDelegate, UIT
         picker.confirmBlock = {(row) ->() in
             self.playMode = UInt8(row)
             self.tableView.reloadData()
+            picker.removeFromSuperview()
         }
         Utils.addSubView(picker, suitableTo: UIApplication.shared.keyWindow)
     }

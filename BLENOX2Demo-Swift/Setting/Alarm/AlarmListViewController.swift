@@ -16,12 +16,53 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     
     var alarmList: NSMutableArray?
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setUI()
         
         self.initData()
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(workModeChanged), name: NSNotification.Name(rawValue: kNotificationNameBLENoxWorkModeChanged), object: nil)
+    }
+    
+    @objc func workModeChanged(_ notification: Notification) -> Void {
+//        let workMode = notification.userInfo!["postData"] as! BleNoxWorkStatus
+//        print(workMode)     // 设备端关闭闹钟，本地也刷新开关功能先注释
+        
+    }
+    
+    func dealMode(_ workMode: BleNoxWorkStatus) -> Void {
+        
+        let alarmStatus = workMode.alarmStatus
+        print(alarmStatus)
+//        let alarmID = workMode.alarmID
+//
+//        var hour: UInt8 = 255
+//        var minute: UInt8 = 255
+//
+//        for i in 0...self.alarmList!.count {
+//            let alarm = self.alarmList![i] as! BleNoxAlarmInfo
+//
+//            if alarmID == alarm.alarmID {
+//                hour = alarm.hour
+//                minute = alarm.minute
+//            }
+//        }
+//
+//        for i in 0...self.alarmList!.count {
+//            let alarm = self.alarmList![i] as! BleNoxAlarmInfo
+//
+//            if hour == alarm.hour && minute == alarm.minute && alarm.repeat == 0 {
+//                alarm.isOpen = false
+//            }
+//        }
+//
+//        self.tableView.reloadData()
     }
     
     func initData() -> Void {

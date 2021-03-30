@@ -462,7 +462,7 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func selectTime(_ sender: UIButton) {
         let minuteSelectView = Bundle.main.loadNibNamed("SLPMinuteSelectView", owner: nil, options: nil)?.first as! SLPMinuteSelectView
         var values = [Int]()
-        for i in 1...45 {
+        for i in 1...60 {
             values.append(i)
         }
         minuteSelectView.iValues = values

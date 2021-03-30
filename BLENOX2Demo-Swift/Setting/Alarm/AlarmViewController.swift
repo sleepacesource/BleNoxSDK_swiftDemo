@@ -127,6 +127,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     
     @objc func rightClick() -> Void {
+        self.alarmDataNew!.isOpen = true
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, alarmConfig: self.alarmDataNew!, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed {
                 self.reloadDataBlock!()
