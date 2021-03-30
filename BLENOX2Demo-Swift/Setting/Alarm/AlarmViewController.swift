@@ -20,6 +20,9 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     var reloadDataBlock: ReloadDataBlock?
     
+    var preSnoozeTime:UInt8 = 5
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     func getMusicList() -> Array<MusicInfo> {
@@ -89,13 +92,15 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
             self.alarmDataNew!.hour = 8;
             self.alarmDataNew!.minute = 0;
             self.alarmDataNew!.repeat = 0;
-            self.alarmDataNew!.snoozeTime = 6;
+            self.alarmDataNew!.snoozeTime = 5;
+            self.preSnoozeTime = 5
             self.alarmDataNew!.snoozeLength = 9;
             self.alarmDataNew!.volume = 16;
             self.alarmDataNew!.brightness = 100;
             self.alarmDataNew!.shake = false;
             self.alarmDataNew!.musicID = 31001;
             self.alarmDataNew!.timestamp = UInt32(NSDate().timeIntervalSince1970)
+            self.alarmDataNew!.alarmMaxTime = 8;
         } else {
             let alarmDataNew = BleNoxAlarmInfo()
             alarmDataNew.alarmID = self.originAlarm!.alarmID
@@ -104,6 +109,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
             alarmDataNew.minute = self.originAlarm!.minute
             alarmDataNew.repeat = self.originAlarm!.repeat
             alarmDataNew.snoozeTime = self.originAlarm!.snoozeTime
+            self.preSnoozeTime = self.originAlarm!.snoozeTime
             alarmDataNew.snoozeLength = self.originAlarm!.snoozeLength
             alarmDataNew.volume = self.originAlarm!.volume
             alarmDataNew.brightness = self.originAlarm!.brightness
@@ -112,6 +118,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
             alarmDataNew.shake = self.originAlarm!.shake
             alarmDataNew.musicID = self.originAlarm!.musicID
             alarmDataNew.timestamp = self.originAlarm!.timestamp
+            alarmDataNew.alarmMaxTime = self.originAlarm!.alarmMaxTime;
             self.alarmDataNew = alarmDataNew
         }
     }
@@ -144,12 +151,31 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        let info = self.alarmDataNew! as BleNoxAlarmInfo
+        if info.snoozeTime != 0 {
+            return 9
+        }
+        return 7
     }
     
     func getAlarmTimeString(_ dataModel: BleNoxAlarmInfo) -> String {
         let timeStr = String(format: "%.2d:%.2d", dataModel.hour, dataModel.minute)
         return timeStr
+    }
+    
+    func getAlarmMaxTimeString(_ dataModel: BleNoxAlarmInfo) -> String {
+        let time = dataModel.alarmMaxTime
+        return String(format: "%d %@", time, NSLocalizedString("min", comment: ""))
+    }
+    
+    func getSnoozeTimeString(_ dataModel: BleNoxAlarmInfo) -> String {
+        let time = dataModel.snoozeTime
+        return String(format: "%d %@", time, NSLocalizedString("totalTime", comment: ""))
+    }
+
+    func getSnoozeLengthString(_ dataModel: BleNoxAlarmInfo) -> String {
+        let time = dataModel.snoozeLength
+        return String(format: "%d %@", time, NSLocalizedString("min", comment: ""))
     }
     
     func getMusicName(_ musicID: UInt16) -> String {
@@ -178,22 +204,28 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         } else if indexPath.row == 1 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
+            normalCell.titleLabel?.text = NSLocalizedString("alarmMaxTime", comment: "")
+            normalCell.subTitleLabel?.text = self.getAlarmMaxTimeString(self.alarmDataNew!)
+            return normalCell
+        } else if indexPath.row == 2 {
+            tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
+            let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
             normalCell.titleLabel?.text = NSLocalizedString("reply", comment: "")
             normalCell.subTitleLabel?.text = SLPWeekDay.getAlarmRepeatDayString(withWeekDay: self.alarmDataNew!.repeat)
             return normalCell
-        } else if indexPath.row == 2 {
+        } else if indexPath.row == 3 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
             normalCell.subTitleLabel?.text = self.getMusicName(self.alarmDataNew!.musicID)
             normalCell.titleLabel?.text = NSLocalizedString("music", comment: "")
             return normalCell
-        } else if indexPath.row == 3 {
+        } else if indexPath.row == 4 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
             normalCell.subTitleLabel?.text = String(format: "%d", self.alarmDataNew!.volume)
             normalCell.titleLabel?.text = NSLocalizedString("volume", comment: "")
             return normalCell
-        } else if indexPath.row == 4 {
+        } else if indexPath.row == 5 {
             tableView.register(UINib(nibName: "SwtichTableViewCell", bundle: nil), forCellReuseIdentifier: "SwtichTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "SwtichTableViewCell") as! SwtichTableViewCell
             normalCell.titleLabel?.text = NSLocalizedString("light_wake", comment: "")
@@ -204,6 +236,31 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
                     self.alarmDataNew!.brightness = 0
                 }
             }
+            return normalCell
+        }  else if indexPath.row == 6 {
+            tableView.register(UINib(nibName: "SwtichTableViewCell", bundle: nil), forCellReuseIdentifier: "SwtichTableViewCell")
+            let normalCell = tableView.dequeueReusableCell(withIdentifier: "SwtichTableViewCell") as! SwtichTableViewCell
+            normalCell.titleLabel?.text = NSLocalizedString("snoozeTime", comment: "")
+            normalCell.switcherBlock = {(switcher) ->() in
+                if switcher.isOn {
+                    self.alarmDataNew!.snoozeTime = self.preSnoozeTime
+                } else {
+                    self.alarmDataNew!.snoozeTime = 0
+                }
+                self.tableView.reloadData()
+            }
+            return normalCell
+        } else if indexPath.row == 7 {
+            tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
+            let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
+            normalCell.titleLabel?.text = NSLocalizedString("snooze_duration", comment: "")
+            normalCell.subTitleLabel?.text = self.getSnoozeLengthString(self.alarmDataNew!)
+            return normalCell
+        } else if indexPath.row == 8 {
+            tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
+            let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
+            normalCell.titleLabel?.text = NSLocalizedString("snoozeTime", comment: "")
+            normalCell.subTitleLabel?.text = self.getSnoozeTimeString(self.alarmDataNew!)
             return normalCell
         }
         
@@ -220,11 +277,17 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         if indexPath.row == 0 {
             self.goSelectTime()
         } else if indexPath.row == 1 {
-            self.goSelectWeekdayPage()
+            self.selectMaxTime()
         } else if indexPath.row == 2 {
-            self.goSelectMusic()
+            self.goSelectWeekdayPage()
         } else if indexPath.row == 3 {
+            self.goSelectMusic()
+        } else if indexPath.row == 4 {
             self.goSelectVolume()
+        } else if indexPath.row == 7 {
+            self.selectSnoothLength()
+        } else if indexPath.row == 8 {
+            self.selectSnoothLTime()
         }
     }
     
@@ -366,5 +429,51 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
             self.tableView!.reloadData()
         }
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func selectMaxTime() -> Void {
+        let minuteSelectView = Bundle.main.loadNibNamed("SLPMinuteSelectView", owner: nil, options: nil)?.first as! SLPMinuteSelectView
+        var values = [Int]()
+        for i in 1...60 {
+            values.append(i)
+        }
+        minuteSelectView.iValues = values
+        minuteSelectView.show(in: UIApplication.shared.keyWindow!, mode: SLPMinutePickerMode.second, time: Int(self.alarmDataNew!.alarmMaxTime)) { (timeValue) in
+            self.alarmDataNew!.alarmMaxTime = UInt8(timeValue)
+            self.tableView.reloadData()
+        } cancelHandle: {
+            
+        }
+    }
+    
+    func selectSnoothLength() -> Void {
+        let minuteSelectView = Bundle.main.loadNibNamed("SLPMinuteSelectView", owner: nil, options: nil)?.first as! SLPMinuteSelectView
+        var values = [Int]()
+        for i in 1...60 {
+            values.append(i)
+        }
+        minuteSelectView.iValues = values
+        minuteSelectView.show(in: UIApplication.shared.keyWindow!, mode: SLPMinutePickerMode.second, time: Int(self.alarmDataNew!.snoozeLength)) { (timeValue) in
+            self.alarmDataNew!.snoozeLength = UInt8(timeValue)
+            self.tableView.reloadData()
+        } cancelHandle: {
+            
+        }
+    }
+    
+    func selectSnoothLTime() -> Void {
+        let minuteSelectView = Bundle.main.loadNibNamed("SLPMinuteSelectView", owner: nil, options: nil)?.first as! SLPMinuteSelectView
+        var values = [Int]()
+        for i in 1...60 {
+            values.append(i)
+        }
+        minuteSelectView.iValues = values
+        minuteSelectView.show(in: UIApplication.shared.keyWindow!, mode: SLPMinutePickerMode.second, time: Int(self.alarmDataNew!.snoozeTime)) { (timeValue) in
+            self.preSnoozeTime = UInt8(timeValue)
+            self.alarmDataNew!.snoozeTime = UInt8(timeValue)
+            self.tableView.reloadData()
+        } cancelHandle: {
+            
+        }
     }
 }

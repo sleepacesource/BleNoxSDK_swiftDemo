@@ -168,3 +168,6 @@
 "at_Least_3"="不得少于3种颜色";
 "cleanColor"="清空灯光颜色";
 "confirmCleanColor"="清空后用户挥手控制灯光时不再出现此颜色的灯光，是否确认删除此颜色的灯光？";
+"alarmMaxTime"="闹铃时长";
+"snoozeTime"="贪睡次数";
+"totalTime"="次";
