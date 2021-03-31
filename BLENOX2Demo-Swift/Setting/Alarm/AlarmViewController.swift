@@ -110,6 +110,10 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
             alarmDataNew.repeat = self.originAlarm!.repeat
             alarmDataNew.snoozeTime = self.originAlarm!.snoozeTime
             self.preSnoozeTime = self.originAlarm!.snoozeTime
+            if self.originAlarm!.snoozeTime == 0 {
+                self.preSnoozeTime = 5
+                alarmDataNew.snoozeTime = 5
+            }
             alarmDataNew.snoozeLength = self.originAlarm!.snoozeLength
             alarmDataNew.volume = self.originAlarm!.volume
             alarmDataNew.brightness = self.originAlarm!.brightness
