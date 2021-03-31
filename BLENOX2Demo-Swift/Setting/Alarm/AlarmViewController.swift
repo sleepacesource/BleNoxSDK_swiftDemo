@@ -135,6 +135,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         rightButton.setTitle(NSLocalizedString("save", comment: ""), for: UIControl.State.normal)
         rightButton.addTarget(self, action: #selector(rightClick), for: UIControl.Event.touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+        
     }
     
     @objc func rightClick() -> Void {
@@ -275,6 +276,10 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         return 60
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -297,13 +302,23 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if self.mode == 1 {
-            return 164
+            return 214
         }
-        return 104
+        return 154
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
+        
+        let label = UILabel.init()
+        label.text = NSLocalizedString("tips_snooze", comment: "")
+        label.numberOfLines = 0
+        view.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true  //顶部约束
+        label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true  //左端约束
+        label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true  //右端约束
+        
         let btn = UIButton()
         btn.addTarget(self, action: #selector(previewAndStopAlarm), for: UIControl.Event.touchUpInside)
         if self.isPreviewing {
@@ -316,7 +331,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         btn.layer.cornerRadius = 2.0;
         btn.layer.masksToBounds = true;
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true  //顶部约束
+        btn.topAnchor.constraint(equalTo: view.topAnchor, constant: 90).isActive = true  //顶部约束
         btn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true  //左端约束
         btn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true  //右端约束
 //        btn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true  //底部约束
@@ -331,7 +346,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
             btn1.layer.cornerRadius = 2.0;
             btn1.layer.masksToBounds = true;
             btn1.translatesAutoresizingMaskIntoConstraints = false
-            btn1.topAnchor.constraint(equalTo: btn.bottomAnchor, constant: 30).isActive = true  //顶部约束
+            btn1.topAnchor.constraint(equalTo: btn.bottomAnchor, constant: 15).isActive = true  //顶部约束
             btn1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true  //左端约束
             btn1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true  //右端约束
             btn1.heightAnchor.constraint(equalToConstant: 44).isActive = true

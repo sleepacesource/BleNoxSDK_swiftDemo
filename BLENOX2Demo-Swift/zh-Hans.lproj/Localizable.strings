@@ -171,3 +171,4 @@
 "alarmMaxTime"="闹铃时长";
 "snoozeTime"="贪睡次数";
 "totalTime"="次";
+"tips_snooze"="打开后，闹钟响起时，挥手进入贪睡模式进入贪睡模式，在设定的贪睡次数后自动关闭闹钟";
