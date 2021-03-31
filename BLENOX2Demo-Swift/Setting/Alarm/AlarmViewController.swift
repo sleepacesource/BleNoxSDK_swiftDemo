@@ -112,7 +112,6 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
             self.preSnoozeTime = self.originAlarm!.snoozeTime
             if self.originAlarm!.snoozeTime == 0 {
                 self.preSnoozeTime = 5
-                alarmDataNew.snoozeTime = 5
             }
             alarmDataNew.snoozeLength = self.originAlarm!.snoozeLength
             alarmDataNew.volume = self.originAlarm!.volume
@@ -233,6 +232,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         } else if indexPath.row == 5 {
             tableView.register(UINib(nibName: "SwtichTableViewCell", bundle: nil), forCellReuseIdentifier: "SwtichTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "SwtichTableViewCell") as! SwtichTableViewCell
+            normalCell.switcher.isOn = self.alarmDataNew!.brightness != 0
             normalCell.titleLabel?.text = NSLocalizedString("light_wake", comment: "")
             normalCell.switcherBlock = {(switcher) ->() in
                 if switcher.isOn {
@@ -246,6 +246,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
             tableView.register(UINib(nibName: "SwtichTableViewCell", bundle: nil), forCellReuseIdentifier: "SwtichTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "SwtichTableViewCell") as! SwtichTableViewCell
             normalCell.titleLabel?.text = NSLocalizedString("snoozeTime", comment: "")
+            normalCell.switcher.isOn = self.alarmDataNew!.snoozeTime != 0
             normalCell.switcherBlock = {(switcher) ->() in
                 if switcher.isOn {
                     self.alarmDataNew!.snoozeTime = self.preSnoozeTime
@@ -313,6 +314,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         let label = UILabel.init()
         label.text = NSLocalizedString("tips_snooze", comment: "")
         label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 15)
         view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true  //顶部约束
