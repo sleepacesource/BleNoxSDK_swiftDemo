@@ -47,7 +47,7 @@
 		8F37B81226035F6F00A69893 /* CustomColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B81026035F6F00A69893 /* CustomColorViewController.swift */; };
 		8F37B81326035F6F00A69893 /* CustomColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B81126035F6F00A69893 /* CustomColorViewController.xib */; };
 		8F37B8302604364D00A69893 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B8322604364D00A69893 /* Localizable.strings */; };
-		8F86986326131BC2006D0141 /* SN902B_20210330_1.32.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 8F86986226131BC2006D0141 /* SN902B_20210330_1.32.MVA */; };
+		8F86988426144D20006D0141 /* SN902B_20210331_1.40.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 8F86988326144D20006D0141 /* SN902B_20210331_1.40.MVA */; };
 		8F9C50CF260097F0004BB46B /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C50C1260097F0004BB46B /* AlarmListViewController.swift */; };
 		8F9C50D0260097F0004BB46B /* AlarmListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9C50C2260097F0004BB46B /* AlarmListViewController.xib */; };
 		8F9C50D1260097F0004BB46B /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C50C4260097F0004BB46B /* GestureViewController.swift */; };
@@ -170,7 +170,7 @@
 		8F37B8182604319C00A69893 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		8F37B8312604364D00A69893 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8F37B8362604365100A69893 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		8F86986226131BC2006D0141 /* SN902B_20210330_1.32.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_20210330_1.32.MVA; sourceTree = "<group>"; };
+		8F86988326144D20006D0141 /* SN902B_20210331_1.40.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_20210331_1.40.MVA; sourceTree = "<group>"; };
 		8F9C50C1260097F0004BB46B /* AlarmListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		8F9C50C2260097F0004BB46B /* AlarmListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmListViewController.xib; sourceTree = "<group>"; };
 		8F9C50C4260097F0004BB46B /* GestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 		26E2791E2328EC20005A983D /* BLENOX2Demo-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				8F86986226131BC2006D0141 /* SN902B_20210330_1.32.MVA */,
+				8F86988326144D20006D0141 /* SN902B_20210331_1.40.MVA */,
 				26E2791F2328EC20005A983D /* AppDelegate.swift */,
 				26E279212328EC20005A983D /* ViewController.swift */,
 				2685C45F2329E03B009947EE /* MainViewController.swift */,
@@ -662,6 +662,7 @@
 				8F9C50F42600A0CA004BB46B /* NormalTableViewCell.xib in Resources */,
 				26E279272328EC23005A983D /* Assets.xcassets in Resources */,
 				8F9C512D2601C9C0004BB46B /* TimePickerSelectView.xib in Resources */,
+				8F86988426144D20006D0141 /* SN902B_20210331_1.40.MVA in Resources */,
 				8F9C511F260195A2004BB46B /* MusicListViewController.xib in Resources */,
 				8F9C50FB2600A0E4004BB46B /* SwtichTableViewCell.xib in Resources */,
 				8F37B80426034C5600A69893 /* DataPicker.xib in Resources */,
@@ -677,7 +678,6 @@
 				2685C4622329E03B009947EE /* MainViewController.xib in Resources */,
 				8F37B8302604364D00A69893 /* Localizable.strings in Resources */,
 				26E279252328EC20005A983D /* Main.storyboard in Resources */,
-				8F86986326131BC2006D0141 /* SN902B_20210330_1.32.MVA in Resources */,
 				8FDBE57426097DD90070824C /* TitleValueSwitchCellTableViewCell.xib in Resources */,
 				8F9C51602601EA9E004BB46B /* SetLightViewController.xib in Resources */,
 				2685C4712329F534009947EE /* SearchViewController.xib in Resources */,
