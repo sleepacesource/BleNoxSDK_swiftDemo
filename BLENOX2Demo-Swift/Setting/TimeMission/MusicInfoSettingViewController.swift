@@ -109,7 +109,7 @@ class MusicInfoSettingViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func getPlayModeStringList() -> Array<String> {
-        return [NSLocalizedString("sequencePlay", comment: ""), NSLocalizedString("randomPlay", comment: ""), NSLocalizedString("singlePlay", comment: "")]
+        return [NSLocalizedString("loop_order", comment: ""), NSLocalizedString("loop_random", comment: ""), NSLocalizedString("loop_single", comment: "")]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -118,7 +118,7 @@ class MusicInfoSettingViewController: UIViewController, UITableViewDelegate, UIT
         if indexPath.row == 0 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = NSLocalizedString("cycleMode", comment: "")
+            normalCell.titleLabel?.text = NSLocalizedString("loop_mode", comment: "")
             let list = self.getPlayModeStringList()
             normalCell.subTitleLabel?.text = list[Int(self.playMode!)]
             return normalCell

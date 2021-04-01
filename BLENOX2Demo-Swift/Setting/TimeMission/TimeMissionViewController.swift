@@ -262,7 +262,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
 //            normalCell.subTitleLabel?.text = self.getMusicName(self.timeMissionNew!.musicID)
-            normalCell.titleLabel?.text = NSLocalizedString("setMusic", comment: "")
+            normalCell.titleLabel?.text = NSLocalizedString("timer_music", comment: "")
             return normalCell
         }
         
@@ -431,7 +431,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     func goSelectMusic() -> Void {
         let vc = MusicInfoSettingViewController()
-        vc.title = NSLocalizedString("setMusic", comment: "")
+        vc.title = NSLocalizedString("timer_music", comment: "")
         vc.musicID = self.timeMissionNew!.musicID
         vc.volume = self.timeMissionNew!.volume
         vc.playMode = self.timeMissionNew!.playMode

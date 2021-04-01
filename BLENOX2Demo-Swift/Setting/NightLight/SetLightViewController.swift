@@ -57,6 +57,8 @@ class SetLightViewController: UIViewController {
             self.colorRTextField.backgroundColor = UIColor.lightGray
             self.colorBTextField.backgroundColor = UIColor.lightGray
             self.colorWTextField.backgroundColor = UIColor.lightGray
+            
+            self.colorGTextField.placeholder = NSLocalizedString("0~255", comment: "")
         }
         
         if self.r != nil {
@@ -89,7 +91,10 @@ class SetLightViewController: UIViewController {
         if r != nil && g != nil && b != nil && w != nil && brightness != nil {
             
             let rValid = (r! >= 0) && (r! <= 255);
-            let gValid = (g! >= 0) && (g! <= 255);
+            var gValid = (g! >= 0) && (g! <= 255);
+            if self.fromMode == 1 {
+                gValid = (g! >= 0) && (g! <= 120);
+            }
             let bValid = (b! >= 0) && (b! <= 255);
             let wValid = (w! >= 0) && (w! <= 255);
             if !(rValid && gValid && bValid && wValid)  {
@@ -122,7 +127,15 @@ class SetLightViewController: UIViewController {
         if r != nil && g != nil && b != nil && w != nil {
             
             let rValid = (r! >= 0) && (r! <= 255);
-            let gValid = (g! >= 0) && (g! <= 255);
+            var gValid = (g! >= 0) && (g! <= 255);
+            if self.fromMode == 1 {
+                gValid = (g! >= 0) && (g! <= 120);
+                
+                if !gValid {
+                    Utils.showMessage(NSLocalizedString("input_0_120", comment: ""), controller: self)
+                    return
+                }
+            }
             let bValid = (b! >= 0) && (b! <= 255);
             let wValid = (w! >= 0) && (w! <= 255);
             if !(rValid && gValid && bValid && wValid)  {
@@ -172,11 +185,13 @@ class SetLightViewController: UIViewController {
     @IBAction func sendBrightnessAction(_ sender: UIButton) {
         let valueBrightness = self.brightnessTextFiled.text!.count > 0
         if valueBrightness {
-            let brightness = UInt8(self.brightnessTextFiled.text!)
-            if (!(brightness! >= 0) && (brightness! <= 100)) {
+            let brightness = Int(self.brightnessTextFiled.text!)
+            if (brightness! <= 0 || brightness! >= 100) {
                 Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
                 return
             }
+            
+//            brightness = UInt8(brightness!)
             
             let isOpen = SLPBLEManager.shared()?.blueToothIsOpen()
             if !(isOpen!) {
@@ -184,13 +199,13 @@ class SetLightViewController: UIViewController {
                 return
             }
             
-            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, lightBrightness: brightness!, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+            SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, lightBrightness: UInt8(brightness!), timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
                 if status != SLPDataTransferStatus.succeed {
                     Utils.showDeviceOperationFailed(-1, at: self)
                     return
                 }
                 
-                self.brightness = brightness
+                self.brightness = UInt8(brightness!)
 //                self.setLightBlock!(self.r!, self.g!, self.b!, self.w!, self.brightness!)
             })
         } else {

@@ -335,6 +335,10 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         }
         
         let volume = UInt8(self.volTextField.text!)
+        if volume == nil {
+            Utils.showMessage(NSLocalizedString("input_0_16", comment: ""), controller: self)
+            return
+        }
         let isValid = (volume! >= 0) && (volume! <= 16);
         if !isValid {
             Utils.showMessage(NSLocalizedString("input_0_16", comment: ""), controller: self)
@@ -436,6 +440,10 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         }
         
         let brightness = UInt8(self.brightnessTextFiled.text!)
+        if brightness == nil {
+            Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
+            return
+        }
         let isValid = (brightness! >= 0) && (brightness! <= 100);
         if !isValid {
             Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
