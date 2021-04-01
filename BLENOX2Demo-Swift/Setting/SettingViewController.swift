@@ -98,9 +98,9 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
             } else if indexPath.row == 1 {
                 cell?.textLabel?.text = NSLocalizedString("nightLight", comment: "")
             } else if indexPath.row == 2 {
-                cell?.textLabel?.text = NSLocalizedString("timeMission", comment: "")
+                cell?.textLabel?.text = NSLocalizedString("timer_task", comment: "")
             } else if indexPath.row == 3 {
-                cell?.textLabel?.text = NSLocalizedString("delayClose", comment: "")
+                cell?.textLabel?.text = NSLocalizedString("delay_close", comment: "")
             }
         } else if (indexPath.section == 1) {
             if indexPath.row == 0 {
@@ -209,7 +209,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     // 定时任务页面
     func goTimeMissionPage() -> Void {
         let searchVC = TimeMissionListViewController ()
-        searchVC.title = NSLocalizedString("timeMission", comment: "")
+        searchVC.title = NSLocalizedString("timer_task", comment: "")
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
     

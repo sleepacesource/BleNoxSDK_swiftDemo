@@ -146,7 +146,7 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
         vc.reloadDataBlock = {()->() in
             self.getDataAndReload()
         }
-        vc.title = NSLocalizedString("addTimeMission", comment: "")
+        vc.title = NSLocalizedString("add_timer", comment: "")
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -165,9 +165,9 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
         let info = self.timeMissionList![indexPath.row] as! BleNoxTimeMission
         let mode = info.mode
         if mode == 1 {
-            switcherCell.titleLbel.text = NSLocalizedString("lightMode", comment: "")
+            switcherCell.titleLbel.text = NSLocalizedString("timer_mode_light", comment: "")
         } else {
-            switcherCell.titleLbel.text = NSLocalizedString("aidMode", comment: "")
+            switcherCell.titleLbel.text = NSLocalizedString("timer_mode_aid", comment: "")
         }
         
         let repeatStr = SLPWeekDay.getAlarmRepeatDayString(withWeekDay: info.repeat)

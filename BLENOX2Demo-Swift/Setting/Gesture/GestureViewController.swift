@@ -70,6 +70,12 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
                 Utils.showDeviceOperationFailed(-1, at: self)
                 return
             }
+            if self.mode.rawValue == 0 {
+                DataManager.shared().waveAction = self.currentGestureAction!.rawValue
+            } else {
+                DataManager.shared()?.hoverAction = self.currentGestureAction!.rawValue
+            }
+            DataManager.shared().waveAction = self.currentGestureAction!.rawValue
             Utils.showMessage(NSLocalizedString("save_succeed", comment: ""), controller: self)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.navigationController?.popViewController(animated: true)
@@ -137,7 +143,7 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
             } else if indexPath.section == 1 {
                 tableView.register(UINib(nibName: "TitleArrowCell", bundle: nil), forCellReuseIdentifier: "TitleArrowCell")
                 let titleCell = tableView.dequeueReusableCell(withIdentifier: "TitleArrowCell") as! TitleArrowCell
-                titleCell.titleLabel?.text = NSLocalizedString("setWaveColor", comment: "")
+                titleCell.titleLabel?.text = NSLocalizedString("color_setting_intro", comment: "")
                 return titleCell
             }
         } else {
@@ -225,7 +231,7 @@ class GestureViewController: UIViewController, UITableViewDataSource,UITableView
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true  //左端约束
             label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true  //右端约束
             label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true  //底部约束
-            label.text = NSLocalizedString("setColor", comment: "")
+            label.text = NSLocalizedString("color_setting", comment: "")
             
             view.backgroundColor = UIColor.groupTableViewBackground
         }

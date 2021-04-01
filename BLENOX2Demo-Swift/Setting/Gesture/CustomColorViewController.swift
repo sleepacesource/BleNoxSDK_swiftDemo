@@ -270,9 +270,9 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         self.color4Label.text = String(format: "%@ 4", NSLocalizedString("color", comment: ""))
         self.color5Label.text = String(format: "%@ 5", NSLocalizedString("color", comment: ""))
         self.color6Label.text = String(format: "%@ 6", NSLocalizedString("color", comment: ""))
-        self.color7Label.text = String(format: "%@ 7(%@)", NSLocalizedString("color", comment: ""), NSLocalizedString("noCustom", comment: ""))
+        self.color7Label.text = NSLocalizedString("label_color7", comment: "")
         
-        self.color7Lum.text = NSLocalizedString("liuguang", comment: "")
+        self.color7Lum.text = NSLocalizedString("stream_light", comment: "")
         
         self.color1Send.setTitle(NSLocalizedString("preview", comment: ""), for: UIControl.State.normal)
         self.color2Send.setTitle(NSLocalizedString("preview", comment: ""), for: UIControl.State.normal)
@@ -281,12 +281,12 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
         self.color5Send.setTitle(NSLocalizedString("preview", comment: ""), for: UIControl.State.normal)
         self.color6Send.setTitle(NSLocalizedString("preview", comment: ""), for: UIControl.State.normal)
         
-        self.color1Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
-        self.color2Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
-        self.color3Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
-        self.color4Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
-        self.color5Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
-        self.color6Clean.setTitle(NSLocalizedString("cleanColor", comment: ""), for: UIControl.State.normal)
+        self.color1Clean.setTitle(NSLocalizedString("clear", comment: ""), for: UIControl.State.normal)
+        self.color2Clean.setTitle(NSLocalizedString("clear", comment: ""), for: UIControl.State.normal)
+        self.color3Clean.setTitle(NSLocalizedString("clear", comment: ""), for: UIControl.State.normal)
+        self.color4Clean.setTitle(NSLocalizedString("clear", comment: ""), for: UIControl.State.normal)
+        self.color5Clean.setTitle(NSLocalizedString("clear", comment: ""), for: UIControl.State.normal)
+        self.color6Clean.setTitle(NSLocalizedString("clear", comment: ""), for: UIControl.State.normal)
         
         let leftButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         leftButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
@@ -577,7 +577,7 @@ class CustomColorViewController: UIViewController, UIScrollViewDelegate {
     
     func cleanColor(_ colorId: Int) -> Void {
         if !self.cleaned {
-            let alertVc = UIAlertController(title: NSLocalizedString("cleanColor", comment: ""), message: NSLocalizedString("confirmCleanColor", comment: ""), preferredStyle: .alert)
+            let alertVc = UIAlertController(title: NSLocalizedString("clear", comment: ""), message: NSLocalizedString("clear_light_color_msg", comment: ""), preferredStyle: .alert)
             let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel, handler: nil)
             let okAction = UIAlertAction(title: NSLocalizedString("confirm", comment: ""), style: .default, handler: {
                         action in

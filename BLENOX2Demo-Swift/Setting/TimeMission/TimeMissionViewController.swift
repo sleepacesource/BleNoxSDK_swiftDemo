@@ -233,7 +233,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
         } else if indexPath.row == 1 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = NSLocalizedString("closeTime", comment: "")
+            normalCell.titleLabel?.text = NSLocalizedString("close_time", comment: "")
             normalCell.subTitleLabel?.text = self.getAlarmTimeString(self.timeMissionNew!.endHour, self.timeMissionNew!.endMinute)
             return normalCell
         }
@@ -247,11 +247,11 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
             if self.timeMissionNew!.mode == 1 {
-                normalCell.subTitleLabel?.text = NSLocalizedString("lightMode", comment: "")
+                normalCell.subTitleLabel?.text = NSLocalizedString("timer_mode_light", comment: "")
             } else {
-                normalCell.subTitleLabel?.text = NSLocalizedString("aidMode", comment: "")
+                normalCell.subTitleLabel?.text = NSLocalizedString("timer_mode_aid", comment: "")
             }
-            normalCell.titleLabel?.text = NSLocalizedString("openMode", comment: "")
+            normalCell.titleLabel?.text = NSLocalizedString("timer_mode", comment: "")
             return normalCell
         } else if indexPath.row == 4 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
@@ -363,7 +363,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     
     func goSelectMode() -> Void {
         let picker = Bundle.main.loadNibNamed("DataPicker", owner: nil, options: nil)?.first as! DataPicker
-        picker.dataList = [NSLocalizedString("aidMode", comment: ""), NSLocalizedString("lightMode", comment: "")]
+        picker.dataList = [NSLocalizedString("timer_mode_aid", comment: ""), NSLocalizedString("timer_mode_light", comment: "")]
         picker.selectedRow = Int(self.timeMissionNew!.mode)
         picker.reload()
         picker.backgroundColor = UIColor.clear
