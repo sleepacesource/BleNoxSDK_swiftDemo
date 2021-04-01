@@ -61,6 +61,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="BbX-DU-BtC"/>
                                             </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <state key="normal" title="设备名"/>
                                             <connections>
                                                 <action selector="getDeviceName:" destination="-1" eventType="touchUpInside" id="7cw-Ha-BnX"/>
@@ -78,6 +79,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="Ry0-Da-vJo"/>
                                             </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <state key="normal" title="设备ID"/>
                                             <connections>
                                                 <action selector="getDeviceInfo:" destination="-1" eventType="touchUpInside" id="XUA-RI-dX4"/>
@@ -127,6 +129,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="AVA-fa-zyc"/>
                                             </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <state key="normal" title="获取固件版本"/>
                                             <connections>
                                                 <action selector="getDeviceVersion:" destination="-1" eventType="touchUpInside" id="T95-71-MnQ"/>
@@ -144,6 +147,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="JeT-tX-9e0"/>
                                             </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <state key="normal" title="固件升级"/>
                                             <connections>
                                                 <action selector="upgrade:" destination="-1" eventType="touchUpInside" id="4Y5-w5-cJv"/>

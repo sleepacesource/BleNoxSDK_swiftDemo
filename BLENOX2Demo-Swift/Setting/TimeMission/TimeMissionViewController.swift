@@ -322,7 +322,7 @@ class TimeMissionViewController: UIViewController,UITableViewDataSource,UITableV
     @objc func deleteMission() {
         
         
-        let alertVc = UIAlertController(title: NSLocalizedString("deleteMission", comment: ""), message: NSLocalizedString("confirmDeleteMission", comment: ""), preferredStyle: .alert)
+        let alertVc = UIAlertController(title: NSLocalizedString("delete_timer_task", comment: ""), message: NSLocalizedString("tips_delete_timer_task", comment: ""), preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel, handler: nil)
                 let okAction = UIAlertAction(title: NSLocalizedString("confirm", comment: ""), style: .default, handler: {
                     action in

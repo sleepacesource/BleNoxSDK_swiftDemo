@@ -157,9 +157,9 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let info = self.alarmDataNew! as BleNoxAlarmInfo
         if info.snoozeTime != 0 {
-            return 9
+            return 10
         }
-        return 7
+        return 8
     }
     
     func getAlarmTimeString(_ dataModel: BleNoxAlarmInfo) -> String {
@@ -257,23 +257,59 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
             }
             return normalCell
         } else if indexPath.row == 7 {
-            tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
-            let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
-            normalCell.titleLabel?.text = NSLocalizedString("snooze_duration", comment: "")
-            normalCell.subTitleLabel?.text = self.getSnoozeLengthString(self.alarmDataNew!)
-            return normalCell
+            if self.alarmDataNew!.snoozeTime == 0 {
+                tableView.register(UINib(nibName: "TitleCell", bundle: nil), forCellReuseIdentifier: "TitleCell")
+                let titleCell = tableView.dequeueReusableCell(withIdentifier: "TitleCell") as! TitleCell
+                titleCell.titleLabel?.text = NSLocalizedString(NSLocalizedString("smart_wake_turn_off", comment: ""), comment: "")
+                titleCell.lineDown.isHidden = true
+                return titleCell
+            } else {
+                tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
+                let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
+                normalCell.titleLabel?.text = NSLocalizedString("snooze_duration", comment: "")
+                normalCell.subTitleLabel?.text = self.getSnoozeLengthString(self.alarmDataNew!)
+                return normalCell
+            }
+            
         } else if indexPath.row == 8 {
             tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
             let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
             normalCell.titleLabel?.text = NSLocalizedString("snoozeTime", comment: "")
             normalCell.subTitleLabel?.text = self.getSnoozeTimeString(self.alarmDataNew!)
             return normalCell
+        } else if indexPath.row == 9{
+            tableView.register(UINib(nibName: "TitleCell", bundle: nil), forCellReuseIdentifier: "TitleCell")
+            let titleCell = tableView.dequeueReusableCell(withIdentifier: "TitleCell") as! TitleCell
+            titleCell.titleLabel?.text = String(format: NSLocalizedString("smart_wake_turn_on2", comment: ""), "\(self.alarmDataNew!.snoozeTime)")
+            titleCell.lineDown.isHidden = true
+            return titleCell
         }
         
         return cell!
     }
     
+    func getCurrentLanguage() -> String {
+            let preferredLang = Bundle.main.preferredLocalizations.first! as NSString
+            
+            switch String(describing: preferredLang) {
+            case "zh-Hans-CN","zh-Hans":
+                return "cn"//中文
+            default:
+                return "en"
+            }
+        }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if self.alarmDataNew!.snoozeTime != 0 {
+            if indexPath.row == 9 {
+                let lan = self.getCurrentLanguage()
+                if lan != "cn" {
+                    return 110
+                }
+            }
+            
+        }
         return 60
     }
     
@@ -303,23 +339,23 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if self.mode == 1 {
-            return 214
+            return 164
         }
-        return 154
+        return 104
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
         
-        let label = UILabel.init()
-        label.text = NSLocalizedString("tips_snooze", comment: "")
-        label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 15)
-        view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true  //顶部约束
-        label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true  //左端约束
-        label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true  //右端约束
+//        let label = UILabel.init()
+//        label.text = NSLocalizedString("tips_snooze", comment: "")
+//        label.numberOfLines = 0
+//        label.font = UIFont.systemFont(ofSize: 15)
+//        view.addSubview(label)
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true  //顶部约束
+//        label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true  //左端约束
+//        label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true  //右端约束
         
         let btn = UIButton()
         btn.addTarget(self, action: #selector(previewAndStopAlarm), for: UIControl.Event.touchUpInside)
@@ -333,7 +369,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         btn.layer.cornerRadius = 2.0;
         btn.layer.masksToBounds = true;
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.topAnchor.constraint(equalTo: view.topAnchor, constant: 90).isActive = true  //顶部约束
+        btn.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true  //顶部约束
         btn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true  //左端约束
         btn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true  //右端约束
 //        btn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true  //底部约束
@@ -362,7 +398,7 @@ class AlarmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         SLPBLEManager.shared()?.bleNox(DataManager.shared()?.peripheral, delAlarm: self.alarmDataNew!.alarmID, timeout: 0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed {
                 self.reloadDataBlock!()
-                Utils.showMessage(NSLocalizedString("已删除", comment: ""), controller: self)
+                Utils.showMessage(NSLocalizedString("deleted", comment: ""), controller: self)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.navigationController?.popViewController(animated: true)
                 }

@@ -41,6 +41,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
             if status == SLPDataTransferStatus.succeed {
                 let delayTime = data as! NSNumber
                 DataManager.shared()?.delayTime = delayTime.uint16Value
+                self.tableView.reloadData()
             }
         })
     }
@@ -86,32 +87,37 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellid = "testCellID"
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellid)
-        if cell==nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellid)
-        }
+        tableView.register(UINib(nibName: "NormalTableViewCell", bundle: nil), forCellReuseIdentifier: "NormalTableViewCell")
+        let normalCell = tableView.dequeueReusableCell(withIdentifier: "NormalTableViewCell") as! NormalTableViewCell
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                cell?.textLabel?.text = NSLocalizedString("alarm", comment: "")
+                normalCell.titleLabel?.text = NSLocalizedString("alarm", comment: "")
             } else if indexPath.row == 1 {
-                cell?.textLabel?.text = NSLocalizedString("nightLight", comment: "")
+                normalCell.titleLabel?.text = NSLocalizedString("nightLight", comment: "")
             } else if indexPath.row == 2 {
-                cell?.textLabel?.text = NSLocalizedString("timer_task", comment: "")
+                normalCell.titleLabel?.text = NSLocalizedString("timer_task", comment: "")
             } else if indexPath.row == 3 {
-                cell?.textLabel?.text = NSLocalizedString("delay_close", comment: "")
+                normalCell.titleLabel?.text = NSLocalizedString("delay_close", comment: "")
+                let hour = CGFloat(DataManager.shared().delayTime) / 60.0
+                var subTitle = ""
+                if hour == 0 {
+                    subTitle = NSLocalizedString("close", comment: "")
+                } else {
+                    subTitle = String(format: "%.1f %@", hour, NSLocalizedString("hour", comment: ""))
+                }
+                
+                normalCell.subTitleLabel?.text = subTitle
             }
         } else if (indexPath.section == 1) {
             if indexPath.row == 0 {
-                cell?.textLabel?.text = NSLocalizedString("Wave", comment: "")
+                normalCell.titleLabel?.text = NSLocalizedString("Wave", comment: "")
             } else if indexPath.row == 1 {
-                cell?.textLabel?.text = NSLocalizedString("Hover", comment: "")
+                normalCell.titleLabel?.text = NSLocalizedString("Hover", comment: "")
             }
         }
         
-        cell?.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-        return cell!
+        return normalCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -218,8 +224,8 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         let dataList = [NSLocalizedString("close", comment: ""), "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6"];
         
         let delayTime = DataManager.shared().delayTime
-//        let minuteList: Array<UInt16> = [0, 30, 60, 90, 120, 150,180, 210, 240, 270, 300, 330, 360]
-        let minuteList: Array<UInt16> = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        let minuteList: Array<UInt16> = [0, 30, 60, 90, 120, 150,180, 210, 240, 270, 300, 330, 360]
+//        let minuteList: Array<UInt16> = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
         
         var selectedRow = 0
         for i in 0..<minuteList.count {
@@ -236,6 +242,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
                 if (status == SLPDataTransferStatus.succeed) {
                     DataManager.shared()?.delayTime = selectedValue
                     Utils.showMessage(NSLocalizedString("settingSucceed", comment: ""), controller: self)
+                    self.tableView.reloadData()
                 } else {
                     Utils.showDeviceOperationFailed(-1, at: self)
                 }

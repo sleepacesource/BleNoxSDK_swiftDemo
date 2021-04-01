@@ -233,7 +233,7 @@ class TimeMissionListViewController: UIViewController, UITableViewDelegate, UITa
         let vc = TimeMissionViewController()
         vc.mode = 1
         vc.originTimeMission = timeMission
-        vc.title = NSLocalizedString("编辑定时任务", comment: "")
+        vc.title = NSLocalizedString("timer_task", comment: "")
         vc.reloadDataBlock = {()->() in
             self.getDataAndReload()
         }

@@ -267,3 +267,5 @@
 "alarmMaxTime"="Length of the alarm";
 "snoozeTime"="Times of snooze mode";
 "totalTime"="Times";
+"smart_wake_turn_off"="When turned off, the alarm will not ring again!";
+"smart_wake_turn_on2"="After it is turned on, when the alarm clock rings, the user waves hands to the Nox, then the alarm clock will enter snooze mode, and the alarm clock will turn off automatically after the set  %@ of snooze times.";

@@ -383,6 +383,10 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
         }
         
         let g = UInt8(self.colorGTextfFiled.text!)
+        if g == nil {
+            Utils.showMessage(NSLocalizedString("input_0_120", comment: ""), controller: self)
+            return
+        }
         let isValid = (g! >= 0) && (g! <= 120);
         if !isValid {
             Utils.showMessage(NSLocalizedString("input_0_120", comment: ""), controller: self)
@@ -497,7 +501,10 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
             return
         }
 
-        
+        if g == nil {
+            Utils.showMessage(NSLocalizedString("input_0_120", comment: ""), controller: self)
+            return;
+        }
         let gValid = (g! >= 0) && (g! <= 120);
         
         if (!gValid) {
@@ -511,6 +518,12 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
             return
         }
         let brightness = UInt8(self.brightnessTextFiled.text!)
+        
+        if brightness == nil {
+            Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
+            return;
+        }
+        
         let brightValid = (brightness! >= 0) && (brightness! <= 100);
         if (!brightValid) {
             Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
@@ -523,6 +536,10 @@ class SleepAidViewController: UIViewController, UIScrollViewDelegate {
             return
         }
         let volumn = UInt8(self.volTextField.text!)
+        if volumn == nil {
+            Utils.showMessage(NSLocalizedString("input_0_16", comment: ""), controller: self)
+            return;
+        }
         if (volumn! < 1 || volumn! > 16) {
             Utils.showMessage(NSLocalizedString("input_0_16", comment: ""), controller: self)
             return;

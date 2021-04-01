@@ -58,7 +58,7 @@ class SetLightViewController: UIViewController {
             self.colorBTextField.backgroundColor = UIColor.lightGray
             self.colorWTextField.backgroundColor = UIColor.lightGray
             
-            self.colorGTextField.placeholder = NSLocalizedString("0~255", comment: "")
+            self.colorGTextField.placeholder = NSLocalizedString("0~120", comment: "")
         }
         
         if self.r != nil {
@@ -94,6 +94,11 @@ class SetLightViewController: UIViewController {
             var gValid = (g! >= 0) && (g! <= 255);
             if self.fromMode == 1 {
                 gValid = (g! >= 0) && (g! <= 120);
+                if !gValid {
+                    Utils.showMessage(NSLocalizedString("input_0_120", comment: ""), controller: self)
+                    return
+                }
+                
             }
             let bValid = (b! >= 0) && (b! <= 255);
             let wValid = (w! >= 0) && (w! <= 255);
@@ -102,7 +107,7 @@ class SetLightViewController: UIViewController {
                 return
             }
             
-            if (!(brightness! >= 0) && (brightness! <= 100)) {
+            if (!((brightness! >= 0) && (brightness! <= 100))) {
                 Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
                 return
             }
@@ -113,7 +118,16 @@ class SetLightViewController: UIViewController {
             self.w = UInt8(w!)
             self.brightness = UInt8(brightness!)
         } else {
-            Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
+            if brightness == nil {
+                Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
+            } else {
+                if self.fromMode == 1 {
+                    Utils.showMessage(NSLocalizedString("input_0_120", comment: ""), controller: self)
+                } else {
+                    Utils.showMessage(NSLocalizedString("input_0_255", comment: ""), controller: self)
+                }
+            }
+            
         }
         self.setLightBlock!(self.r!, self.g!, self.b!, self.w!, self.brightness!)
         self.navigationController?.popViewController(animated: true)
@@ -186,7 +200,7 @@ class SetLightViewController: UIViewController {
         let valueBrightness = self.brightnessTextFiled.text!.count > 0
         if valueBrightness {
             let brightness = Int(self.brightnessTextFiled.text!)
-            if (brightness! <= 0 || brightness! >= 100) {
+            if (brightness! < 0 || brightness! > 100) {
                 Utils.showMessage(NSLocalizedString("input_0_100", comment: ""), controller: self)
                 return
             }

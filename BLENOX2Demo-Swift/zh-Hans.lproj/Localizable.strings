@@ -267,3 +267,5 @@
 "alarmMaxTime"="闹铃时长";
 "snoozeTime"="贪睡次数";
 "totalTime"="次";
+"smart_wake_turn_off"="关闭后，闹钟将不再重复响起!";
+"smart_wake_turn_on2"="打开后,闹钟响起时,向Nox挥手进入贪睡模式,在设定的贪睡%@次后自动关闭闹钟";
