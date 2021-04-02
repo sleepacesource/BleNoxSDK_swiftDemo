@@ -47,7 +47,7 @@
 		8F37B81226035F6F00A69893 /* CustomColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37B81026035F6F00A69893 /* CustomColorViewController.swift */; };
 		8F37B81326035F6F00A69893 /* CustomColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B81126035F6F00A69893 /* CustomColorViewController.xib */; };
 		8F37B8302604364D00A69893 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F37B8322604364D00A69893 /* Localizable.strings */; };
-		8F86988C26147D8F006D0141 /* SN902B_20210331_1.43.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 8F86988B26147D8F006D0141 /* SN902B_20210331_1.43.MVA */; };
+		8F3D8DA92616A54F000AC9D5 /* SN902B_20210331_1.45.MVA in Resources */ = {isa = PBXBuildFile; fileRef = 8F3D8DA82616A54F000AC9D5 /* SN902B_20210331_1.45.MVA */; };
 		8F9C50CF260097F0004BB46B /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C50C1260097F0004BB46B /* AlarmListViewController.swift */; };
 		8F9C50D0260097F0004BB46B /* AlarmListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9C50C2260097F0004BB46B /* AlarmListViewController.xib */; };
 		8F9C50D1260097F0004BB46B /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C50C4260097F0004BB46B /* GestureViewController.swift */; };
@@ -170,7 +170,7 @@
 		8F37B8182604319C00A69893 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		8F37B8312604364D00A69893 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8F37B8362604365100A69893 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		8F86988B26147D8F006D0141 /* SN902B_20210331_1.43.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_20210331_1.43.MVA; sourceTree = "<group>"; };
+		8F3D8DA82616A54F000AC9D5 /* SN902B_20210331_1.45.MVA */ = {isa = PBXFileReference; lastKnownFileType = file; path = SN902B_20210331_1.45.MVA; sourceTree = "<group>"; };
 		8F9C50C1260097F0004BB46B /* AlarmListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		8F9C50C2260097F0004BB46B /* AlarmListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmListViewController.xib; sourceTree = "<group>"; };
 		8F9C50C4260097F0004BB46B /* GestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 		26E2791E2328EC20005A983D /* BLENOX2Demo-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				8F86988B26147D8F006D0141 /* SN902B_20210331_1.43.MVA */,
+				8F3D8DA82616A54F000AC9D5 /* SN902B_20210331_1.45.MVA */,
 				26E2791F2328EC20005A983D /* AppDelegate.swift */,
 				26E279212328EC20005A983D /* ViewController.swift */,
 				2685C45F2329E03B009947EE /* MainViewController.swift */,
@@ -657,6 +657,7 @@
 				8F37B81326035F6F00A69893 /* CustomColorViewController.xib in Resources */,
 				2685C45E2329DF9B009947EE /* SettingViewController.xib in Resources */,
 				2685C45A2329DF8A009947EE /* ControlViewController.xib in Resources */,
+				8F3D8DA92616A54F000AC9D5 /* SN902B_20210331_1.45.MVA in Resources */,
 				26E2792A2328EC23005A983D /* LaunchScreen.storyboard in Resources */,
 				8F9C50D0260097F0004BB46B /* AlarmListViewController.xib in Resources */,
 				8F9C50F42600A0CA004BB46B /* NormalTableViewCell.xib in Resources */,
@@ -681,7 +682,6 @@
 				8F9C51602601EA9E004BB46B /* SetLightViewController.xib in Resources */,
 				2685C4712329F534009947EE /* SearchViewController.xib in Resources */,
 				8F9C51522601D33B004BB46B /* SLPMinuteSelectView.xib in Resources */,
-				8F86988C26147D8F006D0141 /* SN902B_20210331_1.43.MVA in Resources */,
 				26D84AD22334824600311489 /* device_btn_refresh_nor@2x.png in Resources */,
 				8F9C510E2600B4FC004BB46B /* WeekdaySelectViewController.xib in Resources */,
 				8F9C50D6260097F0004BB46B /* CountDownViewController.xib in Resources */,
@@ -948,7 +948,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NV3296URNT;
+				DEVELOPMENT_TEAM = T3348QM7CT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -963,7 +963,7 @@
 					"-force_load",
 					"$(SRCROOT)/BleNox.framework/BleNox",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.BLENOX2Demo-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.BLENOX2Demo-Swift-Enterprise";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BLENOX2Demo-Swift/Control/Button/BLENOX2Demo-Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -978,7 +978,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NV3296URNT;
+				DEVELOPMENT_TEAM = T3348QM7CT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -993,7 +993,7 @@
 					"-force_load",
 					"$(SRCROOT)/BleNox.framework/BleNox",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.BLENOX2Demo-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.BLENOX2Demo-Swift-Enterprise";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BLENOX2Demo-Swift/Control/Button/BLENOX2Demo-Swift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
