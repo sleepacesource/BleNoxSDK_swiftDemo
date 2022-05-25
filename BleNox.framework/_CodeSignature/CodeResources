@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/BleNox.h</key>
 		<data>
-		aiZ2sCJQm2ZZRaA7VBNJ0H1ESks=
+		g5wb9kTy9NliWpCvNGPPwFcgyyM=
 		</data>
 		<key>Headers/BleNoxAidInfo.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Headers/BleNoxTimeMission.h</key>
 		<data>
-		acAKTaA9I9/YyYSUt33gaLWOWG0=
+		ublANkJfCbXrKZ8XwsgVMy3PjFU=
 		</data>
 		<key>Headers/BleNoxUpgradeInfo.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		YQJZYoCYnYzNatHnp3fBtv9r0G8=
+		WycQfjMDezecCKyDPYHkCzxuxqI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,11 +75,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aiZ2sCJQm2ZZRaA7VBNJ0H1ESks=
+			g5wb9kTy9NliWpCvNGPPwFcgyyM=
 			</data>
 			<key>hash2</key>
 			<data>
-			jM5moN52ZyPyAnpAVeNm/pPwgGp54js051gpfAvluPI=
+			6lYg4gVrfeRUJ14mFZG09OIg0xsBRe9wEFnDWlQUL0s=
 			</data>
 		</dict>
 		<key>Headers/BleNoxAidInfo.h</key>
@@ -163,11 +163,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			acAKTaA9I9/YyYSUt33gaLWOWG0=
+			ublANkJfCbXrKZ8XwsgVMy3PjFU=
 			</data>
 			<key>hash2</key>
 			<data>
-			v2bXCmfeM0HBJcaMk2vSJdb5VcKWi87gjVDEluLvqpE=
+			hOB2pQ/1C346+apRe+l8LVKjndq9jBtgAG0rfZuknW8=
 			</data>
 		</dict>
 		<key>Headers/BleNoxUpgradeInfo.h</key>

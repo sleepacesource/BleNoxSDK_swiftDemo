@@ -25,4 +25,6 @@
 @property (nonatomic, assign) BOOL shake;//震动是否打开
 @property (nonatomic, assign) UInt16 musicID;//音乐ID
 @property (nonatomic, assign) UInt32 timestamp;//时间戳 设置/修改闹钟时的标准时间戳（用于单次闹钟）
+@property (nonatomic, assign) UInt8 alarmMaxTime;//闹钟的最大时长
+
 @end

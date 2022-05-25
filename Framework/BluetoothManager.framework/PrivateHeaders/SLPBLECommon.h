@@ -94,6 +94,11 @@ typedef NS_ENUM(NSInteger,SLPBLEMessagetUniqTypes) {
     SLPBLEMessagetUniqType_PillowHistoryBoundaryQuery,//历史数据的边界查询
     SLPBLEMessagetUniqType_PillowDownloadHistoryData,//历史数据下载
     SLPBLEMessagetUniqType_PillowDownloadHistoryDataAdditional,//带温湿度的历史数据下载
+    SLPBLEMessagetUniqType_AutoPillowHistorySummaryQuery,//历史数据的概要查询(全自动)
+    SLPBLEMessagetUniqType_AutoPillowHistoryBoundaryQuery,//历史数据的边界查询(全自动)
+    SLPBLEMessagetUniqType_AutoPillowDownloadHistoryData,//历史数据下载(全自动)
+    SLPBLEMessagetUniqType_AutoPillowDownloadHistoryDataAdditional,//带温湿度的历史数据下载(全自动)
+    
     SLPBLEMessagetUniqType_PillowPostStatus,//控制盒状态上报  设备->APP
     SLPBLEMessagetUniqType_PillowUpgradeSummery,//概要上传请求
     SLPBLEMessagetUniqType_PillowUpgradeContent,//内容上传请求
@@ -144,6 +149,13 @@ typedef NS_ENUM(NSInteger,SLPBLEMessagetUniqTypes) {
     SLPBLEMessagetUniqType_NOX2GetDeviceLog,
     SLPBLEMessagetUniqType_NOX2ConfigurePIN,//配置PIN码
     SLPBLEMessagetUniqType_NOX2GetPIN,//获取PIN码
+    SLPBLEMessagetUniqType_NOX2ConfigTimeMission,//设置定时任务
+    SLPBLEMessagetUniqType_NOX2GetTimeMission, // 获取定时任务
+    SLPBLEMessagetUniqType_NOX2ConfigDelayTime,//设置延迟关闭时间
+    SLPBLEMessagetUniqType_NOX2GetDelayTime, // 获取延迟关闭时间
+    SLPBLEMessagetUniqType_NOX2ConfigWaveColorList, // 挥手颜色列表设置
+    SLPBLEMessagetUniqType_NOX2GetWaveColorList, // 获取挥手颜色列表设置
+    SLPBLEMessagetUniqType_NOX2PreviewCustomColor, // 预览自定义颜色
     //SA1001-2
     SLPBLEMessagetUniqType_SABTimeCalibration,//时间校准
     SLPBLEMessagetUniqType_SABFactoryReset,//恢复出厂设置
@@ -183,6 +195,7 @@ typedef NS_ENUM(NSInteger,SLPBLEMessagetUniqTypes) {
     SLPBLEMessagetUniqType_SABGetTimeAroma,//获取定时香薰
     SLPBLEMessagetUniqType_SABGetCenterKey,//获取中心键
     SLPBLEMessagetUniqType_SABGetPINCode,//获取PIN码
+    SLPBLEMessagetUniqType_SABGetSenceConfig,//获取场景
     
     
     //Binatone
@@ -225,7 +238,11 @@ typedef NS_ENUM(NSInteger,SLPBLEMessagetUniqTypes) {
     SLPBLEMessagetUniqType_BLEWifiNOXConfigGetDeviceInfo,//获取设备信息
     SLPBLEMessagetUniqType_BLEWifiNOXConfigGetHTTPServerAddress,//获取服务器HTTP地址
     SLPBLEMessagetUniqType_BLEWifiNOXConfigGetWIFIStatus,//获取wifi连接状态
-
+    
+    //FH61W
+    SLPBLEMessagetUniqType_FH61W_GetDeviceInfo,//获取设备信息
+    SLPBLEMessagetUniqType_FH61W_GetDeviceIpInfo,//获取ip信息
+    
     //通用ID
     SLPBLEMessagetUniqType_ProtocolOne,//蓝牙最老版协议 比如Reston Pillow
     SLPBLEMessagetUniqType_ProtocolTwo,//蓝牙新版协议 枕头以及后面的nox2

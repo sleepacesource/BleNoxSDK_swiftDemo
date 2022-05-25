@@ -11,6 +11,6 @@
 #import "SLPBleNoxDef.h"
 #import "SLPBLEManager+BleNox.h"
 
-#define kRestonVersion  @"3.1.0";
+#define kRestonVersion  @"3.1.1";
 
 

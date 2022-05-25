@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/BleNox.h</key>
 		<data>
-		aiZ2sCJQm2ZZRaA7VBNJ0H1ESks=
+		g5wb9kTy9NliWpCvNGPPwFcgyyM=
 		</data>
 		<key>Headers/BleNoxAidInfo.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/BleNoxAlarmInfo.h</key>
 		<data>
-		9HJHiDwC+tWY6ebdliXUULKvm3Y=
+		si1iLdi/voVM59cHU2EWeUGkaJ8=
 		</data>
 		<key>Headers/BleNoxDeviceInfo.h</key>
 		<data>
@@ -36,6 +36,10 @@
 		<data>
 		bwvVzDToBWhU+g4H64XIr5UcJss=
 		</data>
+		<key>Headers/BleNoxTimeMission.h</key>
+		<data>
+		ublANkJfCbXrKZ8XwsgVMy3PjFU=
+		</data>
 		<key>Headers/BleNoxUpgradeInfo.h</key>
 		<data>
 		4ALNGcgfcpDQM3Kf48qTNyRply8=
@@ -46,15 +50,19 @@
 		</data>
 		<key>Headers/SLPBLEManager+BleNox.h</key>
 		<data>
-		89X+ZywWcpYVFSIwixF0j6WKX0w=
+		3Z2195dKlg35vYdIjOMvh6pO/cg=
 		</data>
 		<key>Headers/SLPBleNoxDef.h</key>
 		<data>
 		pjllJ7zsShvoknjj5g+bOONXA2c=
 		</data>
+		<key>Headers/WaveCustomColor.h</key>
+		<data>
+		/rXwzE9VFP5gWRkieAsDG2fvOkw=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		dquEEas+w84noWRTeO3evuKOsh8=
+		WycQfjMDezecCKyDPYHkCzxuxqI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,11 +75,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aiZ2sCJQm2ZZRaA7VBNJ0H1ESks=
+			g5wb9kTy9NliWpCvNGPPwFcgyyM=
 			</data>
 			<key>hash2</key>
 			<data>
-			jM5moN52ZyPyAnpAVeNm/pPwgGp54js051gpfAvluPI=
+			6lYg4gVrfeRUJ14mFZG09OIg0xsBRe9wEFnDWlQUL0s=
 			</data>
 		</dict>
 		<key>Headers/BleNoxAidInfo.h</key>
@@ -89,11 +97,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9HJHiDwC+tWY6ebdliXUULKvm3Y=
+			si1iLdi/voVM59cHU2EWeUGkaJ8=
 			</data>
 			<key>hash2</key>
 			<data>
-			01P55zuhvraPdYr/zitnK59DXycAb9ejUuXFYFxtLX0=
+			mEq7fd7+NSm8sNH6sAiDcy5EsLfGgUxCBCSKhL7Y2wI=
 			</data>
 		</dict>
 		<key>Headers/BleNoxDeviceInfo.h</key>
@@ -151,6 +159,17 @@
 			dmaykvSnGOYm5gnmV47GdmjjxZWYh6TflVl1xFp6as8=
 			</data>
 		</dict>
+		<key>Headers/BleNoxTimeMission.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ublANkJfCbXrKZ8XwsgVMy3PjFU=
+			</data>
+			<key>hash2</key>
+			<data>
+			hOB2pQ/1C346+apRe+l8LVKjndq9jBtgAG0rfZuknW8=
+			</data>
+		</dict>
 		<key>Headers/BleNoxUpgradeInfo.h</key>
 		<dict>
 			<key>hash</key>
@@ -177,11 +196,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			89X+ZywWcpYVFSIwixF0j6WKX0w=
+			3Z2195dKlg35vYdIjOMvh6pO/cg=
 			</data>
 			<key>hash2</key>
 			<data>
-			cuMUzwGOHfoyktnKPGYCGAIqgAMbPK6v7yoxNYvxs7M=
+			17jFnpk17HtIQQaV9sFhMN8qZhG2rswVWeef3e+NeoY=
 			</data>
 		</dict>
 		<key>Headers/SLPBleNoxDef.h</key>
@@ -193,6 +212,17 @@
 			<key>hash2</key>
 			<data>
 			RzzgMh8r9gsA/E2E1xqULzDcrjMPB4+UYLP5VDxPJog=
+			</data>
+		</dict>
+		<key>Headers/WaveCustomColor.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/rXwzE9VFP5gWRkieAsDG2fvOkw=
+			</data>
+			<key>hash2</key>
+			<data>
+			cxdQ2rIGo93qHT3g7ao4Qt5QXk2hH5YXnS/ZbHrr/TI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

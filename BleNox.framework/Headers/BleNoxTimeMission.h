@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) UInt8 endHour;//结束时间小时
 @property (nonatomic, assign) UInt8 endMinute;//结束时间分钟
 /*重复
- 周1-7 开关(0-6位) 0:关， 1:开
+ 周1-7 开关(0-6位)
  全0表示单次,设置时间戳作为过期标准
  */
 @property (nonatomic, assign) UInt8 repeat;  
@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) UInt8 brightness;//亮度 0-100
 @property (nonatomic, assign) UInt16 musicID;//音乐ID
 @property (nonatomic, assign) UInt8 volume;//音量大小 0-16
-@property (nonatomic, assign) UInt8 playMode;//播放模式
+@property (nonatomic, assign) UInt8 playMode;//播放模式 (0: 顺序循环  1：随机播放 2:单曲循环)
 @property (nonatomic, assign) UInt8 valid;//0表示该任务已经删除 1该任务有效
 @property (nonatomic, assign) UInt32 timeStamp;//时间戳
 

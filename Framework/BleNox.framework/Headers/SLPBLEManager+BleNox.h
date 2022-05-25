@@ -18,6 +18,8 @@
 #import <SLPCommon/SLPCommon.h>
 #import <BluetoothManager/SLPBLEDef.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "BleNoxTimeMission.h"
+#import "WaveCustomColor.h"
 
 @interface SLPBLEManager (BleNox)
 
@@ -283,4 +285,43 @@
  */
 - (void)bleNox:(CBPeripheral *)peripheral configurePINWithEnable:(UInt8)enable timeout:(CGFloat)timeout completion:(SLPTransforCallback)handle;
 
+/*添加或修改定时任务
+ timeMissionInfo: 定时任务信息
+ timeout:超时
+ */
+- (void)bleNox:(CBPeripheral *)peripheral timeMissionConfig:(BleNoxTimeMission *)timeMissionInfo
+       timeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
+
+/**
+ 获取定时任务列表
+ handle 回调 返回 NSArray<BleNoxTimeMission *>
+ */
+- (void)bleNox:(CBPeripheral *)peripheral getTimeMissionListTimeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
+
+/**
+ 设置延迟关闭时间
+ */
+- (void)bleNox:(CBPeripheral *)peripheral delayCloseTimeConfig:(UInt16)time timeout:(CGFloat)timeout completion:(SLPTransforCallback)handle;
+
+/**
+ 获取延迟关闭时间
+ */
+- (void)bleNox:(CBPeripheral *)peripheral getDelayCloseInfoTimeout:(CGFloat)timeout completion:(SLPTransforCallback)handle;
+
+/*修改挥手自定义颜色列表
+ */
+- (void)bleNox:(CBPeripheral *)peripheral waveColorListConfig:(NSArray<WaveCustomColor *> *)colorList
+       timeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
+
+/**
+ 获取自定义挥手颜色列表
+ handle 回调 返回 NSArray<WaveCustomColor *>
+ */
+- (void)bleNox:(CBPeripheral *)peripheral getWaveColorListTimeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
+
+/**
+ 预览自定义颜色
+ operationCode：  0:关闭     1:打开
+ */
+- (void)bleNox:(CBPeripheral *)peripheral operationCode:(UInt8)operationCode previewCustomColor:(SLPLight *)light timeout:(CGFloat)timeout completion:(SLPTransforCallback)handle;
 @end
