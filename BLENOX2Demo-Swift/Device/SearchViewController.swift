@@ -65,9 +65,9 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
             return ;
         }
         
-        if !info.name.hasPrefix("SN21") {
-            return ;
-        }
+//        if !info.name.hasPrefix("SN21") {
+//            return ;
+//        }
         
         for ainfo in deviceList {
             if info.name == (ainfo as AnyObject).name
