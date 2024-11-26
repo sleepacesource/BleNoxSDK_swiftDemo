@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/BleNox.h</key>
 		<data>
-		g5wb9kTy9NliWpCvNGPPwFcgyyM=
+		F5CHZ/vJHGvh9JrUmICODD1Y1dI=
 		</data>
 		<key>Headers/BleNoxAidInfo.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		WycQfjMDezecCKyDPYHkCzxuxqI=
+		GQqtSNWio+0mPNJ3wNBuXqOB6os=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,11 +75,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			g5wb9kTy9NliWpCvNGPPwFcgyyM=
+			F5CHZ/vJHGvh9JrUmICODD1Y1dI=
 			</data>
 			<key>hash2</key>
 			<data>
-			6lYg4gVrfeRUJ14mFZG09OIg0xsBRe9wEFnDWlQUL0s=
+			+4F70AKTr/QSiw/GR32pfIEMexK2lO4nqk41tSfsaBY=
 			</data>
 		</dict>
 		<key>Headers/BleNoxAidInfo.h</key>

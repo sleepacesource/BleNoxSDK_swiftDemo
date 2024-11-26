@@ -248,6 +248,29 @@ typedef NS_ENUM(NSInteger,SLPBLEMessagetUniqTypes) {
     SLPBLEMessagetUniqType_ProtocolTwo,//蓝牙新版协议 枕头以及后面的nox2
     SLPBLEMessagetUniqType_ProtocolThree,//有些蓝牙设备还用了TCP的协议
     
+//    SDC
+    SLPBLEMessagetUniqType_SDCControl,//sdk控制
+    SLPBLEMessagetUniqType_SDCLightControl,//床底灯开关
+    SLPBLEMessagetUniqType_SDCBedConfig,//电动床参数设置
+    SLPBLEMessagetUniqType_GETSDCBedConfig,//电动床参数获取
+    SLPBLEMessagetUniqType_SDCWorkMode,//获取电动床工作模式
+    SLPBLEMessagetUniqType_SDCSubSnoreStatus,//鼾声状态订阅开关
+    SLPBLEMessagetUniqType_SDCGetSnoreStatus,//鼾声状态获取
+    SLPBLEMessagetUniqType_SDCClock,//闹钟设置
+    SLPBLEMessagetUniqType_SDCGetClockList,//闹钟列表获取
+    SLPBLEMessagetUniqType_SDCGlobalClock,//闹钟全局设置
+    SLPBLEMessagetUniqType_SDCGetGlobalClock,//闹钟全局获取
+    SLPBLEMessagetUniqType_SDCGoodNightMode,//晚安模式设置
+    SLPBLEMessagetUniqType_SDCGetGoodNightMode,//晚安模式获取
+    SLPBLEMessagetUniqType_SDCLeftBedMode,//离床模式设置
+    SLPBLEMessagetUniqType_SDCGetLeftBedMode,//离床模式获取
+    SLPBLEMessagetUniqType_SDCNightLight,//离床夜灯设置
+    SLPBLEMessagetUniqType_SDCGetNightLight,//离床夜灯获取
+    SLPBLEMessagetUniqType_SDCSnoringMeddleDemo,//打鼾干预演示
+    SLPBLEMessagetUniqType_SDCGetDeviceInfo, //设备信息
+    SLPBLEMessagetUniqType_SDCSnoreMeddle, //打鼾干预开关
+    SLPBLEMessagetUniqType_SDCGetSnoreMeddle, //获取鼾干预开关
+    
     SLPBLEMessagetUniqType_None,
 };
 typedef NS_ENUM(UInt8, OperationSwitch) {
